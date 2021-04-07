@@ -1,6 +1,31 @@
 <resources>
     <string name="app_name">MapaEstaciones</string>
     <string name="title_activity_mapa_con_las_oficinas">Map</string>
+    <string name="reserva_vehiculo">Reservar vehículos</string>
+    <string name="ver_reservas">Ver reservas</string>
+    <string name="ver_vehiculos">Ver vehículos</string>
+    <string name="encontrar_oficinas">Encontrar oficinas</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="ayuda">Ayuda</string>
+
+    /**Activity Ayuda*/
+    <string name="correo_a_ayuda">Correo</string>
+    <string name="nombre_a_ayuda">Nombre</string>
+    <string name="apellidos_a_ayuda">Apellidos</string>
+    <string name="telefono_a_ayuda">Teléfono</string>
+
+    /**Activity Reservar Vehículos*/
+    <string name="punto_recogida">Punto de recogida</string>
+    <string name="punto_devolucion">Punto de devolución</string>
+    <string name="bfecha">Fecha</string>
+    <string name="bhora">Hora</string>
+    <string name="efecha"> </string>
+    <string name="ehora"></string>
+    <string name="button_consultar_disp">Consultar disponibilidad</string>
+    <string name="bfecha2">Fecha</string>
+    <string name="bhora2">Hora</string>
+    <string name="efecha2"> </string>
+    <string name="ehora2"></string>
 
     <string name="VigoInfo"> OFICINA DE VIGO Abierto de 10:00-14:00 L-V Cerrado SyD</string>
 </resources>

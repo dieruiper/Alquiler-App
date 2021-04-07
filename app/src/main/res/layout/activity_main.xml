@@ -15,8 +15,23 @@
 
         <Button
             android:id="@+id/btn_ofi_map"
+            android:onClick="Actividad_Maps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Oficinas en el mapa" />
+
+        <Button
+            android:id="@+id/btn_res_veh"
+            android:onClick="Actividad_Reserva_adelante"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RESERVAR VEHICULO" />
+
+        <Button
+            android:id="@+id/btn_ver_veh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VER VEHICULOS" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
