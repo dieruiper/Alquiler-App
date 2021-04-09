@@ -19,6 +19,7 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
     Button bfecha,bhora,bfecha2,bhora2;
     EditText efecha,ehora,efecha2,ehora2;
     private int dia,mes,ano,hora,minutos;
+    private int prueba;
     /*
 
      */
