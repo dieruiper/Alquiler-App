@@ -19,7 +19,6 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
     Button bfecha,bhora,bfecha2,bhora2;
     EditText efecha,ehora,efecha2,ehora2;
     private int dia,mes,ano,hora,minutos;
-    private int prueba;
     /*
 
      */
@@ -139,6 +138,17 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
             },hora,minutos,false);
             timePickerDialog.show();
         }
+    }
+
+    public void Consultar_Disponibilidad(View view){
+
+        Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this,Resumen_Reserva.class);
+        Bundle miBundle=new Bundle();
+        miBundle.putString("fecha_recogida",efecha.getText().toString());
+        myIntent.putExtras(miBundle);
+        startActivity(myIntent);
+
+
     }
 
 }
