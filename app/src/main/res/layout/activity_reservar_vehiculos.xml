@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/elugar"
         android:layout_width="164dp"
         android:layout_height="45dp"
         android:layout_marginTop="28dp"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toStartOf="@+id/efecha"
         app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/elugar" />
 
     <EditText
         android:id="@+id/efecha"
@@ -63,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/elugar" />
 
     <Button
         android:id="@+id/bhora"
@@ -112,7 +112,7 @@
         app:layout_constraintEnd_toStartOf="@+id/efecha"
         app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/elugar" />
 
     <EditText
         android:id="@+id/efecha2"
@@ -124,7 +124,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/elugar" />
 
     <Button
         android:id="@+id/bhora2"
@@ -153,16 +153,14 @@
 
     <Button
         android:id="@+id/btn_mapa_reserva"
-        android:layout_width="146dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:text="Lugar"
         android:onClick="Actividad_Maps"
-        android:text="@string/btn_mapa_reserva"
-        app:layout_constraintBottom_toTopOf="@+id/bfecha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintEnd_toStartOf="@+id/elugar"
+        app:layout_constraintHorizontal_bias="0.275"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/punto_recogida"
-        app:layout_constraintVertical_bias="0.243" />
+        app:layout_constraintTop_toBottomOf="@+id/punto_recogida" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

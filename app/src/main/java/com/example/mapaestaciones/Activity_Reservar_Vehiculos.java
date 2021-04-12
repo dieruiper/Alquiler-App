@@ -16,7 +16,7 @@ import java.util.Calendar;
 
 public class Activity_Reservar_Vehiculos extends AppCompatActivity implements View.OnClickListener {
 
-    Button bfecha,bhora,bfecha2,bhora2;
+    Button bfecha,bhora,bfecha2,bhora2, bmapa;
     EditText efecha,ehora,efecha2,ehora2;
     private int dia,mes,ano,hora,minutos;
     /*
@@ -84,71 +84,74 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
     @Override
     public void onClick(View v) {
 
-        if(v ==bfecha){
-            final Calendar c= Calendar.getInstance();
-            dia=c.get(Calendar.DAY_OF_MONTH);
-            mes=c.get(Calendar.MONTH);
-            ano=c.get(Calendar.YEAR);
-            DatePickerDialog datePickerDialog= new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+        if (v == bfecha) {
+            final Calendar c = Calendar.getInstance();
+            dia = c.get(Calendar.DAY_OF_MONTH);
+            mes = c.get(Calendar.MONTH);
+            ano = c.get(Calendar.YEAR);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    efecha.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
+                    efecha.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                 }
             }
-                    ,dia,mes,ano);
+                    , dia, mes, ano);
             datePickerDialog.show();
-        }if(v==bhora){
-            final Calendar c= Calendar.getInstance();
-            hora=c.get(Calendar.HOUR_OF_DAY);
-            minutos=c.get(Calendar.MINUTE);
+        }
+        if (v == bhora) {
+            final Calendar c = Calendar.getInstance();
+            hora = c.get(Calendar.HOUR_OF_DAY);
+            minutos = c.get(Calendar.MINUTE);
             TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
                 @Override
                 public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                    ehora.setText(hourOfDay+":"+minute);
+                    ehora.setText(hourOfDay + ":" + minute);
 
                 }
-            },hora,minutos,false);
+            }, hora, minutos, false);
             timePickerDialog.show();
         }
-        if(v ==bfecha2){
-            final Calendar c= Calendar.getInstance();
-            dia=c.get(Calendar.DAY_OF_MONTH);
-            mes=c.get(Calendar.MONTH);
-            ano=c.get(Calendar.YEAR);
-            DatePickerDialog datePickerDialog= new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+        if (v == bfecha2) {
+            final Calendar c = Calendar.getInstance();
+            dia = c.get(Calendar.DAY_OF_MONTH);
+            mes = c.get(Calendar.MONTH);
+            ano = c.get(Calendar.YEAR);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    efecha2.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
+                    efecha2.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                 }
             }
-                    ,dia,mes,ano);
+                    , dia, mes, ano);
             datePickerDialog.show();
-        }if(v==bhora2){
-            final Calendar c= Calendar.getInstance();
-            hora=c.get(Calendar.HOUR_OF_DAY);
-            minutos=c.get(Calendar.MINUTE);
+        }
+        if (v == bhora2) {
+            final Calendar c = Calendar.getInstance();
+            hora = c.get(Calendar.HOUR_OF_DAY);
+            minutos = c.get(Calendar.MINUTE);
             TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
                 @Override
                 public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                    ehora2.setText(hourOfDay+":"+minute);
+                    ehora2.setText(hourOfDay + ":" + minute);
 
                 }
-            },hora,minutos,false);
+            }, hora, minutos, false);
             timePickerDialog.show();
         }
     }
+    public void Actividad_Maps (View view){
+        Intent mapas_adelante = new Intent(getApplicationContext(), Mapa_con_las_oficinas.class);
+        startActivity(mapas_adelante);
+    }
 
-    public void Consultar_Disponibilidad(View view){
-
+    public void Consultar_Disponibilidad(View view) {
         Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this,Resumen_Reserva.class);
         Bundle miBundle=new Bundle();
         miBundle.putString("fecha_recogida",efecha.getText().toString());
         myIntent.putExtras(miBundle);
         startActivity(myIntent);
 
-
     }
-
 }
