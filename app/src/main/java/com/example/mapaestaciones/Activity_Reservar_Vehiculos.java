@@ -41,40 +41,6 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         bhora2.setOnClickListener(this);
 
     }
-
-    /*
-    public void OnClick(View v){
-        if(v ==bfecha){
-            final Calendar c= Calendar.getInstance();
-            dia=c.get(Calendar.DAY_OF_MONTH);
-            mes=c.get(Calendar.MONTH);
-            ano=c.get(Calendar.YEAR);
-            DatePickerDialog datePickerDialog= new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    efecha.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
-
-                }
-            }
-            ,dia,mes,ano);
-            datePickerDialog.show();
-        }if(v==bhora){
-            final Calendar c= Calendar.getInstance();
-            hora=c.get(Calendar.HOUR_OF_DAY);
-            minutos=c.get(Calendar.MINUTE);
-            TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-                @Override
-                public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                    ehora.setText(hourOfDay+":"+minute);
-
-                }
-            },hora,minutos,false);
-            timePickerDialog.show();
-        }
-    }
-
-    */
-
     public void Actividad_Reserva_atras(View view){
 
         Intent reserva_veh_atras = new Intent(this,MainActivity.class);
@@ -149,15 +115,25 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
 
     public void Consultar_Disponibilidad(View view) {
         Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this,Resumen_Reserva.class);
-        myIntent.putExtra("efecha",(Parcelable) efecha);
-        myIntent.putExtra("ehora",(Parcelable) ehora);
-        myIntent.putExtra("efecha2", (Parcelable) efecha2);
-        myIntent.putExtra("ehora2",(Parcelable) ehora2);
         /*
-        Bundle miBundle=new Bundle();
-        miBundle.putString("fecha_recogida",efecha.getText().toString());
-        myIntent.putExtras(miBundle);
+        String s_efecha =efecha.getText().toString().trim();
+        String s_ehora =ehora.getText().toString().trim();
+        String s_efecha2 =efecha2.getText().toString().trim();
+        String s_ehora2 =ehora2.getText().toString().trim();
+        myIntent.putExtra("es_efecha", s_efecha);
+        myIntent.putExtra("es_ehora", s_ehora);
+        myIntent.putExtra("es_efecha2",  s_efecha2);
+        myIntent.putExtra("es_ehora2", s_ehora2);
         */
+
+
+        Bundle miBundle=new Bundle();
+        miBundle.putString("es_efecha",efecha.getText().toString().trim());
+        miBundle.putString("es_ehora",ehora.getText().toString().trim());
+        miBundle.putString("es_efecha2",efecha2.getText().toString().trim());
+        miBundle.putString("es_ehora2",ehora2.getText().toString().trim());
+        myIntent.putExtras(miBundle);
+
         startActivity(myIntent);
 
     }

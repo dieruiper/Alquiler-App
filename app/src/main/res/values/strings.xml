@@ -24,8 +24,8 @@
     <string name="button_consultar_disp">Consultar disponibilidad</string>
     <string name="bfecha2">Fecha</string>
     <string name="bhora2">Hora</string>
-    <string name="efecha2"> </string>
-    <string name="ehora2"></string>
+    <string name="efecha2">Fecha </string>
+    <string name="ehora2">Hora</string>
     <string name="btn_mapa_reserva">Lugar</string>
     <string name="consultar_disponibilidad">Consultar disponibilidad</string>
 
@@ -33,10 +33,10 @@
 
     /* Actividad Resumen_Reserva*/
 
-    <string name="efecha_resumen">Fecha recogida</string>
-    <string name="ehora_resumen">Hora recogida</string>
-    <string name="efecha2_resumen">Fecha2 recogida</string>
-    <string name="ehora2_resumen">Hora2 recogida</string>
+    <string name="efecha_resumen"></string>
+    <string name="ehora_resumen"></string>
+    <string name="efecha2_resumen"></string>
+    <string name="ehora2_resumen"></string>
 
     <string name="volver_reserva_vehiculos">Volver</string>
 

@@ -9,17 +9,18 @@ import android.widget.TextView;
 
 public class Resumen_Reserva extends AppCompatActivity {
 
-    TextView efecha_recogida_resumen,ehora_resumen,efecha2_resumen,ehora2_resumen;
+    TextView efecha_resumen,ehora_resumen,efecha2_resumen,ehora2_resumen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumen__reserva);
 
         Intent me=getIntent();
-        String efecha_resumen=me.getStringExtra("efecha");
-        String ehora_resumen=me.getStringExtra("ehora");
-        String efecha2_resumen=me.getStringExtra("efecha2");
-        String ehora2_resumen=me.getStringExtra("ehora2");
+        String efecha_resumen=me.getStringExtra("es_efecha");
+        String ehora_resumen=me.getStringExtra("es_ehora");
+        String efecha2_resumen=me.getStringExtra("es_efecha2");
+        String ehora2_resumen=me.getStringExtra("es_ehora2");
+
 
 
 
