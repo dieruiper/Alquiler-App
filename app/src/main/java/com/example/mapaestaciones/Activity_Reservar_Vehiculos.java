@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -148,9 +149,15 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
 
     public void Consultar_Disponibilidad(View view) {
         Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this,Resumen_Reserva.class);
+        myIntent.putExtra("efecha",(Parcelable) efecha);
+        myIntent.putExtra("ehora",(Parcelable) ehora);
+        myIntent.putExtra("efecha2", (Parcelable) efecha2);
+        myIntent.putExtra("ehora2",(Parcelable) ehora2);
+        /*
         Bundle miBundle=new Bundle();
         miBundle.putString("fecha_recogida",efecha.getText().toString());
         myIntent.putExtras(miBundle);
+        */
         startActivity(myIntent);
 
     }

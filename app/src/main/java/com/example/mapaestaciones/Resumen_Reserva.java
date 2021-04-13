@@ -9,16 +9,20 @@ import android.widget.TextView;
 
 public class Resumen_Reserva extends AppCompatActivity {
 
-    TextView fecha_recogida_resumen;
+    TextView efecha_recogida_resumen,ehora_resumen,efecha2_resumen,ehora2_resumen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumen__reserva);
-        fecha_recogida_resumen=findViewById(R.id.efecha);
-        Bundle miBundle=this.getIntent().getExtras();
-        if(miBundle!=null){
-            String nombre=miBundle.getString("fecha_recogida");
-        }
+
+        Intent me=getIntent();
+        String efecha_resumen=me.getStringExtra("efecha");
+        String ehora_resumen=me.getStringExtra("ehora");
+        String efecha2_resumen=me.getStringExtra("efecha2");
+        String ehora2_resumen=me.getStringExtra("ehora2");
+
+
+
     }
     public void volver_reserva_vehiculos(View view){
 
