@@ -4,6 +4,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -80,11 +81,17 @@ public class Mapa_con_las_oficinas extends FragmentActivity implements OnMapRead
 
     @Override
     public boolean onMarkerClick(Marker marker) {
+
         if(marker.equals(markerBilbao)){
             String lat, lng;
             lat = Double.toString(marker.getPosition().latitude);
             lng = Double.toString(marker.getPosition().longitude);
             Toast.makeText(this,"Oficina Bilbao: "+lat+","+lng, Toast.LENGTH_SHORT).show();
+            Intent me =getIntent();
+            me.putExtra("lat",lat);
+            me.putExtra("lng",lng);
+            setResult(100, me);
+            finish();
         }
         return false;
     }

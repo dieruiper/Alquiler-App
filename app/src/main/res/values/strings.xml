@@ -33,7 +33,7 @@
 
     /* Actividad Resumen_Reserva*/
 
-    <string name="efecha_resumen"></string>
+    <string name="efecha_resumen">fecha</string>
     <string name="ehora_resumen"></string>
     <string name="efecha2_resumen"></string>
     <string name="ehora2_resumen"></string>

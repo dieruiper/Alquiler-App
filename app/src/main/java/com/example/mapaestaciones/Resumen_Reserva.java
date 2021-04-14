@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class Resumen_Reserva extends AppCompatActivity {
 
-    TextView efecha_resumen,ehora_resumen,efecha2_resumen,ehora2_resumen;
+    TextView tx_efecha_resumen,tx_ehora_resumen,tx_efecha2_resumen,tx_ehora2_resumen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,14 +21,16 @@ public class Resumen_Reserva extends AppCompatActivity {
         String efecha2_resumen=me.getStringExtra("es_efecha2");
         String ehora2_resumen=me.getStringExtra("es_ehora2");
 
-
+        tx_efecha_resumen=findViewById(R.id.fecha_recogida_resumen);
+        tx_efecha_resumen.setText(efecha_resumen);
 
 
     }
     public void volver_reserva_vehiculos(View view){
 
-        Intent volver_reserva_vehiculos = new Intent(this,Activity_Reservar_Vehiculos.class );
-        startActivity(volver_reserva_vehiculos);
-
+        //Intent volver_reserva_vehiculos = new Intent(this,Activity_Reservar_Vehiculos.class );
+        //startActivity(volver_reserva_vehiculos);
+        finish();
     }
+
 }
