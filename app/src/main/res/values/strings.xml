@@ -33,11 +33,12 @@
 
     /* Actividad Resumen_Reserva*/
 
+    <string name="elugar_resumen">lugar</string>
     <string name="efecha_resumen">fecha</string>
-    <string name="ehora_resumen"></string>
-    <string name="efecha2_resumen"></string>
-    <string name="ehora2_resumen"></string>
-
+    <string name="ehora_resumen">hora</string>
+    <string name="elugar2_resumen">lugar</string>
+    <string name="efecha2_resumen">fecha</string>
+    <string name="ehora2_resumen">hora</string>
     <string name="volver_reserva_vehiculos">Volver</string>
 
 
