@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class Resumen_Reserva extends AppCompatActivity {
-    //mergeame esta
+
     TextView tx_efecha_resumen,tx_ehora_resumen,tx_efecha2_resumen,tx_ehora2_resumen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
