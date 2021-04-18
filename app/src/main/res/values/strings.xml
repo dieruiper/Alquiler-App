@@ -31,8 +31,19 @@
 
     <string name="VigoInfo"> OFICINA DE VIGO Abierto de 10:00-14:00 L-V Cerrado SyD</string>
 
-    /* Actividad Resumen_Reserva*/
+    /*Activity Ver Vehículos*/
+    <string name="int_matricula">Matrícula</string>
+    <string name="chr_categoria">Categoría</string>
+    <string name="txt_marca">Marca</string>
+    <string name="txt_modelo">Modelo</string>
+    <string name="txt_descripcion">Descripción</string>
+    <string name="real_precio">Precio</string>
+    <string name="BotonRegistrar">Registrar vehiculo</string>
+    <string name="BotonBuscar">Buscar vehiculo</string>
+    <string name="BotonEliminar">Eliminar vehiculo</string>
+    <string name="BotonModificar">Modificar vehiculo</string>
 
+    /* Actividad Resumen_Reserva*/
     <string name="fecha_recogida_resumen">Fecha recogida</string>
     <string name="volver_reserva_vehiculos">Volver</string>
 

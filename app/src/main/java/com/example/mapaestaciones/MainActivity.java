@@ -23,4 +23,8 @@ public class MainActivity extends AppCompatActivity {
         Intent reserva_adelante = new Intent(getApplicationContext(), Activity_Reservar_Vehiculos.class);
         startActivity(reserva_adelante);
     }
+    public void Actividad_Ver_Vehiculos (View view){
+        Intent vehiculos_adelante = new Intent(getApplicationContext(), Activity_Ver_Vehiculos.class);
+        startActivity(vehiculos_adelante);
+    }
 }
