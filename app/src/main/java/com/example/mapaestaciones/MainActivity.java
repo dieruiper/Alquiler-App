@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,8 +22,13 @@ public class MainActivity extends AppCompatActivity {
         Intent reserva_adelante = new Intent(getApplicationContext(), Activity_Reservar_Vehiculos.class);
         startActivity(reserva_adelante);
     }
-    public void Actividad_Ver_Vehiculos (View view){
-        Intent vehiculos_adelante = new Intent(getApplicationContext(), Activity_Ver_Vehiculos.class);
-        startActivity(vehiculos_adelante);
+    public void Actividad_Acciones_BD (View view){
+        Intent acciones_bd_adelante = new Intent(getApplicationContext(), Activity_Acciones_BD.class);
+        startActivity(acciones_bd_adelante);
     }
+    public void Actividad_Ver_Vehiculos (View view){
+        Intent ver_vehiculos_adelante = new Intent(getApplicationContext(), Activity_Ver_Vehiculos.class);
+        startActivity(ver_vehiculos_adelante);
+    }
+
 }
