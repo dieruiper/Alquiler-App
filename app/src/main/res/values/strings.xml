@@ -24,20 +24,27 @@
     <string name="button_consultar_disp">Consultar disponibilidad</string>
     <string name="bfecha2">Fecha</string>
     <string name="bhora2">Hora</string>
-    <string name="efecha2">Fecha </string>
-    <string name="ehora2">Hora</string>
+    <string name="efecha2"> </string>
+    <string name="ehora2"></string>
     <string name="btn_mapa_reserva">Lugar</string>
     <string name="consultar_disponibilidad">Consultar disponibilidad</string>
 
     <string name="VigoInfo"> OFICINA DE VIGO Abierto de 10:00-14:00 L-V Cerrado SyD</string>
 
+    /*Activity Ver Vehículos*/
+    <string name="int_matricula">Matrícula</string>
+    <string name="chr_categoria">Categoría</string>
+    <string name="txt_marca">Marca</string>
+    <string name="txt_modelo">Modelo</string>
+    <string name="txt_descripcion">Descripción</string>
+    <string name="real_precio">Precio</string>
+    <string name="BotonRegistrar">Registrar vehiculo</string>
+    <string name="BotonBuscar">Buscar vehiculo</string>
+    <string name="BotonEliminar">Eliminar vehiculo</string>
+    <string name="BotonModificar">Modificar vehiculo</string>
+
     /* Actividad Resumen_Reserva*/
-
-    <string name="efecha_resumen">fecha</string>
-    <string name="ehora_resumen"></string>
-    <string name="efecha2_resumen"></string>
-    <string name="ehora2_resumen"></string>
-
+    <string name="fecha_recogida_resumen">Fecha recogida</string>
     <string name="volver_reserva_vehiculos">Volver</string>
 
 
