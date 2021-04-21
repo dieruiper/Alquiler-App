@@ -32,6 +32,8 @@
     <string name="VigoInfo"> OFICINA DE VIGO Abierto de 10:00-14:00 L-V Cerrado SyD</string>
 
     /*Activity Ver Vehículos*/
+    <string name="tv1">Selecciona un nombre</string>
+    /*Activity Acciones BD*/
     <string name="int_matricula">Matrícula</string>
     <string name="chr_categoria">Categoría</string>
     <string name="txt_marca">Marca</string>
@@ -43,8 +45,18 @@
     <string name="BotonEliminar">Eliminar vehiculo</string>
     <string name="BotonModificar">Modificar vehiculo</string>
 
+
+    /* Temporary merge branch 1*/
+    <string name="elugar_resumen">lugar</string>
+    <string name="efecha_resumen">fecha</string>
+    <string name="ehora_resumen">hora</string>
+    <string name="elugar2_resumen">lugar</string>
+    <string name="efecha2_resumen">fecha</string>
+    <string name="ehora2_resumen">hora</string>
+    =========
     /* Actividad Resumen_Reserva*/
     <string name="fecha_recogida_resumen">Fecha recogida</string>
+    >>>>>>>>> Temporary merge branch 2
     <string name="volver_reserva_vehiculos">Volver</string>
 
 
