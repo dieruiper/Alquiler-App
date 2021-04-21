@@ -16,7 +16,7 @@ public class Activity_Ver_Vehiculos extends AppCompatActivity {
 
     private TextView tv1;
     private ListView lv1;
-
+    //prueba
     private String nombres []={"Pepe", "José", "Aantonio", "Diego", "Rafael", "Adrian", "Conchi"};
     private String edades []={"58", "24", "24", "24", "41", "31", "59"};
 
