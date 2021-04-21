@@ -32,6 +32,9 @@
     <string name="VigoInfo"> OFICINA DE VIGO Abierto de 10:00-14:00 L-V Cerrado SyD</string>
 
     /*Activity Ver Vehículos*/
+    <string name="tv1">Selecciona un nombre</string>
+
+    /*Activity Acciones BD*/
     <string name="int_matricula">Matrícula</string>
     <string name="chr_categoria">Categoría</string>
     <string name="txt_marca">Marca</string>

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ import java.util.ArrayList;
 public class Activity_Acciones_BD extends AppCompatActivity {
 
     private EditText et_matricula,et_categoria, et_marca, et_modelo,et_descripcion, et_precio;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         et_modelo = (EditText)findViewById(R.id.txt_modelo);
         et_descripcion = (EditText)findViewById(R.id.txt_descripcion);
         et_precio = (EditText)findViewById(R.id.real_precio);
+
     }
 
     //Método para dar de alta los productos
@@ -170,17 +174,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         }
     }
 
-    public ArrayList llenar_lv(){
-        ArrayList<String> lista = new ArrayList<>();
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-        String q = "SELECT * FROM vehiculos";
-        Cursor registros = BaseDeDatos.rawQuery(q, null);
-        if(registros.moveToFirst()){
-            do{
-                lista.add(registros.getString(0));
-            }while(registros.moveToNext());
-        }
-        return lista;
-    }
+
+
+
 }
