@@ -80,7 +80,6 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         String matricula = et_matricula.getText().toString();
-        String descripcion = et_descripcion.getText().toString();
 
         if(!matricula.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
