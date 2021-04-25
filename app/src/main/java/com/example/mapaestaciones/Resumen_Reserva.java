@@ -43,4 +43,10 @@ public class Resumen_Reserva extends AppCompatActivity {
         finish();
     }
 
+    public void formularioresumen_Reserva(View view){
+
+        Intent formularioresumen = new Intent(this,FormularioResumen.class );
+        startActivity(formularioresumen);
+    }
+
 }
