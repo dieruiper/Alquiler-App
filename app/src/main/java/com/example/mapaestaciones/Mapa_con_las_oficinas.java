@@ -18,10 +18,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Mapa_con_las_oficinas extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
+public class Mapa_con_las_oficinas extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener{
     //comentario
     private GoogleMap mMap;
-    private Marker markerBilbao, InfoWindow;
+    private Marker InfoWindowBarcelona,InfoWindowBilbao,InfoWindowSevilla,InfoWindowMadrid, InfoWindowVigo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,29 +38,24 @@ public class Mapa_con_las_oficinas extends FragmentActivity implements OnMapRead
         mMap = googleMap;
 
         LatLng sevilla = new LatLng(37.3886303, -5.9953403);
-        mMap.addMarker(new MarkerOptions().position(sevilla).title("Oficina en Sevilla").snippet("Esta es la oficina de Sevilla").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+        InfoWindowSevilla =  googleMap.addMarker(new MarkerOptions().position(sevilla).title("Oficina de Sevilla").snippet("Pulse el mensaje para confirmar la oficina").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
 
         LatLng madrid = new LatLng(40.4167047, -3.7035825);
-        mMap.addMarker(new MarkerOptions().position(madrid).title("Oficina en Madrid").snippet("Esta es la oficina de Madrid").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+        InfoWindowMadrid =  googleMap.addMarker(new MarkerOptions().position(madrid).title("Oficina de Madrid").snippet("Pulse el mensaje para confirmar la oficina").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
 
         LatLng barcelona = new LatLng(41.3828939, 2.1774322);
-        mMap.addMarker(new MarkerOptions().position(barcelona).title("Oficina en Barcelona").snippet("Esta es la oficina de Barcelona").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+        InfoWindowBarcelona =  googleMap.addMarker(new MarkerOptions().position(barcelona).title("Oficina de Barcelona").snippet("Pulse el mensaje para confirmar la oficina").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
 
         LatLng bilbao = new LatLng(43.2630018, -2.9350039);
-        markerBilbao = googleMap.addMarker(new MarkerOptions().position(bilbao).title("Oficina en Bilbao").snippet("Esta es la oficina de Bilbao").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+        InfoWindowBilbao =  googleMap.addMarker(new MarkerOptions().position(bilbao).title("Oficina de Bilbao").snippet("Pulse el mensaje para confirmar la oficina").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
 
         LatLng vigo = new LatLng(42.2376602, -8.7247205);
-        InfoWindow = googleMap.addMarker(new MarkerOptions().position(vigo).title("VIGO").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
-
+        InfoWindowVigo = googleMap.addMarker(new MarkerOptions().position(vigo).title("Oficina de Vigo").snippet("Pulse el mensaje para confirmar la oficina").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
         //Camara al inicio
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(madrid, 5));
 
-        //Click en marcador
-        googleMap.setOnMarkerClickListener(this);
-
         //Cuadro dialogo
         googleMap.setOnInfoWindowClickListener(this);
-
         //Habilitar zoom
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
@@ -79,27 +74,28 @@ public class Mapa_con_las_oficinas extends FragmentActivity implements OnMapRead
 
     }
 
-    @Override
-    public boolean onMarkerClick(Marker marker) {
-
-        if(marker.equals(markerBilbao)){
-            String lat, lng;
-            lat = Double.toString(marker.getPosition().latitude);
-            lng = Double.toString(marker.getPosition().longitude);
-            Toast.makeText(this,"Oficina Bilbao: "+lat+","+lng, Toast.LENGTH_SHORT).show();
-            Intent me =getIntent();
-            me.putExtra("lat",lat);
-            me.putExtra("lng",lng);
-            setResult(100, me);
+    public void onInfoWindowClick(Marker marker) {
+        if (marker.equals(InfoWindowVigo)) {
+            //VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(), null);
+            Toast.makeText(this,"Oficina Vigo Seleccionada", Toast.LENGTH_SHORT).show();
+            finish();
+        }else if (marker.equals(InfoWindowBilbao)) {
+            //VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(), null);
+            Toast.makeText(this,"Oficina Bilbao Seleccionada", Toast.LENGTH_SHORT).show();
+            finish();
+        }else if (marker.equals(InfoWindowMadrid)) {
+            //VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(), null);
+            Toast.makeText(this,"Oficina Madrid Seleccionada", Toast.LENGTH_SHORT).show();
+            finish();
+        }else if (marker.equals(InfoWindowSevilla)) {
+            //VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(), null);
+            Toast.makeText(this,"Oficina Sevilla Seleccionada", Toast.LENGTH_SHORT).show();
+            finish();
+        }else if (marker.equals(InfoWindowBarcelona)) {
+            //VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(), null);
+            Toast.makeText(this,"Oficina Barcelona Seleccionada", Toast.LENGTH_SHORT).show();
             finish();
         }
-        return false;
     }
 
-    @Override
-    public void onInfoWindowClick(Marker marker) {
-        if (marker.equals(InfoWindow)) {
-            VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(),null);
-        }
-    }
 }
