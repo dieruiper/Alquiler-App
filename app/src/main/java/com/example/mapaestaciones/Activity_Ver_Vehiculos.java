@@ -17,8 +17,6 @@ public class Activity_Ver_Vehiculos extends AppCompatActivity {
 
     private EditText tv1;
     private ListView lv1;
-    ArrayList<String> lista = new ArrayList<String>();
-    Vehiculo vehiculo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,30 +25,33 @@ public class Activity_Ver_Vehiculos extends AppCompatActivity {
 
         tv1=(EditText) findViewById(R.id.tv1);
         lv1=(ListView)findViewById(R.id.lv1);
+        ArrayList<String> lista = new ArrayList<String>();
 
         //funciona
-       /* AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-        String marca = tv1.getText().toString();
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
         Cursor fila = BaseDeDatos.rawQuery("select * from vehiculos", null);
         if(fila.moveToFirst()){
             do{
-                vehiculo = new Vehiculo(fila.getInt(0),fila.getString(1),
+                Vehiculo vehiculo = new Vehiculo(fila.getInt(0),fila.getString(1),
                         fila.getString(2), fila.getString(3),
                         fila.getString(4),fila.getDouble(5));
-                lista.add(vehiculo.getModelo());
+                lista.add(vehiculo.toString());
             }while (fila.moveToNext());
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_vervehiculos,lista);
-        lv1.setAdapter(adapter);*/
+        lv1.setAdapter(adapter);
+        BaseDeDatos.close();
 
     }
-
+/*
+    //Consulta por matrícula
     public void Consult(View view){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         String matricula = tv1.getText().toString();
+        lista.removeAll(lista);
 
         if(!matricula.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
@@ -60,7 +61,36 @@ public class Activity_Ver_Vehiculos extends AppCompatActivity {
                 vehiculo = new Vehiculo(fila.getInt(0),fila.getString(1),
                         fila.getString(2), fila.getString(3),
                         fila.getString(4),fila.getDouble(5));
-                lista.add(vehiculo.getMarca());
+                lista.add(vehiculo.getToString());
+                }while (fila.moveToNext());
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_vervehiculos,lista);
+                lv1.setAdapter(adapter);
+            }else{
+                Toast.makeText(this, "No existe el vehiculo", Toast.LENGTH_SHORT).show();
+                BaseDeDatos.close();
+            }
+        }else{
+            Toast.makeText(this, "Debes introducir la matricula del vehiculo", Toast.LENGTH_LONG).show();
+        }
+    }*/
+
+    //Consulta por marca
+    public void Consult(View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+
+        String marca = tv1.getText().toString();
+        ArrayList<String> lista = new ArrayList<String>();
+
+        if(!marca.isEmpty()){
+            Cursor fila = BaseDeDatos.rawQuery
+                    ("select * from vehiculos where marca ='" + marca + "'", null);
+            if(fila.moveToFirst()){
+                do{
+                    Vehiculo vehiculo = new Vehiculo(fila.getInt(0),fila.getString(1),
+                            fila.getString(2), fila.getString(3),
+                            fila.getString(4),fila.getDouble(5));
+                    lista.add(vehiculo.toString());
                 }while (fila.moveToNext());
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_vervehiculos,lista);
                 lv1.setAdapter(adapter);
@@ -72,7 +102,9 @@ public class Activity_Ver_Vehiculos extends AppCompatActivity {
             Toast.makeText(this, "Debes introducir la matricula del vehiculo", Toast.LENGTH_LONG).show();
         }
     }
-    /*public void Consult (View view){
+
+    /*
+    public void Consult (View view){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
         String marca = tv1.getText().toString();
