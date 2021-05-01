@@ -46,7 +46,7 @@
     <string name="BotonEliminar">Eliminar vehiculo</string>
     <string name="BotonModificar">Modificar vehiculo</string>
 
-    <string name="elugar_resumen">lugar</string>
+    <string name="elugar_resumen">Lugar</string>
     <string name="efecha_resumen">fecha</string>
     <string name="ehora_resumen">hora</string>
     <string name="elugar2_resumen">lugar</string>
@@ -56,6 +56,8 @@
     /* Actividad Resumen_Reserva*/
     <string name="fecha_recogida_resumen">Fecha recogida</string>
     <string name="volver_reserva_vehiculos">Volver</string>
+    <string name="continuarRegistroUsuario">Continuar</string>
+
 
 
 </resources>
