@@ -41,7 +41,7 @@ public class RegistroUsuario extends AppCompatActivity {
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    bfechaRegistro.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                    formres_fecha.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                 }
             }
