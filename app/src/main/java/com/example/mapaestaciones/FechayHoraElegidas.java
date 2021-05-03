@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class Resumen_Reserva extends AppCompatActivity {
+public class FechayHoraElegidas extends AppCompatActivity {
 
     TextView tx_efecha_resumen,tx_ehora_resumen,tx_efecha2_resumen,tx_ehora2_resumen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resumen__reserva);
+        setContentView(R.layout.activity_fechayhora_elegidas);
 
         Intent me=getIntent();
         String efecha_resumen=me.getStringExtra("es_efecha");
@@ -41,6 +41,21 @@ public class Resumen_Reserva extends AppCompatActivity {
         //Intent volver_reserva_vehiculos = new Intent(this,Activity_Reservar_Vehiculos.class );
         //startActivity(volver_reserva_vehiculos);
         finish();
+    }
+
+    public void registroUsuario_Reserva(View view){
+
+        Intent formularioresumen = new Intent(this, RegistroUsuario.class );
+        /*String s2_efecha =tx_efecha_resumen.getText().toString().trim();
+        String s2_ehora =tx_ehora_resumen.getText().toString().trim();
+        String s2_efecha2 =tx_efecha2_resumen.getText().toString().trim();
+        String s2_ehora2 =tx_ehora2_resumen.getText().toString().trim();
+        formularioresumen.putExtra("es2_efecha", s2_efecha);
+        formularioresumen.putExtra("es2_ehora", s2_ehora);
+        formularioresumen.putExtra("es2_efecha2",  s2_efecha2);
+        formularioresumen.putExtra("es2_ehora2", s2_ehora2);
+        */
+        startActivity(formularioresumen);
     }
 
 }

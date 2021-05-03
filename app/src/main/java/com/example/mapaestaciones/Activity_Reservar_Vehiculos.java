@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -13,8 +12,6 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import org.w3c.dom.Text;
 
 import java.util.Calendar;
 
@@ -135,7 +132,7 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
     }
 
     public void Consultar_Disponibilidad(View view) {
-        Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this,Resumen_Reserva.class);
+        Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this, FechayHoraElegidas.class);
 
         String s_efecha =efecha.getText().toString().trim();
         String s_ehora =ehora.getText().toString().trim();

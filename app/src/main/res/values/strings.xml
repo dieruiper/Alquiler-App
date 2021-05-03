@@ -28,7 +28,7 @@
     <string name="ehora2"></string>
     <string name="btn_mapa_reserva">Lugar</string>
     <string name="consultar_disponibilidad">Consultar disponibilidad</string>
-
+    <string name="elugar">Lugar</string>
     <string name="VigoInfo"> OFICINA DE VIGO Abierto de 10:00-14:00 L-V Cerrado SyD</string>
 
     /*Activity Ver Vehículos*/
@@ -46,19 +46,18 @@
     <string name="BotonEliminar">Eliminar vehiculo</string>
     <string name="BotonModificar">Modificar vehiculo</string>
 
-
-    /* Temporary merge branch 1*/
-    <string name="elugar_resumen">lugar</string>
+    <string name="elugar_resumen">Lugar</string>
     <string name="efecha_resumen">fecha</string>
     <string name="ehora_resumen">hora</string>
     <string name="elugar2_resumen">lugar</string>
     <string name="efecha2_resumen">fecha</string>
     <string name="ehora2_resumen">hora</string>
-    =========
+    
     /* Actividad Resumen_Reserva*/
     <string name="fecha_recogida_resumen">Fecha recogida</string>
-    >>>>>>>>> Temporary merge branch 2
     <string name="volver_reserva_vehiculos">Volver</string>
+    <string name="continuarRegistroUsuario">Continuar</string>
+
 
 
 </resources>
