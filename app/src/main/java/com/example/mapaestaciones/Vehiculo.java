@@ -18,11 +18,9 @@ public class Vehiculo {
         this.precio = precio;
     }
 
-    public String getMarca(){
-        return marca;
-    }
+    public String getMarca(){ return marca; }
 
-    public String getModelo(){
-        return modelo;
-    }
+    public String getModelo(){ return modelo; }
+
+    public String toString(){ return marca+" - "+modelo; }
 }
