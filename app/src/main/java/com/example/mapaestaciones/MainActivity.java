@@ -14,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         }
 
-    public void Actividad_Maps (View view){
+    /*public void Actividad_Maps (View view){
         Intent mapas_adelante = new Intent(getApplicationContext(), Mapa_con_las_oficinas.class);
         startActivity(mapas_adelante);
-    }
+    }*/
     public void Actividad_Reserva_adelante (View view){
         Intent reserva_adelante = new Intent(getApplicationContext(), Activity_Reservar_Vehiculos.class);
         startActivity(reserva_adelante);

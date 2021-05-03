@@ -123,11 +123,12 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         {
         // Recuperamos el valor
             //short code = (short) data.getExtras().get("mi_return");
+            Bundle tap = data.getExtras();
             double lng=(double) data.getExtras().get("lng");
 
             double lat=data.getDoubleExtra("lat",0.0);
             TextView elugar =findViewById(R.id.elugar);
-            elugar.setText(elugar.toString());
+            elugar.setText("Long: " + lng + "Lat :" + lat);
 
         }
 
