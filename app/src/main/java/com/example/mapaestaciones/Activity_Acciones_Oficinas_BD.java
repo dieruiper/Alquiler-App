@@ -11,15 +11,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
-
     private EditText et_nombre, et_lat, et_long, et_matricula;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__acciones__oficinas__b_d);
         et_nombre = (EditText)findViewById(R.id.txt_nombreOfi);
-        et_lat = (EditText)findViewById(R.id.txt_lat);
-        et_long = (EditText)findViewById(R.id.txt_long);
+        et_lat = (EditText)findViewById(R.id.real_lat);
+        et_long = (EditText)findViewById(R.id.real_long);
         et_matricula = (EditText)findViewById(R.id.txt_matricula);
     }
 

@@ -19,36 +19,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/txt_lat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:hint="@string/txt_lat"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nombreOfi" />
-
-    <EditText
-        android:id="@+id/txt_long"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:hint="@string/txt_long"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_lat" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="24dp"
         android:onClick="Buscar"
         android:text="@string/BotonConsultarOficina"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,25 +34,25 @@
         android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="28dp"
         android:onClick="Modificar"
         android:text="@string/BotonModificarOficina"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.01" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="20dp"
         android:onClick="Registrar"
         android:text="@string/BotonRegistrarOficina"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_long" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_matricula" />
 
     <EditText
         android:id="@+id/txt_matricula"
@@ -88,5 +64,29 @@
         android:hint="@string/int_matricula"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_long" />
+        app:layout_constraintTop_toBottomOf="@+id/real_long" />
+
+    <EditText
+        android:id="@+id/real_lat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/real_lat"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nombreOfi" />
+
+    <EditText
+        android:id="@+id/real_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/real_long"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/real_lat" />
 </androidx.constraintlayout.widget.ConstraintLayout>
