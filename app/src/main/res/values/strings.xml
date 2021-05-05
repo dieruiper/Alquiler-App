@@ -45,6 +45,15 @@
     <string name="BotonBuscar">Buscar vehiculo</string>
     <string name="BotonEliminar">Eliminar vehiculo</string>
     <string name="BotonModificar">Modificar vehiculo</string>
+    /*Activity Acciones Oficinas BD*/
+    <string name="txt_nombreOfi">Oficina</string>
+    <string name="txt_lat">latitud</string>
+    <string name="txt_long">longitud</string>
+    <string name="BotonRegistrarOficina">Registrar oficina</string>
+    <string name="BotonConsultarOficina">Consultar oficina</string>
+    <string name="BotonModificarOficina">Modificar oficina</string>
+
+
 
     <string name="elugar_resumen">Lugar</string>
     <string name="efecha_resumen">fecha</string>
@@ -52,12 +61,11 @@
     <string name="elugar2_resumen">lugar</string>
     <string name="efecha2_resumen">fecha</string>
     <string name="ehora2_resumen">hora</string>
-    
+
     /* Actividad Resumen_Reserva*/
     <string name="fecha_recogida_resumen">Fecha recogida</string>
     <string name="volver_reserva_vehiculos">Volver</string>
     <string name="continuarRegistroUsuario">Continuar</string>
-
 
 
 </resources>

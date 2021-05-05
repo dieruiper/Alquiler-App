@@ -15,7 +15,11 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table vehiculos(matricula int primary key, categoria char, marca text, modelo text, descripcion text, precio real)");
+        db.execSQL("create table vehiculos(matricula int primary key, categoria char, marca text," +
+                " modelo text, descripcion text, precio real)");
+
+        db.execSQL("create table oficinas(name string primary key, double lat, double lang," +
+                " foreign key (matricula) references vehiculos)");
     }
 
     @Override

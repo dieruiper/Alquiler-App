@@ -30,5 +30,9 @@ public class MainActivity extends AppCompatActivity {
         Intent ver_vehiculos_adelante = new Intent(getApplicationContext(), Activity_Ver_Vehiculos.class);
         startActivity(ver_vehiculos_adelante);
     }
+    public void Actividad_Acciones_Oficinas_BD (View view){
+        Intent acciones_oficinas_bd_adelante = new Intent(getApplicationContext(), Activity_Acciones_Oficinas_BD.class);
+        startActivity(acciones_oficinas_bd_adelante);
+    }
 
 }
