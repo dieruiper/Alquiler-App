@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="24dp"
-        android:onClick="Buscar"
+        android:onClick="BuscarOficina"
         android:text="@string/BotonConsultarOficina"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="28dp"
-        android:onClick="Modificar"
+        android:onClick="ModificarOficina"
         android:text="@string/BotonModificarOficina"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
-        android:onClick="Registrar"
+        android:onClick="RegistrarOficina"
         android:text="@string/BotonRegistrarOficina"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_matricula" />

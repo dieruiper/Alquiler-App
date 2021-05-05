@@ -24,7 +24,7 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
     }
 
     //Para registrar una oficina
-    public void Registrar(View view){
+    public void RegistrarOficina(View view){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"admin_oficinas",null,2);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
@@ -60,7 +60,7 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         }
     }
     //Método para consultar
-    public void Buscar(View view){
+    public void BuscarOficina(View view){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "admin_oficinas", null, 2);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
@@ -84,7 +84,7 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         }
     }
 
-    public void Modificar(View view){
+    public void ModificarOficina(View view){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "admin_oficinas", null, 2);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
