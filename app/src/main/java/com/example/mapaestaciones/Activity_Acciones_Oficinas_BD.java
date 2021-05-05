@@ -25,7 +25,7 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
 
     //Para registrar una oficina
     public void RegistrarOficina(View view){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"admin_oficinas",null,2);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         String nombre = et_nombre.getText().toString();
@@ -61,18 +61,18 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
     }
     //Método para consultar
     public void BuscarOficina(View view){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "admin_oficinas", null, 2);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         String nombre = et_nombre.getText().toString();
 
         if(!nombre.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select latitud, longitud, matricula from oficinas where nombre =" + nombre, null);
+                    ("select latitud, longitud, matricula from oficinas where nombre ='" + nombre + "'", null);
             if(fila.moveToFirst()){
-                et_lat.setText(fila.getString(0));
-                et_long.setText(fila.getString(1));
-                et_matricula.setText(fila.getString(2));
+                et_lat.setText(fila.getString(1));
+                et_long.setText(fila.getString(2));
+                et_matricula.setText(fila.getString(3));
 
                 BaseDeDatos.close();
             }else{
@@ -85,7 +85,7 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
     }
 
     public void ModificarOficina(View view){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "admin_oficinas", null, 2);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         //variables donde almacenamos lo que el usuario ha modificado
