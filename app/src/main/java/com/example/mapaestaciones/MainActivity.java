@@ -35,4 +35,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(acciones_oficinas_bd_adelante);
     }
 
+    public void Actividad_Login (View view){
+        Intent login_adelante = new Intent(getApplicationContext(), Activity_Login.class);
+        startActivity(login_adelante);
+    }
+
+
 }

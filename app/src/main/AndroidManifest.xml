@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MapaEstaciones">
-        <activity android:name=".Activity_Acciones_Oficinas_BD"></activity>
+        <activity android:name=".Activity_Registrar"></activity>
+        <activity android:name=".Activity_Login" />
+        <activity android:name=".Activity_Acciones_Oficinas_BD" />
         <activity android:name=".RegistroUsuario" />
         <activity android:name=".Activity_Ver_Vehiculos" />
         <activity android:name=".Activity_Acciones_BD" />

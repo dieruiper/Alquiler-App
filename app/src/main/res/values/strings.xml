@@ -34,6 +34,7 @@
     /*Activity Ver Vehículos*/
     <string name="tv1">Selecciona una Matricula</string>
     <string name="btn_ver">consultar</string>
+
     /*Activity Acciones BD*/
     <string name="int_matricula">Matrícula</string>
     <string name="chr_categoria">Categoría</string>
@@ -54,7 +55,6 @@
     <string name="BotonModificarOficina">Modificar oficina</string>
 
 
-
     <string name="elugar_resumen">Lugar</string>
     <string name="efecha_resumen">fecha</string>
     <string name="ehora_resumen">hora</string>
@@ -66,6 +66,19 @@
     <string name="fecha_recogida_resumen">Fecha recogida</string>
     <string name="volver_reserva_vehiculos">Volver</string>
     <string name="continuarRegistroUsuario">Continuar</string>
+
+    // Registro de usuario
+    <string name="btnEntrar">Entrar</string>
+    <string name="btnRegistrate">Regístrate</string>
+    <string name="etEmail">Email</string>
+    <string name="etPass">Contraseña</string>
+    <string name="etUsuario">Usuario</string>
+    <string name="etNombre">Nombre</string>
+    <string name="etApellidos">Apellidos</string>
+    <string name="etDni">DNI</string>
+    <string name="etTelefono">Telefono</string>
+    <string name="btnRegistrarUsuario">Registrar</string>
+    <string name="btnCancelarRegistro">Cancelar</string>
 
 
 </resources>
