@@ -44,11 +44,11 @@
             android:text="ACCIONES OFICINAS BD" />
 
         <Button
-            android:id="@+id/btn_actividad_login"
+            android:id="@+id/btn_ver_ofi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="Actividad_Login"
-            android:text="Prueba LOGIN" />
+            android:onClick="Actividad_Ver_Oficinas"
+            android:text="VER OFICINAS" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@ import java.util.Calendar;
 public class Activity_Reservar_Vehiculos extends AppCompatActivity implements View.OnClickListener {
 
     Button bfecha,bhora,bfecha2,bhora2, bmapa;
-    EditText efecha,ehora,efecha2,ehora2;
+    EditText efecha,ehora,efecha2,ehora2, elugar, elugar2;
     private int dia,mes,ano,hora,minutos;
     /*
 
@@ -27,6 +27,13 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservar_vehiculos);
+        elugar = (EditText) findViewById(R.id.elugar);
+        String title= getIntent().getStringExtra("title");
+        elugar2 = (EditText) findViewById(R.id.elugar2);
+        String title2= getIntent().getStringExtra("title");
+
+        elugar.setText(title);
+        elugar2.setText(title2);
         bfecha=(Button) findViewById(R.id.bfecha);
         bhora =(Button) findViewById(R.id.bhora);
         efecha=(EditText)findViewById(R.id.efecha);
@@ -138,10 +145,15 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         String s_ehora =ehora.getText().toString().trim();
         String s_efecha2 =efecha2.getText().toString().trim();
         String s_ehora2 =ehora2.getText().toString().trim();
+        String s_elugar = elugar.getText().toString().trim();
+        String s_elugar2 = elugar2.getText().toString().trim();
+
         myIntent.putExtra("es_efecha", s_efecha);
         myIntent.putExtra("es_ehora", s_ehora);
         myIntent.putExtra("es_efecha2",  s_efecha2);
         myIntent.putExtra("es_ehora2", s_ehora2);
+        myIntent.putExtra("es_lugar", s_elugar);
+        myIntent.putExtra("es_lugar2", s_elugar2);
 
 
         /*

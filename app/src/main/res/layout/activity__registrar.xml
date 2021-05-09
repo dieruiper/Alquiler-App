@@ -18,7 +18,7 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RegPass" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView
         android:id="@+id/tvRegistrar"
@@ -32,7 +32,7 @@
         tools:layout_editor_absoluteX="20dp" />
 
     <EditText
-        android:id="@+id/RegUser"
+        android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRegistrar" />
 
     <EditText
-        android:id="@+id/RegPass"
+        android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -59,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RegUser" />
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <EditText
         android:id="@+id/RegApellidos"
@@ -118,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@+id/RegDni" />
 
     <Button
-        android:id="@+id/btnRegistrarUsuario"
+        android:id="@+id/btnEntrar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -132,7 +132,7 @@
         app:layout_constraintTop_toBottomOf="@+id/RegTelefono" />
 
     <Button
-        android:id="@+id/btnCancelarRegistro"
+        android:id="@+id/btnRegistrate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -143,7 +143,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

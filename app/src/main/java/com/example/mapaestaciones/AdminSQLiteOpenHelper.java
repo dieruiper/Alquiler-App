@@ -18,16 +18,12 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("create table vehiculos(matricula int primary key, categoria char, marca text," +
                 " modelo text, descripcion text, precio real)");
 
-        db.execSQL("create table oficinas(name string primary key, double lat, double lang," +
-                " foreign key (matricula) references vehiculos)");
+        db.execSQL("create table oficinas (nombre string primary key, latitud double, longitud double)");
 
         db.execSQL("create table if not exists usuarios(dni string primary key, nombre string, telefono integer," +
                 "email string, pass string)");
 
-        db.execSQL("create table reservas(codigo integer primary key, fechaInicio date, fechaFin date," +
-                "foreign key (matricula) references vehiculos, " +
-                "foreign key (nombreOficina) references oficinas, " +
-                "foreign key (dni) references usuarios)");
+        db.execSQL("create table reservas(codigo integer primary key, fechaInicio date, fechaFin date)");
     }
 
     @Override

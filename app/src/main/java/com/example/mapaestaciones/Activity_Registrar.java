@@ -21,16 +21,16 @@ public class Activity_Registrar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__registrar);
 
-        et_usuario=(EditText)findViewById(R.id.RegUser);
+        et_usuario=(EditText)findViewById(R.id.username);
         et_nombre=(EditText)findViewById(R.id.RegNombre);
         et_apellidos=(EditText)findViewById(R.id.RegApellidos);
         et_telefono=(EditText)findViewById(R.id.RegTelefono);
         et_email=(EditText)findViewById(R.id.RegEmail);
-        et_password=(EditText)findViewById(R.id.RegPass);
+        et_password=(EditText)findViewById(R.id.password);
         et_dni=(EditText)findViewById(R.id.RegDni);
 
-        btn_cancel=(Button)findViewById(R.id.btnCancelarRegistro);
-        btn_registrar_usuario=(Button)findViewById(R.id.btnRegistrarUsuario);
+        btn_cancel=(Button)findViewById(R.id.btnRegistrate);
+        btn_registrar_usuario=(Button)findViewById(R.id.btnEntrar);
 
     }
 
