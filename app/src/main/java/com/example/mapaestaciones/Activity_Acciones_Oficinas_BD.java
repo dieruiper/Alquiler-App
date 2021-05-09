@@ -117,4 +117,31 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         }
     }
 
+    public void Eliminar(View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+
+        String nombre = et_nombre.getText().toString();
+
+        if(!nombre.isEmpty()){
+            int cantidad = BaseDeDatos.delete("oficinas", "nombre=" + '"' + nombre + '"', null);
+            BaseDeDatos.close();
+
+            et_nombre.setText("");
+            et_lat.setText("");
+            et_long.setText("");
+
+            if(cantidad == 1){
+                Toast.makeText(this, "Eliminado con exito", Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, "El vehículo no existe",Toast.LENGTH_SHORT).show();
+            }
+
+        }else {
+            Toast.makeText(this, "Debes introducir la matrícula del vehículo", Toast.LENGTH_LONG).show();
+
+        }
+    }
+
+
 }
