@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
-    private EditText et_nombre, et_lat, et_long, et_matricula;
+    private EditText et_nombre, et_lat, et_long;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +64,10 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
 
         if(!nombre.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select latitud, longitud from oficinas where nombre =" + nombre, null);
+                    ("select latitud, longitud from oficinas where nombre ='" + nombre + "'", null);
             if(fila.moveToFirst()){
-                et_lat.setText(fila.getString(1));
-                et_long.setText(fila.getString(2));
+                et_lat.setText(fila.getString(0));
+                et_long.setText(fila.getString(1));
 
                 BaseDeDatos.close();
             }else{
