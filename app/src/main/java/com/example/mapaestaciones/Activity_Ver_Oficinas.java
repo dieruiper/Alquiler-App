@@ -33,8 +33,8 @@ public class Activity_Ver_Oficinas extends AppCompatActivity {
         Cursor fila = BaseDeDatos.rawQuery("select * from oficinas", null);
         if(fila.moveToFirst()){
             do{
-                Oficina oficina = new Oficina(fila.getDouble(0),fila.getDouble(1),
-                        fila.getString(2));
+                Oficina oficina = new Oficina(fila.getString(0),fila.getDouble(1),
+                        fila.getDouble(2));
                 lista.add(oficina.toString());
             }while (fila.moveToNext());
         }
@@ -74,7 +74,7 @@ public class Activity_Ver_Oficinas extends AppCompatActivity {
     }*/
 
     //Consulta por marca
-    public void Consult(View view){
+    public void ConsultarOficina(View view){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
@@ -86,8 +86,8 @@ public class Activity_Ver_Oficinas extends AppCompatActivity {
                     ("select * from oficinas where nombre ='" + nombre + "'", null);
             if(fila.moveToFirst()){
                 do{
-                    Oficina oficina = new Oficina(fila.getDouble(0),fila.getDouble(1),
-                            fila.getString(2));
+                    Oficina oficina = new Oficina(fila.getString(0),fila.getDouble(1),
+                            fila.getDouble(2));
                     lista.add(oficina.toString());
                 }while (fila.moveToNext());
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_veroficinas,lista);

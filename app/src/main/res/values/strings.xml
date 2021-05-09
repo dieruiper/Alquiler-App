@@ -76,5 +76,19 @@
     <string name="continuarRegistroUsuario">Continuar</string>
 
 
+    <string name="etNombre">Nombre</string>
+    <string name="etUsuario">Nombre</string>
+    <string name="etEmail">Nombre</string>
+    <string name="etPass">Nombre</string>
+    <string name="etDni">Nombre</string>
+    <string name="etApellidos">Nombre</string>
+    <string name="etTelefono">Nombre</string>
+    <string name="btnRegistrarUsuario">Nombre</string>
+    <string name="btnCancelarRegistro">Nombre</string>
+
+    <string name="username">Nombre</string>
+    <string name="password">Nombre</string>
+    <string name="btnEntrar">Nombre</string>
+    <string name="btnRegistrate">Nombre</string>
 
 </resources>

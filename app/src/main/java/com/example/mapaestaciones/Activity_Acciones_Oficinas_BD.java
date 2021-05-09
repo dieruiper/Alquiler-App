@@ -20,7 +20,6 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         et_nombre = (EditText)findViewById(R.id.txt_nombreOfi);
         et_lat = (EditText)findViewById(R.id.real_lat);
         et_long = (EditText)findViewById(R.id.real_long);
-        et_matricula = (EditText)findViewById(R.id.txt_matricula);
     }
 
     //Para registrar una oficina
@@ -31,7 +30,6 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         String nombre = et_nombre.getText().toString();
         String latitud = et_lat.getText().toString();
         String longitud = et_long.getText().toString();
-        String matricula = et_matricula.getText().toString();
 
 
         if(!nombre.isEmpty() && !latitud.isEmpty() && !longitud.isEmpty()){
@@ -40,7 +38,6 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
             registro.put("nombre", nombre);
             registro.put("latitud", latitud);
             registro.put("longitud", longitud);
-            registro.put("matricula", matricula);
 
 
             BaseDeDatos.insert("oficinas", null, registro);
@@ -49,7 +46,6 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
             et_nombre.setText("");
             et_lat.setText("");
             et_long.setText("");
-            et_matricula.setText("");
 
 
             Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
@@ -68,11 +64,10 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
 
         if(!nombre.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select matricula, latitud, longitud from oficinas where nombre =" + nombre, null);
+                    ("select latitud, longitud from oficinas where nombre =" + nombre, null);
             if(fila.moveToFirst()){
                 et_lat.setText(fila.getString(1));
                 et_long.setText(fila.getString(2));
-                et_matricula.setText(fila.getString(3));
 
                 BaseDeDatos.close();
             }else{
@@ -92,7 +87,6 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         String nombre = et_nombre.getText().toString();
         String latitud = et_lat.getText().toString();
         String longitud = et_long.getText().toString();
-        String matricula = et_matricula.getText().toString();
 
 
         //validamos que todos los campos esten completos
@@ -103,7 +97,6 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
             registro.put("nombre", nombre);
             registro.put("latitud", latitud);
             registro.put("longitud", longitud);
-            registro.put("matricula", matricula);
 
 
             //El método para modificar(update) retorna valores de tipo entero

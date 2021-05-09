@@ -10,7 +10,7 @@ public class Oficina {
     private Double longitude;
     private String nombre;
 
-    public Oficina(Double latitude, Double longitude, String nombre){
+    public Oficina( String nombre,Double latitude, Double longitude){
         this.nombre = nombre;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -40,6 +40,7 @@ public class Oficina {
     public Double getLongitude(){
         return longitude;
     }
+
     public String toString(){
         return "Nombre: "+ nombre +" - Latitud: "+ latitude +" - Longitud: "+ longitude;
     }
