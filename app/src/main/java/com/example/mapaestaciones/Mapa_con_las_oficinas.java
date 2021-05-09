@@ -7,6 +7,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telecom.Call;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -18,7 +19,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Mapa_con_las_oficinas extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener{
+import java.util.ArrayList;
+
+public class Mapa_con_las_oficinas extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowLongClickListener {
     //comentario
     private GoogleMap mMap;
     private Marker InfoWindowBarcelona,InfoWindowBilbao,InfoWindowSevilla,InfoWindowMadrid, InfoWindowVigo;
@@ -37,28 +40,52 @@ public class Mapa_con_las_oficinas extends FragmentActivity implements OnMapRead
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+
+        /*
+        ArrayList<String> listaNombres = new ArrayList<String>();
+
+        ArrayList<Double> listaLatitudes = new ArrayList<Double>();
+        ArrayList<Double> listaLongitudes = new ArrayList<Double>();
+        ArrayList<LatLng> listaMarcadores = new ArrayList<LatLng>();
+
+        //Obtener datos BD
+        for (int i = 0; i<listaNombres.size(); i++){
+            listaNombres.add(listaBDNombres.get(i));
+             LatLng posicion = new LatLng(listaBDLatitudes.get(i),listaBDLongitudes.get(i));
+             listaMarcadores.add(posicion);
+        }
+
+        //Crear marcadores
+        for(int i = 0; i<listaMarcadores.size(); i++){
+            for(int j = 0; j<listaNombres.size();j++){
+                googleMap.addMarker(new MarkerOptions().position(listaMarcadores.get(i)).title(String.valueOf(listaNombres.get(j))).snippet("Mantenga pulsado aquí para confirmar").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+            }
+          mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(listaMarcadores.get(i), 5));
+        }
+        */
+
         LatLng sevilla = new LatLng(37.3886303, -5.9953403);
-        InfoWindowSevilla =  googleMap.addMarker(new MarkerOptions().position(sevilla).title("Oficina de Sevilla").snippet("Pulse el mensaje para confirmar la oficina").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+        InfoWindowSevilla =  googleMap.addMarker(new MarkerOptions().position(sevilla).title("Sevilla").snippet("Mantenga pulsado aquí para confirmar").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
 
         LatLng madrid = new LatLng(40.4167047, -3.7035825);
-        InfoWindowMadrid =  googleMap.addMarker(new MarkerOptions().position(madrid).title("Oficina de Madrid").snippet("Pulse el mensaje para confirmar la oficina").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+        InfoWindowMadrid =  googleMap.addMarker(new MarkerOptions().position(madrid).title("Madrid").snippet("Mantenga pulsado aquí para confirmar").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
 
         LatLng barcelona = new LatLng(41.3828939, 2.1774322);
-        InfoWindowBarcelona =  googleMap.addMarker(new MarkerOptions().position(barcelona).title("Oficina de Barcelona").snippet("Pulse el mensaje para confirmar la oficina").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+        InfoWindowBarcelona =  googleMap.addMarker(new MarkerOptions().position(barcelona).title("Barcelona").snippet("Mantenga pulsado aquí para confirmar").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
 
         LatLng bilbao = new LatLng(43.2630018, -2.9350039);
-        InfoWindowBilbao =  googleMap.addMarker(new MarkerOptions().position(bilbao).title("Oficina de Bilbao").snippet("Pulse el mensaje para confirmar la oficina").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+        InfoWindowBilbao =  googleMap.addMarker(new MarkerOptions().position(bilbao).title("Bilbao").snippet("Mantenga pulsado aquí para confirmar").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
 
         LatLng vigo = new LatLng(42.2376602, -8.7247205);
-        InfoWindowVigo = googleMap.addMarker(new MarkerOptions().position(vigo).title("Oficina de Vigo").snippet("Pulse el mensaje para confirmar la oficina").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
+        InfoWindowVigo = googleMap.addMarker(new MarkerOptions().position(vigo).title("Vigo").snippet("Mantenga pulsado aquí para confirmar").icon(BitmapDescriptorFactory.fromResource(R.drawable.car)));
         //Camara al inicio
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(madrid, 5));
 
-        //Cuadro dialogo
-        googleMap.setOnInfoWindowClickListener(this);
+
+
         //Habilitar zoom
         mMap.getUiSettings().setZoomControlsEnabled(true);
-
+        mMap.setOnInfoWindowLongClickListener(this);
         //Habilitar posicion actual
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -71,31 +98,31 @@ public class Mapa_con_las_oficinas extends FragmentActivity implements OnMapRead
             return;
         }
         mMap.setMyLocationEnabled(true);
-
     }
 
-    public void onInfoWindowClick(Marker marker) {
-        if (marker.equals(InfoWindowVigo)) {
-            //VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(), null);
-            Toast.makeText(this,"Oficina Vigo Seleccionada", Toast.LENGTH_SHORT).show();
-            finish();
+
+    @Override
+    public void onInfoWindowLongClick(Marker marker) {
+        String nombreMarker = "";
+        /*
+        for (int i = 0; i<listaNombres.size(); i++){
+            if (marker.getTitle().equals(listaNombres.get(i)){
+                nombreMarker = listaNombres.get(i);
+         */
+
+        if (marker.equals(InfoWindowSevilla)) {
+            nombreMarker = InfoWindowSevilla.getTitle();
         }else if (marker.equals(InfoWindowBilbao)) {
-            //VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(), null);
-            Toast.makeText(this,"Oficina Bilbao Seleccionada", Toast.LENGTH_SHORT).show();
-            finish();
+            nombreMarker = InfoWindowBilbao.getTitle();
+        }else if (marker.equals(InfoWindowVigo)) {
+            nombreMarker = InfoWindowVigo.getTitle();
         }else if (marker.equals(InfoWindowMadrid)) {
-            //VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(), null);
-            Toast.makeText(this,"Oficina Madrid Seleccionada", Toast.LENGTH_SHORT).show();
-            finish();
-        }else if (marker.equals(InfoWindowSevilla)) {
-            //VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(), null);
-            Toast.makeText(this,"Oficina Sevilla Seleccionada", Toast.LENGTH_SHORT).show();
-            finish();
+            nombreMarker = InfoWindowMadrid.getTitle();
         }else if (marker.equals(InfoWindowBarcelona)) {
-            //VigoDialogo.newIntance(marker.getTitle(), getString(R.string.VigoInfo)).show(getSupportFragmentManager(), null);
-            Toast.makeText(this,"Oficina Barcelona Seleccionada", Toast.LENGTH_SHORT).show();
-            finish();
+            nombreMarker = InfoWindowBarcelona.getTitle();
         }
+        Intent IntentMarcadores = new Intent(Mapa_con_las_oficinas.this, Activity_Reservar_Vehiculos.class);
+        IntentMarcadores.putExtra("title", nombreMarker);
+        startActivity(IntentMarcadores);
     }
-
 }

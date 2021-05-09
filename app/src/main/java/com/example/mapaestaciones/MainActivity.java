@@ -34,5 +34,8 @@ public class MainActivity extends AppCompatActivity {
         Intent acciones_oficinas_bd_adelante = new Intent(getApplicationContext(), Activity_Acciones_Oficinas_BD.class);
         startActivity(acciones_oficinas_bd_adelante);
     }
-
+    public void Actividad_Ver_Oficinas (View view) {
+        Intent ver_oficinas_adelante = new Intent(getApplicationContext(), Activity_Ver_Oficinas.class);
+        startActivity(ver_oficinas_adelante);
+    }
 }

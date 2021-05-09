@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">MapaEstaciones</string>
     <string name="title_activity_mapa_con_las_oficinas">Map</string>
+    <string name="title_activity_mapa_con_las_oficinas2">Map2</string>
     <string name="reserva_vehiculo">Reservar vehículos</string>
     <string name="ver_reservas">Ver reservas</string>
     <string name="ver_vehiculos">Ver vehículos</string>
     <string name="encontrar_oficinas">Encontrar oficinas</string>
+    <string name="ver_oficinas">Ver oficinas</string>
     <string name="ajustes">Ajustes</string>
     <string name="ayuda">Ayuda</string>
 
@@ -29,11 +31,15 @@
     <string name="btn_mapa_reserva">Lugar</string>
     <string name="consultar_disponibilidad">Consultar disponibilidad</string>
     <string name="elugar">Lugar</string>
-    <string name="VigoInfo"> OFICINA DE VIGO Abierto de 10:00-14:00 L-V Cerrado SyD</string>
+    <string name="elugar2">Lugar</string>
+    <string name="blugar">Lugar</string>
+    <string name="blugar2">Lugar</string>
 
     /*Activity Ver Vehículos*/
     <string name="tv1">Selecciona una Matricula</string>
     <string name="btn_ver">consultar</string>
+    <string name="tv2">Selecciona una nombre</string>
+    <string name="btn_ver2">consultar</string>
     /*Activity Acciones BD*/
     <string name="int_matricula">Matrícula</string>
     <string name="chr_categoria">Categoría</string>
@@ -64,8 +70,11 @@
 
     /* Actividad Resumen_Reserva*/
     <string name="fecha_recogida_resumen">Fecha recogida</string>
+    <string name="lugar_recogida_resumen">Lugar recogida</string>
+    <string name="lugar_devolucion_resumen">Lugar devolucion</string>
     <string name="volver_reserva_vehiculos">Volver</string>
     <string name="continuarRegistroUsuario">Continuar</string>
+
 
 
 </resources>

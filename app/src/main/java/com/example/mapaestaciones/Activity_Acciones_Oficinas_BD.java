@@ -68,7 +68,7 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
 
         if(!nombre.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select latitud, longitud, matricula from oficinas where nombre ='" + nombre + "'", null);
+                    ("select matricula, latitud, longitud from oficinas where nombre =" + nombre, null);
             if(fila.moveToFirst()){
                 et_lat.setText(fila.getString(1));
                 et_long.setText(fila.getString(2));
