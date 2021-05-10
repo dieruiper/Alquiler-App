@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class FechayHoraElegidas extends AppCompatActivity {
 
-    TextView tx_efecha_resumen,tx_ehora_resumen,tx_efecha2_resumen,tx_ehora2_resumen;
+    TextView tx_lugar_resumen,tx_lugar2_resumen, tx_efecha_resumen,tx_ehora_resumen,tx_efecha2_resumen,tx_ehora2_resumen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,14 @@ public class FechayHoraElegidas extends AppCompatActivity {
         String ehora_resumen=me.getStringExtra("es_ehora");
         String efecha2_resumen=me.getStringExtra("es_efecha2");
         String ehora2_resumen=me.getStringExtra("es_ehora2");
+        String elugar_resumen=me.getStringExtra("es_lugar");
+        String elugar2_resumen=me.getStringExtra("es_lugar2");
+
+        tx_lugar2_resumen = findViewById(R.id.elugar_recogida_resumen);
+        tx_lugar2_resumen.setText(elugar2_resumen);
+
+        tx_lugar_resumen = findViewById(R.id.elugar_devolucion_resumen);
+        tx_lugar_resumen.setText(elugar_resumen);
 
         tx_efecha_resumen=findViewById(R.id.fecha_recogida_resumen);
         tx_efecha_resumen.setText(efecha_resumen);

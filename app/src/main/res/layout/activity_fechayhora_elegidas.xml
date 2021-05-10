@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.168" />
 
     <TextView
-        android:id="@+id/elugar_resumen"
+        android:id="@+id/elugar_recogida_resumen"
         android:layout_width="50dp"
         android:layout_height="23dp"
         android:text="@string/elugar_resumen"
@@ -110,11 +110,11 @@
         app:layout_constraintVertical_bias="0.237" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/elugar_devolucion_resumen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="140dp"
-        android:text="Lugar"
+        android:text="@string/elugar2_resumen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.14"
