@@ -29,7 +29,7 @@ public class Activity_Login extends AppCompatActivity {
         pass=(EditText)findViewById(R.id.password);
         btnEntrar=(Button)findViewById(R.id.btnEntrar);
         btnRegistrate=(Button)findViewById(R.id.btnRegistrate);
-        lv_usuarios=(ListView)findViewById(R.id.lv1);
+        lv_usuarios=(ListView)findViewById(R.id.lv_usuarios);
         ArrayList<String> l = new ArrayList<String>();
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"hola",null,1);

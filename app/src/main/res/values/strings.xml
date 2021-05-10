@@ -53,6 +53,7 @@
     <string name="BotonModificar">Modificar vehiculo</string>
     /*Activity Acciones Oficinas BD*/
     <string name="txt_nombreOfi">Oficina</string>
+    <string name="txt_matricula">Matricula</string>
     <string name="real_lat">latitud</string>
     <string name="real_long">longitud</string>
     <string name="BotonRegistrarOficina">Registrar oficina</string>
