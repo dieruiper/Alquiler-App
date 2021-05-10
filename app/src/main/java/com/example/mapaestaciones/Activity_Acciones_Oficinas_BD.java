@@ -120,7 +120,7 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
     public void Eliminar(View view){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-
+        //Esto no le aparece a JOSECA
         String nombre = et_nombre.getText().toString();
 
         if(!nombre.isEmpty()){
