@@ -77,18 +77,18 @@
 
 
     <string name="etNombre">Nombre</string>
-    <string name="etUsuario">Nombre</string>
-    <string name="etEmail">Nombre</string>
-    <string name="etPass">Nombre</string>
-    <string name="etDni">Nombre</string>
-    <string name="etApellidos">Nombre</string>
-    <string name="etTelefono">Nombre</string>
-    <string name="btnRegistrarUsuario">Nombre</string>
-    <string name="btnCancelarRegistro">Nombre</string>
+    <string name="etUsuario">Usuario</string>
+    <string name="etEmail">Email</string>
+    <string name="etPass">Contraseña</string>
+    <string name="etDni">DNI</string>
+    <string name="etApellidos">Apellidos</string>
+    <string name="etTelefono">Telefono</string>
+    <string name="btnRegistrarUsuario">Registrar</string>
+    <string name="btnCancelarRegistro">Cancelar</string>
 
-    <string name="username">Nombre</string>
-    <string name="password">Nombre</string>
-    <string name="btnEntrar">Nombre</string>
-    <string name="btnRegistrate">Nombre</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="btnEntrar">Entrar</string>
+    <string name="btnRegistrate">Registrate</string>
 
 </resources>

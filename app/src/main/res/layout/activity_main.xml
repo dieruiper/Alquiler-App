@@ -50,5 +50,12 @@
             android:onClick="Actividad_Ver_Oficinas"
             android:text="VER OFICINAS" />
 
+        <Button
+            android:id="@+id/btn_prueba_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Actividad_Prueba_Login"
+            android:text="Prueba Login" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
