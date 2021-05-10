@@ -64,11 +64,14 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
-        String nombre = et_nombre.getText().toString();
+        admin.onCreate(BaseDeDatos);
 
-        if(!nombre.isEmpty()) {
+
+        //String nombre = et_nombre.getText().toString();
+
+        //if(!nombre.isEmpty()) {
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select lat, long from vehiculos where nombre =" + nombre, null);
+                    ("select * from oficinas", null);
             if (fila.moveToFirst()) {
                 //et_nombre.setText(fila.getString(0));
                 et_lat.setText(fila.getString(0));
@@ -80,7 +83,7 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
                 Toast.makeText(this, "No existe la oficina", Toast.LENGTH_SHORT).show();
                 BaseDeDatos.close();
             }
-        }
+        //}
     }
 
     public void ModificarOficina(View view){
