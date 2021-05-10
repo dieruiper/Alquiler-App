@@ -38,4 +38,9 @@ public class MainActivity extends AppCompatActivity {
         Intent ver_oficinas_adelante = new Intent(getApplicationContext(), Activity_Ver_Oficinas.class);
         startActivity(ver_oficinas_adelante);
     }
+
+    public void Actividad_Prueba_Login (View view) {
+        Intent login = new Intent(getApplicationContext(), Activity_Login.class);
+        startActivity(login);
+    }
 }

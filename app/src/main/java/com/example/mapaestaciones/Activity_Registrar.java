@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -56,7 +58,8 @@ public class Activity_Registrar extends AppCompatActivity {
             registro.put("apellidos", apellidos);
             registro.put("telefono", telefono);
             registro.put("email", email);
-            registro.put("dni", password);
+            registro.put("password", password);
+
             BaseDeDatos.insert("usuarios", null, registro);
             BaseDeDatos.close();
 
@@ -69,6 +72,9 @@ public class Activity_Registrar extends AppCompatActivity {
             et_password.setText("");
 
             Toast.makeText(this,"Registro correcto", Toast.LENGTH_LONG).show();
+            Intent i = new Intent(Activity_Registrar.this, Activity_Login.class);
+            startActivity(i);
+            finish();
 
         }else {
             Toast.makeText(this,"ERROR: No puede haber campos vacíos", Toast.LENGTH_LONG).show();
@@ -81,33 +87,4 @@ public class Activity_Registrar extends AppCompatActivity {
         finish();
     }
 
-    /*
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.btnRegistrarUsuario:
-                Usuario u = new Usuario();
-                u.setUsuario(user.getText().toString());
-                u.setNombre(user.getText().toString());
-                u.setApellidos(user.getText().toString());
-                u.setEmail(user.getText().toString());
-                u.setPassword(user.getText().toString());
-                u.setTelefono(Integer.parseInt(user.getText().toString()));
-                u.setDni(user.getText().toString());
-                if(u.isNull()){
-                    Toast.makeText(this,"ERROR: No puede haber campos vacíos", Toast.LENGTH_LONG).show();
-                }else if (insertUsuario(u)) {
-                    Toast.makeText(this,"Registro correcto", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(this,"Usuario ya registrado", Toast.LENGTH_LONG).show();
-                }
-                break;
-
-            case R.id.btnCancelarRegistro:
-                Intent i = new Intent(Activity_Registrar.this, Activity_Login.class);
-                startActivity(i);
-                finish();
-                break;
-        }
-    }*/
 }

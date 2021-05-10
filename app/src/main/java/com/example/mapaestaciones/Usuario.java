@@ -2,11 +2,10 @@ package com.example.mapaestaciones;
 
 public class Usuario {
 
-    Integer telefono;
-    String dni, usuario, nombre, apellidos, email, password;
+    String dni, usuario, nombre, apellidos, telefono, email, password;
 
     public Usuario(String dni, String usuario, String nombre, String apellidos,
-                   Integer telefono, String email, String password){
+                   String telefono, String email, String password){
         this.dni = dni;
         this.usuario = usuario;
         this.nombre = nombre;
@@ -21,7 +20,7 @@ public class Usuario {
         this.usuario = "";
         this.nombre = "";
         this.apellidos = "";
-        this.telefono = 0;
+        this.telefono = "";
         this.email = "";
         this.password = "";
     }
@@ -44,13 +43,13 @@ public class Usuario {
 
     public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public Integer getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    /*public void setTelefono(Integer telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }*/
+    }
 
     public String getApellidos() {
         return apellidos;
