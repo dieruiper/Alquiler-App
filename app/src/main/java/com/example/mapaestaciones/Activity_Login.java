@@ -32,7 +32,7 @@ public class Activity_Login extends AppCompatActivity {
         lv_usuarios=(ListView)findViewById(R.id.lv_usuarios);
         ArrayList<String> l = new ArrayList<String>();
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"hola",null,1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         Cursor fila = BaseDeDatos.rawQuery("select * from usuarios", null);
@@ -61,7 +61,7 @@ public class Activity_Login extends AppCompatActivity {
     }
 
     public void Entrar(View view){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"UsuarioHelper",null,1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
         String usuario = user.getText().toString();
         String password = pass.getText().toString();

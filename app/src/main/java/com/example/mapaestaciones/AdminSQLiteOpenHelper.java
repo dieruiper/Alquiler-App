@@ -20,9 +20,10 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
 
         db.execSQL("create table oficinas (nombre string primary key, latitud double, longitud double)");
 
-        db.execSQL("create table usuarios(dni text primary key, usuario text, nombre text, apellidos text, " +
-                "telefono int, email text, password text)");
-        db.execSQL("insert into usuarios values('1234','jf','jf','jf',1,'jf@j.com','jf')");
+        db.execSQL("create table if not exists usuarios(dni text primary key, usuario text, nombre text, apellidos text, " +
+                "telefono text, email text, password text)");
+        db.execSQL("insert into usuarios values('1234','jf','jf','jf','3','jf@j.com','jf')");
+        db.execSQL("insert into usuarios values('1244','j','j','j','2','j@j.com','j')");
 
         db.execSQL("create table reservas(codigo integer primary key, fechaInicio date, fechaFin date)");
     }
