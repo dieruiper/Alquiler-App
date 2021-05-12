@@ -17,8 +17,9 @@ import java.util.Calendar;
 
 public class Activity_Reservar_Vehiculos extends AppCompatActivity implements View.OnClickListener {
 
-    Button bfecha,bhora,bfecha2,bhora2, bmapa;
+    Button bfecha,bhora,bfecha2,bhora2, blugar,blugar2;
     EditText efecha,ehora,efecha2,ehora2, elugar, elugar2;
+    String title,title2;
     private int dia,mes,ano,hora,minutos;
     /*
 
@@ -27,11 +28,11 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservar_vehiculos);
-        elugar = (EditText) findViewById(R.id.elugar);
-        String title= getIntent().getStringExtra("title");
-        elugar2 = (EditText) findViewById(R.id.elugar2);
-        String title2= getIntent().getStringExtra("title");
 
+        elugar2 = (EditText) findViewById(R.id.elugar2);
+        title2= getIntent().getStringExtra("title");
+        elugar = (EditText) findViewById(R.id.elugar);
+        title= getIntent().getStringExtra("title");
         elugar.setText(title);
         elugar2.setText(title2);
         bfecha=(Button) findViewById(R.id.bfecha);
@@ -40,6 +41,7 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         ehora=(EditText)findViewById(R.id.ehora);
         bfecha.setOnClickListener(this);
         bhora.setOnClickListener(this);
+
         bfecha2=(Button) findViewById(R.id.bfecha2);
         bhora2 =(Button) findViewById(R.id.bhora2);
         efecha2=(EditText)findViewById(R.id.efecha2);
@@ -116,6 +118,7 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         }
     }
     public void Actividad_Maps (View view){
+
         Intent mapas_adelante = new Intent(getApplicationContext(), Mapa_con_las_oficinas.class);
         startActivityForResult(mapas_adelante,100);
     }

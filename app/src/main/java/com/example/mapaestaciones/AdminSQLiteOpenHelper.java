@@ -8,29 +8,36 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
+public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     public AdminSQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
+    public void onConfigure(SQLiteDatabase db) {
+        super.onConfigure(db);
+        db.setForeignKeyConstraintsEnabled(true);
+    }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table vehiculos(matricula int primary key, categoria char, marca text," +
+
+        db.execSQL("PRAGMA foreign_keys=ON;");
+
+        db.execSQL("create table vehiculos (matricula int primary key, categoria char, marca text," +
                 " modelo text, descripcion text, precio real)");
 
-        db.execSQL("create table oficinas (nombre string primary key, latitud double, longitud double)");
+        db.execSQL("create table oficinas (nombre string primary key, latitud double, longitud double, matricula int references vehiculos)");
 
-        db.execSQL("create table if not exists usuarios(dni text primary key, usuario text, nombre text, apellidos text, " +
+        db.execSQL("create table if not exists usuarios (dni text primary key, usuario text, nombre text, apellidos text, " +
                 "telefono text, email text, password text)");
-        db.execSQL("insert into usuarios values('1234','jf','jf','jf','3','jf@j.com','jf')");
-        db.execSQL("insert into usuarios values('1244','j','j','j','2','j@j.com','j')");
+        //db.execSQL("insert into usuarios values('1234','jf','jf','jf','3','jf@j.com','jf')");
+        //db.execSQL("insert into usuarios values('1244','j','j','j','2','j@j.com','j')");
 
-        db.execSQL("create table reservas(codigo integer primary key, fechaInicio date, fechaFin date)");
+        db.execSQL("create table reservas (codigo integer primary key, fechaInicio date, fechaFin date)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-
 }

@@ -31,6 +31,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         et_descripcion = (EditText)findViewById(R.id.txt_descripcion);
         et_precio = (EditText)findViewById(R.id.real_precio);
 
+
     }
 
     //Método para dar de alta los productos
@@ -46,7 +47,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         String precio = et_precio.getText().toString();
 
         if(!matricula.isEmpty() && !categoria.isEmpty() && !marca.isEmpty()&& !descripcion.isEmpty()
-                && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty()){
+                && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty() ){
 
             ContentValues registro = new ContentValues();
             registro.put("matricula", matricula);
@@ -83,7 +84,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
 
         if(!matricula.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select categoria, marca, modelo, descripcion, precio from vehiculos where matricula =" + matricula, null);
+                    ("select categoria, marca, modelo, descripcion, precio from vehiculos where matricula ='" + matricula + "'", null);
             if(fila.moveToFirst()){
                 et_categoria.setText(fila.getString(0));
                 et_marca.setText(fila.getString(1));
@@ -108,7 +109,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         String matricula = et_matricula.getText().toString();
 
         if(!matricula.isEmpty()){
-            int cantidad = BaseDeDatos.delete("vehiculos", "matricula=" + matricula, null);
+            int cantidad = BaseDeDatos.delete("vehiculos", "matricula=" + "matricula", null);
             BaseDeDatos.close();
 
             et_matricula.setText("");
@@ -141,7 +142,6 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         String modelo = et_modelo.getText().toString();
         String descripcion = et_descripcion.getText().toString();
         String precio = et_precio.getText().toString();
-
         //validamos que todos los campos esten completos
         if(!matricula.isEmpty() && !categoria.isEmpty() && !marca.isEmpty()&& !descripcion.isEmpty()
                 && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty()){
@@ -156,7 +156,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
             registro.put("precio",precio);
 
             //El método para modificar(update) retorna valores de tipo entero
-            int cantidad = BaseDeDatos.update("vehiculos", registro, "matricula=" + matricula, null);
+            int cantidad = BaseDeDatos.update("vehiculos", registro, "matricula=" + "matricula", null);
             //ya hemos terminado de usar la BD por lo tanto debo cerrarla
             BaseDeDatos.close();
 

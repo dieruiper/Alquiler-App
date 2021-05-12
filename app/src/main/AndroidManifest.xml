@@ -40,8 +40,9 @@
         <activity android:name=".Activity_Reservar_Vehiculos" />
         <activity
             android:name=".Mapa_con_las_oficinas"
-            android:label="@string/title_activity_mapa_con_las_oficinas2" />
+            android:label="Map" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
