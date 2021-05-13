@@ -89,6 +89,7 @@
     <string name="password">Contraseña</string>
     <string name="btnEntrar">Entrar</string>
     <string name="btnRegistrate">Registrate</string>
+    <string name="Bienvenida">Bienvenido a RentApp</string>
 
     <string name="tv_credenciales">Credenciales</string>
 
