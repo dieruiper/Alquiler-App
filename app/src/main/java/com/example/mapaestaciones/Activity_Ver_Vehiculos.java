@@ -33,7 +33,7 @@ public class Activity_Ver_Vehiculos extends AppCompatActivity {
         Cursor fila = BaseDeDatos.rawQuery("select * from vehiculos", null);
         if(fila.moveToFirst()){
             do{
-                Vehiculo vehiculo = new Vehiculo(fila.getInt(0),fila.getString(1),
+                Vehiculo vehiculo = new Vehiculo(fila.getString(0),fila.getString(1),
                         fila.getString(2), fila.getString(3),
                         fila.getString(4),fila.getDouble(5));
                 lista.add(vehiculo.toString());
@@ -87,7 +87,7 @@ public class Activity_Ver_Vehiculos extends AppCompatActivity {
                     ("select * from vehiculos where marca ='" + marca + "'", null);
             if(fila.moveToFirst()){
                 do{
-                    Vehiculo vehiculo = new Vehiculo(fila.getInt(0),fila.getString(1),
+                    Vehiculo vehiculo = new Vehiculo(fila.getString(0),fila.getString(1),
                             fila.getString(2), fila.getString(3),
                             fila.getString(4),fila.getDouble(5));
                     lista.add(vehiculo.toString());

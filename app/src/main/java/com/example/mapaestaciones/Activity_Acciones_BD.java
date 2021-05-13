@@ -114,7 +114,8 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         String matricula = et_matricula.getText().toString();
 
         if(!matricula.isEmpty()){
-            int cantidad = BaseDeDatos.delete("vehiculos", "matricula=" + "matricula", null);
+            //int cantidad = BaseDeDatos.delete("vehiculos", "matricula=" + "matricula", null);
+            BaseDeDatos.execSQL("DELETE FROM vehiculos WHERE matricula = '"+matricula+"'");
             BaseDeDatos.close();
 
             et_matricula.setText("");
@@ -123,7 +124,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
             et_modelo.setText("");
             et_descripcion.setText("");
             et_precio.setText("");
-
+/*
             if(cantidad == 1){
                 Toast.makeText(this, "Eliminado con exito", Toast.LENGTH_SHORT).show();
             }else {
@@ -133,6 +134,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         }else {
             Toast.makeText(this, "Debes introducir la matrícula del vehículo", Toast.LENGTH_LONG).show();
 
+        }*/
         }
     }
 
@@ -153,6 +155,11 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         if(!matricula.isEmpty() && !categoria.isEmpty() && !marca.isEmpty()&& !descripcion.isEmpty()
                 && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty() &&!nombre.isEmpty()){
 
+            BaseDeDatos.execSQL("UPDATE vehiculos SET categoria= '" + categoria + "', marca='" + marca + "' " +
+                    ",modelo = '" + modelo + "',descripcion = '" + descripcion +"'" +
+                    ",precio = '" + precio + "', nombre = '"+ nombre+ "' " +
+                    "WHERE matricula = '" + matricula + "'");
+            /*
             //Guardamos dentro de este objeto registro los valores que el usuario ha escrito dentro de estos campos
             ContentValues registro = new ContentValues();
             registro.put("matricula", matricula);
@@ -166,8 +173,9 @@ public class Activity_Acciones_BD extends AppCompatActivity {
             //El método para modificar(update) retorna valores de tipo entero
             int cantidad = BaseDeDatos.update("vehiculos", registro, "matricula=" + "matricula", null);
             //ya hemos terminado de usar la BD por lo tanto debo cerrarla
+            */
             BaseDeDatos.close();
-
+/*
             //Para avisar al usuario si se ha modificado correctamente
             //Si cantidad == 1 es que se ha modificado el producto
             if(cantidad == 1){
@@ -178,7 +186,9 @@ public class Activity_Acciones_BD extends AppCompatActivity {
 
         }else{
             Toast.makeText(this, "Debes rellenar todos los campos", Toast.LENGTH_LONG).show();
+        */
         }
+
     }
 
 

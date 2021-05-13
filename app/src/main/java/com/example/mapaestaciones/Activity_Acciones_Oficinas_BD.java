@@ -90,15 +90,18 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         //variables donde almacenamos lo que el usuario ha modificado
-        String nombre = et_nombre.getText().toString();
+        String nombre  = et_nombre.getText().toString();
         String latitud = et_lat.getText().toString();
-        String longitud = et_long.getText().toString();
+        String longitud  = et_long.getText().toString();
         //String matricula = et_matricula.getText().toString();
 
 
         //validamos que todos los campos esten completos
-        if(!nombre.isEmpty() && !latitud.isEmpty() && !longitud.isEmpty()){
+        if(!nombre.isEmpty() && !latitud.isEmpty() && !longitud.isEmpty()) {
+            BaseDeDatos.execSQL("UPDATE oficinas SET latitud= '" + latitud + "', longitud='" + longitud + "' " +
+                    "WHERE nombre = '" + nombre + "'");
 
+/*
             //Guardamos dentro de este objeto registro los valores que el usuario ha escrito dentro de estos campos
             ContentValues registro = new ContentValues();
             registro.put("nombre", nombre);
@@ -110,8 +113,9 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
             //El método para modificar(update) retorna valores de tipo entero
             int cantidad = BaseDeDatos.update("oficinas", registro, "nombre="  + "nombre" , null);
             //ya hemos terminado de usar la BD por lo tanto debo cerrarla
+            */
             BaseDeDatos.close();
-
+/*
             //Para avisar al usuario si se ha modificado correctamente
             //Si cantidad == 1 es que se ha modificado el producto
             if(cantidad == 1){
@@ -123,6 +127,8 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         }else{
             Toast.makeText(this, "Debes rellenar todos los campos", Toast.LENGTH_LONG).show();
         }
+        */
+        }
     }
 
     public void Eliminar(View view){
@@ -132,13 +138,14 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         String nombre = et_nombre.getText().toString();
 
         if(!nombre.isEmpty()){
-            int cantidad = BaseDeDatos.delete("oficinas", "nombre=" + '"' + nombre + '"', null);
+            //int cantidad = BaseDeDatos.delete("oficinas", "nombre=" + '"' + nombre + '"', null);
+            BaseDeDatos.execSQL("DELETE FROM oficinas WHERE nombre = '"+nombre+"'");
             BaseDeDatos.close();
 
             et_nombre.setText("");
             et_lat.setText("");
             et_long.setText("");
-
+/*
             if(cantidad == 1){
                 Toast.makeText(this, "Eliminado con exito", Toast.LENGTH_SHORT).show();
             }else {
@@ -147,7 +154,7 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
 
         }else {
             Toast.makeText(this, "Debes introducir la matrícula del vehículo", Toast.LENGTH_LONG).show();
-
+*/
         }
     }
 

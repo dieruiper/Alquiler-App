@@ -30,6 +30,7 @@ public class Activity_Ver_Oficinas extends AppCompatActivity {
         //funciona
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
+
         Cursor fila = BaseDeDatos.rawQuery("select * from oficinas", null);
         if(fila.moveToFirst()){
             do{
