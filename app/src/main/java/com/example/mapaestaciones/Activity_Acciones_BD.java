@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class Activity_Acciones_BD extends AppCompatActivity {
 
-    private EditText et_matricula,et_categoria, et_marca, et_modelo,et_descripcion, et_precio;
+    private EditText et_nombre,et_matricula,et_categoria, et_marca, et_modelo,et_descripcion, et_precio;
 
 
     @Override
@@ -30,7 +30,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         et_modelo = (EditText)findViewById(R.id.txt_modelo);
         et_descripcion = (EditText)findViewById(R.id.txt_descripcion);
         et_precio = (EditText)findViewById(R.id.real_precio);
-
+        et_nombre = (EditText)findViewById(R.id.txt_nombreOfi);
 
     }
 
@@ -45,9 +45,10 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         String modelo = et_modelo.getText().toString();
         String descripcion = et_descripcion.getText().toString();
         String precio = et_precio.getText().toString();
+        String nombre = et_nombre.getText().toString();
 
         if(!matricula.isEmpty() && !categoria.isEmpty() && !marca.isEmpty()&& !descripcion.isEmpty()
-                && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty() ){
+                && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty() && !nombre.isEmpty()){
 
             ContentValues registro = new ContentValues();
             registro.put("matricula", matricula);
@@ -56,6 +57,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
             registro.put("modelo", modelo);
             registro.put("descripcion",descripcion);
             registro.put("precio",precio);
+            registro.put("nombre",nombre);
 
             BaseDeDatos.insert("vehiculos", null, registro);
 
@@ -66,6 +68,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
             et_modelo.setText("");
             et_descripcion.setText("");
             et_precio.setText("");
+            et_nombre.setText("");
 
             Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
 
@@ -84,13 +87,15 @@ public class Activity_Acciones_BD extends AppCompatActivity {
 
         if(!matricula.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select categoria, marca, modelo, descripcion, precio from vehiculos where matricula ='" + matricula + "'", null);
+                    ("select categoria, marca, modelo, descripcion, precio, nombre from vehiculos where matricula ='" + matricula + "'", null);
             if(fila.moveToFirst()){
                 et_categoria.setText(fila.getString(0));
                 et_marca.setText(fila.getString(1));
                 et_modelo.setText(fila.getString(2));
                 et_descripcion.setText(fila.getString(3));
                 et_precio.setText(fila.getString(4));
+                et_nombre.setText(fila.getString(5));
+
                 BaseDeDatos.close();
             }else{
                 Toast.makeText(this, "No existe el vehiculo", Toast.LENGTH_SHORT).show();
@@ -142,9 +147,11 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         String modelo = et_modelo.getText().toString();
         String descripcion = et_descripcion.getText().toString();
         String precio = et_precio.getText().toString();
+        String nombre = et_nombre.getText().toString();
         //validamos que todos los campos esten completos
+
         if(!matricula.isEmpty() && !categoria.isEmpty() && !marca.isEmpty()&& !descripcion.isEmpty()
-                && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty()){
+                && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty() &&!nombre.isEmpty()){
 
             //Guardamos dentro de este objeto registro los valores que el usuario ha escrito dentro de estos campos
             ContentValues registro = new ContentValues();
@@ -154,6 +161,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
             registro.put("modelo", modelo);
             registro.put("descripcion",descripcion);
             registro.put("precio",precio);
+            registro.put("nombre",nombre);
 
             //El método para modificar(update) retorna valores de tipo entero
             int cantidad = BaseDeDatos.update("vehiculos", registro, "matricula=" + "matricula", null);
