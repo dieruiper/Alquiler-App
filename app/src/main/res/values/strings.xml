@@ -88,4 +88,6 @@
     <string name="btnEntrar">Entrar</string>
     <string name="btnRegistrate">Registrate</string>
 
+    <string name="btnVerReserva">Ver reservas</string>
+
 </resources>

@@ -43,4 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Intent login = new Intent(getApplicationContext(), Activity_Login.class);
         startActivity(login);
     }
+    public void Actividad_Ver_Reservas (View view){
+        Intent ver_reservas_adelante = new Intent(getApplicationContext(), Activity_Ver_Reservas.class);
+        startActivity(ver_reservas_adelante);
+    }
 }

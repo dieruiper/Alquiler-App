@@ -57,5 +57,12 @@
             android:onClick="Actividad_Prueba_Login"
             android:text="Prueba Login" />
 
+        <Button
+            android:id="@+id/btnVerReserva"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Actividad_Ver_Reservas"
+            android:text="@string/btnVerReserva" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
