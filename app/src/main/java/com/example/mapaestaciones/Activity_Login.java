@@ -2,7 +2,9 @@ package com.example.mapaestaciones;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -29,35 +31,15 @@ public class Activity_Login extends AppCompatActivity {
         pass=(EditText)findViewById(R.id.password);
         btnEntrar=(Button)findViewById(R.id.btnEntrar);
         btnRegistrate=(Button)findViewById(R.id.btnRegistrate);
-        lv_usuarios=(ListView)findViewById(R.id.lv_usuarios);
         ArrayList<String> l = new ArrayList<String>();
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-
-        Cursor fila = BaseDeDatos.rawQuery("select * from usuarios", null);
-
-        if(fila.moveToFirst()){
-            do{
-                Usuario u = new Usuario(fila.getString(0),
-                        fila.getString(1),
-                        fila.getString(2),
-                        fila.getString(3),
-                        fila.getString(4),
-                        fila.getString(5),
-                        fila.getString(6));
-                l.add(u.toString());
-            }while(fila.moveToNext());
-        }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_usuarios,l);
-        lv_usuarios.setAdapter(adapter);
-        BaseDeDatos.close();
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
     }
 
     public void Registrate(View view){
         Intent i = new Intent(Activity_Login.this, Activity_Registrar.class);
         startActivity(i);
+        finish();
     }
 
     public void Entrar(View view){
@@ -85,8 +67,15 @@ public class Activity_Login extends AppCompatActivity {
 
             if (userEntrante.getPassword().equals(password)) {
                 Toast.makeText(this, "Login correcto", Toast.LENGTH_LONG).show();
+                guardarPreferencias(userEntrante);
+
+                SharedPreferences sesion = getSharedPreferences("sesion",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sesion.edit();
+                editor.putBoolean("login", true);
+
                 Intent i = new Intent(Activity_Login.this, MainActivity.class);
                 startActivity(i);
+                MainActivity.saveValuePreference(getApplicationContext(), false);
             } else {
                 Toast.makeText(this, "El usuario no existe o las credenciales no son correctas", Toast.LENGTH_LONG).show();
             }
@@ -94,6 +83,40 @@ public class Activity_Login extends AppCompatActivity {
         }else{
             Toast.makeText(this, "ERROR: debe rellenar los campos", Toast.LENGTH_LONG).show();
         }
-
     }
+
+    private void guardarPreferencias(Usuario u) {
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        SharedPreferences.Editor obj_editor = preferences.edit();
+        obj_editor.putString("nombre",u.getNombre());
+        obj_editor.putString("apellidos",u.getApellidos());
+        obj_editor.putString("dni",u.getDni());
+        obj_editor.commit();
+    }
+
 }
+
+        //MUESTRA LA BASE DE DATOS
+        /* en el onCreate()
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+
+        Cursor fila = BaseDeDatos.rawQuery("select * from usuarios", null);
+
+        if(fila.moveToFirst()){
+            do{
+                Usuario u = new Usuario(fila.getString(0),
+                        fila.getString(1),
+                        fila.getString(2),
+                        fila.getString(3),
+                        fila.getString(4),
+                        fila.getString(5),
+                        fila.getString(6));
+                l.add(u.toString());
+            }while(fila.moveToNext());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_usuarios,l);
+        lv_usuarios.setAdapter(adapter);
+        BaseDeDatos.close();
+        */

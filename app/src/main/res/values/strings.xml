@@ -7,6 +7,7 @@
     <string name="ver_vehiculos">Ver vehículos</string>
     <string name="encontrar_oficinas">Encontrar oficinas</string>
     <string name="ver_oficinas">Ver oficinas</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="ajustes">Ajustes</string>
     <string name="ayuda">Ayuda</string>
 
@@ -83,9 +84,12 @@
     <string name="btnRegistrarUsuario">Registrar</string>
     <string name="btnCancelarRegistro">Cancelar</string>
 
+
     <string name="username">Usuario</string>
     <string name="password">Contraseña</string>
     <string name="btnEntrar">Entrar</string>
     <string name="btnRegistrate">Registrate</string>
+
+    <string name="tv_credenciales">Credenciales</string>
 
 </resources>
