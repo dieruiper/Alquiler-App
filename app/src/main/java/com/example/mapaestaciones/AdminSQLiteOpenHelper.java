@@ -23,7 +23,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
         db.execSQL("PRAGMA foreign_keys=ON;");
 
-        db.execSQL("create table vehiculos (matricula int primary key, categoria char, marca text," +
+        db.execSQL("create table vehiculos (matricula string primary key, categoria char, marca text," +
                 " modelo text, descripcion text, precio real, nombre string references oficinas)");
 
         db.execSQL("create table oficinas (nombre string primary key, latitud double, longitud double)");
@@ -48,7 +48,8 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("insert into usuarios values('1234','jf','jf','jf','3','jf@j.com','jf')");
         db.execSQL("insert into usuarios values('1244','j','j','j','2','j@j.com','j')");
 
-        db.execSQL("create table reservas (codigo integer primary key, fechaInicio date, fechaFin date)");
+        db.execSQL("create table reservas (codigo integer primary key, fechaInicio string, fechaFin string,matricula string references vehiculos,nombre string references oficinas, dni string references usuarios)");
+        db.execSQL("insert into reservas values(11,'2021-05-13', '2021-05-16', '1111AAA', 'Sevilla', '1234')");
     }
 
     @Override
