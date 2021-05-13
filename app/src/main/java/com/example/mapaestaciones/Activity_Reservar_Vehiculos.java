@@ -15,12 +15,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
-public class Activity_Reservar_Vehiculos extends AppCompatActivity implements View.OnClickListener {
+public class Activity_Reservar_Vehiculos extends AppCompatActivity implements View.OnClickListener{
 
-    Button bfecha,bhora,bfecha2,bhora2, blugar,blugar2;
-    EditText efecha,ehora,efecha2,ehora2, elugar, elugar2;
+    Button btn_fecha_inicio,btn_fecha_fin, btn_lugar_recogida,btn_lugar_entrega;
+    EditText et_fecha_inicio,et_fecha_fin, et_lugar_recogida,et_lugar_entrega;
     String title,title2;
-    private int dia,mes,ano,hora,minutos;
+    private int dia,mes,ano;
     /*
 
      */
@@ -29,38 +29,29 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservar_vehiculos);
 
-        elugar2 = (EditText) findViewById(R.id.elugar2);
-        title2= getIntent().getStringExtra("title");
-        elugar = (EditText) findViewById(R.id.elugar);
-        title= getIntent().getStringExtra("title");
-        elugar.setText(title);
-        elugar2.setText(title2);
-        bfecha=(Button) findViewById(R.id.bfecha);
-        bhora =(Button) findViewById(R.id.bhora);
-        efecha=(EditText)findViewById(R.id.efecha);
-        ehora=(EditText)findViewById(R.id.ehora);
-        bfecha.setOnClickListener(this);
-        bhora.setOnClickListener(this);
+        et_lugar_entrega = (EditText) findViewById(R.id.elugar2);
+        et_lugar_recogida = (EditText) findViewById(R.id.elugar);
+        btn_fecha_inicio=(Button) findViewById(R.id.bfecha);
+        et_fecha_inicio=(EditText)findViewById(R.id.efecha);
+        btn_fecha_fin=(Button) findViewById(R.id.bfecha2);
+        et_fecha_fin=(EditText)findViewById(R.id.efecha2);
 
-        bfecha2=(Button) findViewById(R.id.bfecha2);
-        bhora2 =(Button) findViewById(R.id.bhora2);
-        efecha2=(EditText)findViewById(R.id.efecha2);
-        ehora2=(EditText)findViewById(R.id.ehora2);
-        bfecha2.setOnClickListener(this);
-        bhora2.setOnClickListener(this);
+        title2 = getIntent().getStringExtra("title");
+        title = getIntent().getStringExtra("title");
+        et_lugar_recogida.setText(title);
+        et_lugar_entrega.setText(title2);
 
     }
     public void Actividad_Reserva_atras(View view){
-
         Intent reserva_veh_atras = new Intent(this,MainActivity.class);
         startActivity(reserva_veh_atras);
-
     }
-    /*Fecha y hora*/
+
+    /*Fecha*/
     @Override
     public void onClick(View v) {
 
-        if (v == bfecha) {
+        if (v == btn_fecha_inicio) {
             final Calendar c = Calendar.getInstance();
             dia = c.get(Calendar.DAY_OF_MONTH);
             mes = c.get(Calendar.MONTH);
@@ -68,27 +59,15 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    efecha.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                    et_fecha_inicio.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                 }
             }
                     , dia, mes, ano);
             datePickerDialog.show();
         }
-        if (v == bhora) {
-            final Calendar c = Calendar.getInstance();
-            hora = c.get(Calendar.HOUR_OF_DAY);
-            minutos = c.get(Calendar.MINUTE);
-            TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-                @Override
-                public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                    ehora.setText(hourOfDay + ":" + minute);
 
-                }
-            }, hora, minutos, false);
-            timePickerDialog.show();
-        }
-        if (v == bfecha2) {
+        if (v == btn_fecha_fin) {
             final Calendar c = Calendar.getInstance();
             dia = c.get(Calendar.DAY_OF_MONTH);
             mes = c.get(Calendar.MONTH);
@@ -96,32 +75,21 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    efecha2.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                    et_fecha_fin.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                 }
             }
                     , dia, mes, ano);
             datePickerDialog.show();
-        }
-        if (v == bhora2) {
-            final Calendar c = Calendar.getInstance();
-            hora = c.get(Calendar.HOUR_OF_DAY);
-            minutos = c.get(Calendar.MINUTE);
-            TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-                @Override
-                public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                    ehora2.setText(hourOfDay + ":" + minute);
-
-                }
-            }, hora, minutos, false);
-            timePickerDialog.show();
         }
     }
+
     public void Actividad_Maps (View view){
 
         Intent mapas_adelante = new Intent(getApplicationContext(), Mapa_con_las_oficinas.class);
         startActivityForResult(mapas_adelante,100);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -141,6 +109,7 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
 
     }
 
+    /*
     public void Consultar_Disponibilidad(View view) {
         Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this, FechayHoraElegidas.class);
 
@@ -151,25 +120,13 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         String s_elugar = elugar.getText().toString().trim();
         String s_elugar2 = elugar2.getText().toString().trim();
 
-        myIntent.putExtra("es_efecha", s_efecha);
-        myIntent.putExtra("es_ehora", s_ehora);
-        myIntent.putExtra("es_efecha2",  s_efecha2);
-        myIntent.putExtra("es_ehora2", s_ehora2);
-        myIntent.putExtra("es_lugar", s_elugar);
-        myIntent.putExtra("es_lugar2", s_elugar2);
-
-
-        /*
         Bundle miBundle=new Bundle();
         miBundle.putString("es_efecha",efecha.getText().toString().trim());
         miBundle.putString("es_ehora",ehora.getText().toString().trim());
         miBundle.putString("es_efecha2",efecha2.getText().toString().trim());
         miBundle.putString("es_ehora2",ehora2.getText().toString().trim());
         myIntent.putExtras(miBundle);
-        */
-
 
         startActivity(myIntent);
-
-    }
+    }    */
 }
