@@ -5,13 +5,13 @@ import java.sql.Date;
 public class Reserva {
 
     private Integer codigo;
-    private Date fechaInicio;
-    private Date fechaFin;
-    private Integer matricula;
+    private String fechaInicio;
+    private String fechaFin;
+    private String matricula;
     private String nombreOficina;
     private String dni;
 
-    public Reserva(Integer codigo, Date fechaInicio, Date fechaFin, Integer matricula,
+    public Reserva(Integer codigo, String fechaInicio, String fechaFin, String matricula,
                    String nombreOficina, String dni){
         this.codigo = codigo;
         this.fechaInicio = fechaInicio;
