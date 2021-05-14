@@ -59,11 +59,11 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    et_fecha_inicio.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                    et_fecha_inicio.setText(year + "/" + (monthOfYear + 1) + "/" + dayOfMonth);
 
                 }
             }
-                    , dia, mes, ano);
+                    , ano, mes, dia);
             datePickerDialog.show();
         }
 
@@ -75,11 +75,11 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    et_fecha_fin.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                    et_fecha_fin.setText(year + "/" + (monthOfYear + 1) + "/" + dayOfMonth);
 
                 }
             }
-                    , dia, mes, ano);
+                    , ano, mes, dia);
             datePickerDialog.show();
         }
     }
