@@ -109,24 +109,25 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
 
     }
 
-    /*
+
     public void Consultar_Disponibilidad(View view) {
-        Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this, FechayHoraElegidas.class);
+        Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this, ResumenReserva.class);
 
-        String s_efecha =efecha.getText().toString().trim();
-        String s_ehora =ehora.getText().toString().trim();
-        String s_efecha2 =efecha2.getText().toString().trim();
-        String s_ehora2 =ehora2.getText().toString().trim();
-        String s_elugar = elugar.getText().toString().trim();
-        String s_elugar2 = elugar2.getText().toString().trim();
+        String s_efecha =et_fecha_inicio.getText().toString().trim();
+        String s_efecha2 =et_fecha_fin.getText().toString().trim();
+        String s_elugar = et_lugar_entrega.getText().toString().trim();
+        String s_elugar2 = et_lugar_recogida.getText().toString().trim();
 
+        myIntent.putExtra("es_efecha", s_efecha);
+        myIntent.putExtra("es_efecha2",  s_efecha2);
+        myIntent.putExtra("es_elugar",  s_elugar);
+        /*
         Bundle miBundle=new Bundle();
-        miBundle.putString("es_efecha",efecha.getText().toString().trim());
-        miBundle.putString("es_ehora",ehora.getText().toString().trim());
-        miBundle.putString("es_efecha2",efecha2.getText().toString().trim());
-        miBundle.putString("es_ehora2",ehora2.getText().toString().trim());
+        miBundle.putString("es_efecha",et_fecha_inicio.getText().toString().trim());
+        miBundle.putString("es_efecha2",et_fecha_fin.getText().toString().trim());
+        miBundle.putString("es_lugar",et_lugar_recogida.getText().toString().trim());
         myIntent.putExtras(miBundle);
-
+*/
         startActivity(myIntent);
-    }    */
+    }
 }

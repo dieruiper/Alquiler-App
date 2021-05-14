@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FechayHoraElegidas">
+    tools:context=".ResumenReserva">
 
     <TextView
         android:id="@+id/fecha_recogida_resumen"
@@ -13,10 +13,10 @@
         android:text="@string/efecha_resumen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.245"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.168" />
+        app:layout_constraintVertical_bias="0.104" />
 
     <TextView
         android:id="@+id/elugar_recogida_resumen"
@@ -25,10 +25,10 @@
         android:text="@string/elugar_resumen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.105" />
 
     <Button
         android:id="@+id/volver_reserva_vehiculos"
@@ -44,19 +44,6 @@
         app:layout_constraintVertical_bias="0.897" />
 
     <TextView
-        android:id="@+id/ehora_resumen"
-        android:layout_width="88dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/ehora_resumen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
-
-    <TextView
         android:id="@+id/efecha2_resumen"
         android:layout_width="90dp"
         android:layout_height="21dp"
@@ -64,23 +51,10 @@
         android:text="@string/efecha2_resumen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.348" />
-
-    <TextView
-        android:id="@+id/ehora2_resumen"
-        android:layout_width="95dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/ehora2_resumen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintVertical_bias="0.068" />
 
     <TextView
         android:id="@+id/titulo_recogida"
@@ -91,7 +65,7 @@
         android:textColor="#F44336"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -104,10 +78,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.237" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/elugar_devolucion_resumen"
@@ -117,10 +91,10 @@
         android:text="@string/elugar2_resumen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.979"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.309" />
+        app:layout_constraintVertical_bias="0.106" />
 
     <Button
         android:id="@+id/continuar_prueba"
@@ -134,5 +108,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.897" />
+
+    <ListView
+        android:id="@+id/lv_reserva"
+        android:layout_width="326dp"
+        android:layout_height="430dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="57dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/elugar_recogida_resumen" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

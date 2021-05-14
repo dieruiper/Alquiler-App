@@ -3,25 +3,30 @@ package com.example.mapaestaciones;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class FechayHoraElegidas extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class ResumenReserva extends AppCompatActivity {
+    private ListView lv_reserva;
     TextView tx_lugar_resumen,tx_lugar2_resumen, tx_efecha_resumen,tx_ehora_resumen,tx_efecha2_resumen,tx_ehora2_resumen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fechayhora_elegidas);
+        setContentView(R.layout.activity_resumen_reserva);
 
         Intent me=getIntent();
         String efecha_resumen=me.getStringExtra("es_efecha");
-        String ehora_resumen=me.getStringExtra("es_ehora");
         String efecha2_resumen=me.getStringExtra("es_efecha2");
-        String ehora2_resumen=me.getStringExtra("es_ehora2");
-        String elugar_resumen=me.getStringExtra("es_lugar");
-        String elugar2_resumen=me.getStringExtra("es_lugar2");
+        String elugar_resumen=me.getStringExtra("es_elugar");
+        String elugar2_resumen=me.getStringExtra("es_elugar2");
 
         tx_lugar2_resumen = findViewById(R.id.elugar_recogida_resumen);
         tx_lugar2_resumen.setText(elugar2_resumen);
@@ -32,18 +37,32 @@ public class FechayHoraElegidas extends AppCompatActivity {
         tx_efecha_resumen=findViewById(R.id.fecha_recogida_resumen);
         tx_efecha_resumen.setText(efecha_resumen);
 
-        tx_ehora_resumen=findViewById(R.id.ehora_resumen);
-        tx_ehora_resumen.setText(ehora_resumen);
 
         tx_efecha2_resumen=findViewById(R.id.efecha2_resumen);
         tx_efecha2_resumen.setText(efecha2_resumen);
 
-        tx_ehora2_resumen=findViewById(R.id.ehora2_resumen);
-        tx_ehora2_resumen.setText(ehora2_resumen);
+        lv_reserva=(ListView)findViewById(R.id.lv_reserva);
 
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
+        String nombre = elugar_resumen;
+        ArrayList<String> lista = new ArrayList<String>();
 
+        Cursor fila = BaseDeDatos.rawQuery("select * from vehiculos where nombre = '"+nombre+"'", null);
+        if(fila.moveToFirst()){
+            do{
+                Vehiculo vehiculo = new Vehiculo(fila.getString(0),fila.getString(1),
+                        fila.getString(2), fila.getString(3),
+                        fila.getString(4),fila.getDouble(5));
+                lista.add(vehiculo.toString());
+            }while (fila.moveToNext());
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_vervehiculos,lista);
+        lv_reserva.setAdapter(adapter);
+        BaseDeDatos.close();
     }
+
     public void volver_reserva_vehiculos(View view){
 
         //Intent volver_reserva_vehiculos = new Intent(this,Activity_Reservar_Vehiculos.class );
