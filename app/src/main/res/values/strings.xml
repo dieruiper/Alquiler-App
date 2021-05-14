@@ -6,6 +6,7 @@
     <string name="ver_reservas">Ver reservas</string>
     <string name="ver_vehiculos">Ver vehículos</string>
     <string name="encontrar_oficinas">Encontrar oficinas</string>
+    <string name="reservas">Reservas</string>
     <string name="ver_oficinas">Ver oficinas</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="ajustes">Ajustes</string>
@@ -65,6 +66,14 @@
     <string name="elugar2_resumen">lugar</string>
     <string name="efecha2_resumen">fecha</string>
     <string name="ehora2_resumen">hora</string>
+
+    /*Activity Acciones Reservas BD*/
+    <string name="int_codigo_res">Codigo</string>
+    <string name="txt_fecha_inicio_res">Fecha Recogida</string>
+    <string name="txt_fecha_vuelta_res">Fecha Devolucion</string>
+    <string name="txt_matricula_res">Matricula</string>
+    <string name="txt_oficina_res">Oficina</string>
+    <string name="txt_dni_res">DNI</string>
 
     /* Actividad Resumen_Reserva*/
     <string name="fecha_recogida_resumen">Fecha recogida</string>
