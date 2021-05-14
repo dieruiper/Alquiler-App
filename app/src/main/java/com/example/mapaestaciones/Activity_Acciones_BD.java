@@ -59,8 +59,8 @@ public class Activity_Acciones_BD extends AppCompatActivity {
             registro.put("precio",precio);
             registro.put("nombre",nombre);
 
-            BaseDeDatos.insert("vehiculos", null, registro);
-
+            //BaseDeDatos.insert("vehiculos", null, registro);
+            BaseDeDatos.execSQL("insert into vehiculos values ('"+matricula+"','"+categoria+"', '"+marca+"', '"+modelo+"', '"+descripcion+"', '"+precio+"', '"+nombre+"')");
             BaseDeDatos.close();
             et_matricula.setText("");
             et_categoria.setText("");

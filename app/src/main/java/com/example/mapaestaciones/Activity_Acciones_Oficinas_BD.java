@@ -44,8 +44,8 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
             //registro.put("matricula", matricula);
 
 
-            BaseDeDatos.insert("oficinas", null, registro);
-
+            //BaseDeDatos.insert("oficinas", null, registro);
+            BaseDeDatos.execSQL("insert into oficinas values('"+nombre+"','"+latitud+"' ,'"+ longitud+"')");
             BaseDeDatos.close();
             et_nombre.setText("");
             et_lat.setText("");
