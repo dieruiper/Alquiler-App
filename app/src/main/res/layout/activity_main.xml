@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="377dp"
-        android:layout_height="358dp"
+        android:layout_width="376dp"
+        android:layout_height="402dp"
         android:layout_marginTop="80dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,12 +57,14 @@
             android:layout_height="wrap_content"
             android:onClick="Actividad_Prueba_Login"
             android:text="Prueba Login" />
+
         <Button
             android:id="@+id/btn_reservas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Actividad_Acciones_Reservas_BD"
             android:text="RESERVAS" />
+
         <Button
             android:id="@+id/btn_prueba_login3"
             android:layout_width="match_parent"

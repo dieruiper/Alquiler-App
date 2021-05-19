@@ -1,7 +1,6 @@
 package com.example.mapaestaciones;
 
 import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,6 +33,8 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         et_fecha_inicio=(EditText)findViewById(R.id.efecha);
         btn_fecha_fin=(Button) findViewById(R.id.bfecha2);
         et_fecha_fin=(EditText)findViewById(R.id.efecha2);
+        btn_lugar_recogida = (Button)findViewById(R.id.blugar);
+        btn_lugar_entrega = (Button)findViewById(R.id.blugar2);
 
         title2 = getIntent().getStringExtra("title");
         title = getIntent().getStringExtra("title");
@@ -111,7 +111,7 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
 
 
     public void Consultar_Disponibilidad(View view) {
-        Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this, ResumenReserva.class);
+        Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this, Activity_Seleccionar_Vehiculo.class);
 
         String s_efecha =et_fecha_inicio.getText().toString().trim();
         String s_efecha2 =et_fecha_fin.getText().toString().trim();
@@ -121,13 +121,7 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         myIntent.putExtra("es_efecha", s_efecha);
         myIntent.putExtra("es_efecha2",  s_efecha2);
         myIntent.putExtra("es_elugar",  s_elugar);
-        /*
-        Bundle miBundle=new Bundle();
-        miBundle.putString("es_efecha",et_fecha_inicio.getText().toString().trim());
-        miBundle.putString("es_efecha2",et_fecha_fin.getText().toString().trim());
-        miBundle.putString("es_lugar",et_lugar_recogida.getText().toString().trim());
-        myIntent.putExtras(miBundle);
-*/
+
         startActivity(myIntent);
     }
 }

@@ -35,7 +35,8 @@ public class Activity_Ver_Vehiculos extends AppCompatActivity {
             do{
                 Vehiculo vehiculo = new Vehiculo(fila.getString(0),fila.getString(1),
                         fila.getString(2), fila.getString(3),
-                        fila.getString(4),fila.getDouble(5));
+                        fila.getString(4),fila.getDouble(5),
+                        fila.getString(6));
                 lista.add(vehiculo.toString());
             }while (fila.moveToNext());
         }
@@ -89,7 +90,8 @@ public class Activity_Ver_Vehiculos extends AppCompatActivity {
                 do{
                     Vehiculo vehiculo = new Vehiculo(fila.getString(0),fila.getString(1),
                             fila.getString(2), fila.getString(3),
-                            fila.getString(4),fila.getDouble(5));
+                            fila.getString(4),fila.getDouble(5),
+                            fila.getString(6));
                     lista.add(vehiculo.toString());
                 }while (fila.moveToNext());
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_vervehiculos,lista);

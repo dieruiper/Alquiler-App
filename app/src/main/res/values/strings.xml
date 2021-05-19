@@ -82,6 +82,9 @@
     <string name="volver_reserva_vehiculos">Volver</string>
     <string name="continuarRegistroUsuario">Continuar</string>
 
+    /* Actividad Seleccionar_vehiculo */
+    <string name="btn_seleccionar_veh">Seleccionar</string>
+
     /* Usuarios */
     <string name="etNombre">Nombre</string>
     <string name="etUsuario">Usuario</string>
