@@ -33,10 +33,10 @@ public class Activity_Acciones_Reservas_BD extends AppCompatActivity {
         String fechaInicio = et_fecha_inicio.getText().toString();
         String fechaFin = et_fecha_fin.getText().toString();
         String matricula = et_matricula.getText().toString();
-        String nombre = et_oficina.getText().toString();
+        String nombreOficina = et_oficina.getText().toString();
         String dni = et_dni.getText().toString();
 
-        if (!nombre.isEmpty() && !fechaInicio.isEmpty() && !fechaFin.isEmpty() &&
+        if (!nombreOficina.isEmpty() && !fechaInicio.isEmpty() && !fechaFin.isEmpty() &&
                 !matricula.isEmpty() && !codigo.isEmpty() && !dni.isEmpty()) {
 
             ContentValues registro = new ContentValues();
@@ -44,12 +44,12 @@ public class Activity_Acciones_Reservas_BD extends AppCompatActivity {
             registro.put("fechaInicio", fechaInicio);
             registro.put("fechaFin", fechaFin);
             registro.put("matricula", matricula);
-            registro.put("nombre", nombre);
+            registro.put("nombreOficina", nombreOficina);
             registro.put("dni", dni);
 
             //BaseDeDatos.insert("oficinas", null, registro);
             BaseDeDatos.execSQL("insert into reservas values('" + codigo + "','" + fechaInicio + "' ,'" + fechaFin + "','" + matricula + "'" +
-                    ",'" + nombre + "','" + dni + "')");
+                    ",'" + nombreOficina + "','" + dni + "')");
             BaseDeDatos.close();
             et_codigo.setText("");
             et_fecha_inicio.setText("");
@@ -74,7 +74,7 @@ public class Activity_Acciones_Reservas_BD extends AppCompatActivity {
 
         if (!codigo.isEmpty()) {
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select fechaInicio, fechaFin, matricula, nombre, dni from reservas where codigo ='" + codigo + "'", null);
+                    ("select fechaInicio, fechaFin, matricula, nombreOficina, dni from reservas where codigo ='" + codigo + "'", null);
             if (fila.moveToFirst()) {
                 et_fecha_inicio.setText(fila.getString(0));
                 et_fecha_fin.setText(fila.getString(1));
@@ -132,16 +132,16 @@ public class Activity_Acciones_Reservas_BD extends AppCompatActivity {
         String fechaInicio = et_fecha_inicio.getText().toString();
         String fechaFin = et_fecha_fin.getText().toString();
         String matricula = et_matricula.getText().toString();
-        String nombre = et_oficina.getText().toString();
+        String nombreOficina = et_oficina.getText().toString();
         String dni = et_dni.getText().toString();
         //validamos que todos los campos esten completos
 
         if (!matricula.isEmpty() && !codigo.isEmpty() && !fechaInicio.isEmpty() &&
-                !nombre.isEmpty() && !fechaFin.isEmpty() && !dni.isEmpty()) {
+                !nombreOficina.isEmpty() && !fechaFin.isEmpty() && !dni.isEmpty()) {
 
             BaseDeDatos.execSQL("UPDATE reservas SET codigo= '" + codigo + "', fechaInicio='" + fechaInicio + "' " +
                     ",fechaFin = '" + fechaFin + "',matricula = '" + matricula + "'" +
-                    ",nombre = '" + nombre + "', dni = '" + dni + "' " +
+                    ",nombreOficina = '" + nombreOficina + "', dni = '" + dni + "' " +
                     "WHERE codigo = '" + codigo + "'");
             /*
             //Guardamos dentro de este objeto registro los valores que el usuario ha escrito dentro de estos campos

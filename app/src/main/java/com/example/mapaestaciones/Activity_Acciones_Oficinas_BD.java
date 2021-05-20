@@ -29,23 +29,23 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
-        String nombre = et_nombre.getText().toString();
+        String nombreOficina = et_nombre.getText().toString();
         String latitud = et_lat.getText().toString();
         String longitud = et_long.getText().toString();
         //String matricula = et_matricula.getText().toString();
 
 
-        if(!nombre.isEmpty() && !latitud.isEmpty() && !longitud.isEmpty()){
+        if(!nombreOficina.isEmpty() && !latitud.isEmpty() && !longitud.isEmpty()){
 
             ContentValues registro = new ContentValues();
-            registro.put("nombre", nombre);
+            registro.put("nombreOficina", nombreOficina);
             registro.put("latitud", latitud);
             registro.put("longitud", longitud);
             //registro.put("matricula", matricula);
 
 
             //BaseDeDatos.insert("oficinas", null, registro);
-            BaseDeDatos.execSQL("insert into oficinas values('"+nombre+"','"+latitud+"' ,'"+ longitud+"')");
+            BaseDeDatos.execSQL("insert into oficinas values('"+nombreOficina+"','"+latitud+"' ,'"+ longitud+"')");
             BaseDeDatos.close();
             et_nombre.setText("");
             et_lat.setText("");
@@ -65,11 +65,11 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
-        String nombre = et_nombre.getText().toString();
+        String nombreOficina = et_nombre.getText().toString();
 
-        if(!nombre.isEmpty()){
+        if(!nombreOficina.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select latitud, longitud  from oficinas where nombre ='" + nombre + "'", null);
+                    ("select latitud, longitud  from oficinas where nombreOficina ='" + nombreOficina + "'", null);
             if(fila.moveToFirst()){
                 et_lat.setText(fila.getString(0));
                 et_long.setText(fila.getString(1));
@@ -90,16 +90,16 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         //variables donde almacenamos lo que el usuario ha modificado
-        String nombre  = et_nombre.getText().toString();
+        String nombreOficina  = et_nombre.getText().toString();
         String latitud = et_lat.getText().toString();
         String longitud  = et_long.getText().toString();
         //String matricula = et_matricula.getText().toString();
 
 
         //validamos que todos los campos esten completos
-        if(!nombre.isEmpty() && !latitud.isEmpty() && !longitud.isEmpty()) {
+        if(!nombreOficina.isEmpty() && !latitud.isEmpty() && !longitud.isEmpty()) {
             BaseDeDatos.execSQL("UPDATE oficinas SET latitud= '" + latitud + "', longitud='" + longitud + "' " +
-                    "WHERE nombre = '" + nombre + "'");
+                    "WHERE nombreOficina = '" + nombreOficina + "'");
 
 /*
             //Guardamos dentro de este objeto registro los valores que el usuario ha escrito dentro de estos campos
@@ -135,11 +135,11 @@ public class Activity_Acciones_Oficinas_BD extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
         //Esto no le aparece a JOSECA
-        String nombre = et_nombre.getText().toString();
+        String nombreOficina = et_nombre.getText().toString();
 
-        if(!nombre.isEmpty()){
+        if(!nombreOficina.isEmpty()){
             //int cantidad = BaseDeDatos.delete("oficinas", "nombre=" + '"' + nombre + '"', null);
-            BaseDeDatos.execSQL("DELETE FROM oficinas WHERE nombre = '"+nombre+"'");
+            BaseDeDatos.execSQL("DELETE FROM oficinas WHERE nombreOficina = '"+nombreOficina+"'");
             BaseDeDatos.close();
 
             et_nombre.setText("");

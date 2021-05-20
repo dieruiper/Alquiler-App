@@ -45,10 +45,10 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         String modelo = et_modelo.getText().toString();
         String descripcion = et_descripcion.getText().toString();
         String precio = et_precio.getText().toString();
-        String nombre = et_nombre.getText().toString();
+        String nombreOficina = et_nombre.getText().toString();
 
         if(!matricula.isEmpty() && !categoria.isEmpty() && !marca.isEmpty()&& !descripcion.isEmpty()
-                && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty() && !nombre.isEmpty()){
+                && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty() && !nombreOficina.isEmpty()){
 
             ContentValues registro = new ContentValues();
             registro.put("matricula", matricula);
@@ -57,10 +57,10 @@ public class Activity_Acciones_BD extends AppCompatActivity {
             registro.put("modelo", modelo);
             registro.put("descripcion",descripcion);
             registro.put("precio",precio);
-            registro.put("nombre",nombre);
+            registro.put("nombreOficina",nombreOficina);
 
             //BaseDeDatos.insert("vehiculos", null, registro);
-            BaseDeDatos.execSQL("insert into vehiculos values ('"+matricula+"','"+categoria+"', '"+marca+"', '"+modelo+"', '"+descripcion+"', '"+precio+"', '"+nombre+"')");
+            BaseDeDatos.execSQL("insert into vehiculos values ('"+matricula+"','"+categoria+"', '"+marca+"', '"+modelo+"', '"+descripcion+"', '"+precio+"', '"+nombreOficina+"')");
             BaseDeDatos.close();
             et_matricula.setText("");
             et_categoria.setText("");
@@ -87,7 +87,7 @@ public class Activity_Acciones_BD extends AppCompatActivity {
 
         if(!matricula.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select categoria, marca, modelo, descripcion, precio, nombre from vehiculos where matricula ='" + matricula + "'", null);
+                    ("select categoria, marca, modelo, descripcion, precio, nombreOficina from vehiculos where matricula ='" + matricula + "'", null);
             if(fila.moveToFirst()){
                 et_categoria.setText(fila.getString(0));
                 et_marca.setText(fila.getString(1));
@@ -149,15 +149,15 @@ public class Activity_Acciones_BD extends AppCompatActivity {
         String modelo = et_modelo.getText().toString();
         String descripcion = et_descripcion.getText().toString();
         String precio = et_precio.getText().toString();
-        String nombre = et_nombre.getText().toString();
+        String nombreOficina = et_nombre.getText().toString();
         //validamos que todos los campos esten completos
 
         if(!matricula.isEmpty() && !categoria.isEmpty() && !marca.isEmpty()&& !descripcion.isEmpty()
-                && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty() &&!nombre.isEmpty()){
+                && !modelo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty() &&!nombreOficina.isEmpty()){
 
             BaseDeDatos.execSQL("UPDATE vehiculos SET categoria= '" + categoria + "', marca='" + marca + "' " +
                     ",modelo = '" + modelo + "',descripcion = '" + descripcion +"'" +
-                    ",precio = '" + precio + "', nombre = '"+ nombre+ "' " +
+                    ",precio = '" + precio + "', nombreOficina = '"+ nombreOficina+ "' " +
                     "WHERE matricula = '" + matricula + "'");
             /*
             //Guardamos dentro de este objeto registro los valores que el usuario ha escrito dentro de estos campos

@@ -79,12 +79,12 @@ public class Activity_Ver_Oficinas extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
-        String nombre = tv2.getText().toString();
+        String nombreOficina = tv2.getText().toString();
         ArrayList<String> lista = new ArrayList<String>();
 
-        if(!nombre.isEmpty()){
+        if(!nombreOficina.isEmpty()){
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select * from oficinas where nombre ='" + nombre + "'", null);
+                    ("select * from oficinas where nombreOficina ='" + nombreOficina + "'", null);
             if(fila.moveToFirst()){
                 do{
                     Oficina oficina = new Oficina(fila.getString(0),fila.getDouble(1),
