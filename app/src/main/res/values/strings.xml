@@ -82,6 +82,11 @@
     <string name="volver_reserva_vehiculos">Volver</string>
     <string name="continuarRegistroUsuario">Continuar</string>
 
+    /* Actividad Confirmar_Reserva*/
+    <string name="fecha_recogida_resumen2">Fecha recogida</string>
+    <string name="elugar_recogida_resumen2">Lugar recogida</string>
+    <string name="efecha2_resumen2">Fecha devolucion</string>
+
     /* Actividad Seleccionar_vehiculo */
     <string name="btn_seleccionar_veh">Seleccionar</string>
 
