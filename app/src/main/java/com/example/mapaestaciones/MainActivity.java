@@ -62,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(ver_oficinas_adelante);
     }
 
+    public void Actividad_Ver_Reservas (View view) {
+        Intent ver_oficinas_adelante = new Intent(getApplicationContext(), Activity_Ver_Reservas.class);
+        startActivity(ver_oficinas_adelante);
+    }
+
     public void Actividad_Prueba_Login (View view) {
         Intent login = new Intent(getApplicationContext(), Activity_Login.class);
         startActivity(login);

@@ -23,7 +23,7 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
-        Cursor fila = BaseDeDatos.rawQuery("select * from reservas", null);
+        Cursor fila = BaseDeDatos.rawQuery("select * from reservas ", null);
 
         if(fila.moveToFirst()){
             do{

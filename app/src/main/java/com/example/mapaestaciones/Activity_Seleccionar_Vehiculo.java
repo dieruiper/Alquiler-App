@@ -20,7 +20,7 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
 
     private VehiculoAdapter vAdapter;
     TextView tv_lugar_recogida,tv_lugar_entrega,tv_fecha_recogida,tv_fecha_entrega;
-    String efecha_resumen,efecha2_resumen,elugar_resumen;
+    String efecha_resumen,efecha2_resumen,elugar_resumen,fechaInicio,fechaFin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +47,21 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
 
         String nombreOficina = elugar_resumen;
         ArrayList<Vehiculo> lista_vehiculos = new ArrayList<>();
+        String fechaInicio = efecha_resumen;
+        String fechaFin = efecha2_resumen;
+        /*
+        Cursor disponibles = BaseDeDatos.rawQuery("select fechaInicio,fechaFin from reservas where nombreOficina = '"+nombreOficina+"'",null);
+        if(disponibles.moveToFirst()){
+            fechaInicio = disponibles.getString(disponibles.getColumnIndex("fechaInicio"));
+            fechaFin = disponibles.getString(disponibles.getColumnIndex("fechaFin"));
+        }
+         not between fechaInicio ='"+fechaInicio+"' and fechaFin = '"+fechaFin+"'
+        */
 
-        Cursor fila = BaseDeDatos.rawQuery("select * from vehiculos where nombreOficina = '"+nombreOficina+"'", null);
+        //Cursor fila = BaseDeDatos.rawQuery("select * from vehiculos where nombreOficina = '"+nombreOficina+"'" , null);
+        //Cursor fila = BaseDeDatos.rawQuery("select * from vehiculos left join reservas on vehiculos.nombreOficina=reservas.nombreOficina where vehiculos.nombreOficina='"+nombreOficina+"' is null not between reservas.fechaInicio and reservas.fechaFin" , null);
+        //Cursor fila = BaseDeDatos.rawQuery("select * from vehiculos where nombreOficina = '"+nombreOficina+"' in (select  nombreOficina from vehiculos) and nombreOficina in (select nombreOficina from reservas where nombreOficina not between fechaInicio and fechaFin )" , null);
+        Cursor fila = BaseDeDatos.rawQuery("select * from vehiculos,reservas where vehiculos.nombreOficina = reservas.nombreOficina and vehiculos.nombreOficina = '"+nombreOficina+"' and reservas.fechaInicio not between reservas.fechaInicio ='"+fechaInicio+"' and reservas.fechaFin = '"+fechaFin+"'" , null);
         if(fila.moveToFirst()){
             do{
                 Vehiculo vehiculo = new Vehiculo(fila.getString(0),fila.getString(1),

@@ -1,6 +1,7 @@
 package com.example.mapaestaciones;
 
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,7 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
     public int getItemCount() {
         return mDataset.size();
     }
+
 }
 
 

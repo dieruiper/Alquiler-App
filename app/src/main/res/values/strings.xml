@@ -109,5 +109,5 @@
     <string name="Bienvenida">Bienvenido a RentApp</string>
 
     <string name="tv_credenciales">Credenciales</string>
-
+    <string name="vehiculo_seleccionado">Vehiculo Seleccionado</string>
 </resources>

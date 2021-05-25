@@ -66,6 +66,13 @@
             android:text="RESERVAS" />
 
         <Button
+            android:id="@+id/btn_reservas2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Actividad_Ver_Reservas"
+            android:text="RESERVAS" />
+
+        <Button
             android:id="@+id/btn_prueba_login3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
