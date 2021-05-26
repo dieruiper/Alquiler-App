@@ -90,6 +90,12 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         startActivityForResult(mapas_adelante,100);
     }
 
+   /* public void Actividad_Maps2 (View view){
+
+        Intent mapas_adelante = new Intent(getApplicationContext(), Mapa_con_las_oficinas.class);
+        startActivityForResult(mapas_adelante,101);
+    }*/
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
