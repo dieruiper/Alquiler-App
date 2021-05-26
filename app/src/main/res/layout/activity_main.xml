@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="376dp"
-        android:layout_height="402dp"
+        android:layout_height="582dp"
         android:layout_marginTop="80dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Actividad_Ver_Reservas"
-            android:text="RESERVAS" />
+            android:text=" VER RESERVAS FILTRADAS" />
 
         <Button
             android:id="@+id/btn_prueba_login3"
