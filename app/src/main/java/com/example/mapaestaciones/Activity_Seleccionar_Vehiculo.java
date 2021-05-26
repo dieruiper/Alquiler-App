@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -46,8 +47,9 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         String nombreOficina = elugar_resumen;
-        ArrayList<Vehiculo> vehiculos_no_disponibles = new ArrayList<>();
-        ArrayList<Vehiculo> vehiculos = new ArrayList<>();
+        ArrayList<String> prueba = new ArrayList<>();
+        ArrayList<Reserva> vehiculos_no_disponibles = new ArrayList<>();
+        ArrayList<Vehiculo> todos_vehiculos = new ArrayList<>();
         ArrayList<Vehiculo> vehiculos_disponibles = new ArrayList<>();
         String fechaInicio = efecha_resumen;
         String fechaFin = efecha2_resumen;
@@ -66,36 +68,37 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
         //Cursor fila = BaseDeDatos.rawQuery("select * from vehiculos where nombreOficina = '"+nombreOficina+"' in (select  nombreOficina from vehiculos) and nombreOficina in (select nombreOficina from reservas where nombreOficina not between fechaInicio and fechaFin )" , null);
 
         //modificado solo consulta en reserva
-        Cursor no_disponibles = BaseDeDatos.rawQuery("select fechaInicio,fechaFin from reservas where nombreOficina = '"+nombreOficina+"' and reservas.fechaInicio not between reservas.fechaInicio ='"+fechaInicio+"' and reservas.fechaFin = '"+fechaFin+"'",null);
+        //Cursor no_disponibles = BaseDeDatos.rawQuery("select * from reservas where nombreOficina = '"+nombreOficina+"' and ((fechaInicio between fechaInicio ='"+fechaInicio+"' and fechaFin = '"+fechaFin+"') and (fechaFin between fechaInicio ='"+fechaInicio+"' and fechaFin = '"+fechaFin+"'))",null);
+        Cursor no_disponibles = BaseDeDatos.rawQuery("select * from reservas where nombreOficina = '"+nombreOficina+"' and ((fechaInicio between fechaInicio ='"+fechaInicio+"' and fechaFin = '"+fechaFin+"') or (fechaFin between fechaInicio ='"+fechaInicio+"' and fechaFin = '"+fechaFin+"'))" ,null);
         if(no_disponibles.moveToFirst()){
             do{
-                Vehiculo vehiculo = new Vehiculo(no_disponibles.getString(0),no_disponibles.getString(1),
-                        no_disponibles.getString(2), no_disponibles.getString(3),
-                        no_disponibles.getString(4),no_disponibles.getDouble(5),
-                        no_disponibles.getString(6));
-                vehiculos_no_disponibles.add(vehiculo);
+                Reserva reserva = new Reserva(no_disponibles.getInt(0),no_disponibles.getString(1),
+                        no_disponibles.getString(2),no_disponibles.getString(3),no_disponibles.getString(4),no_disponibles.getString(5));
+                vehiculos_no_disponibles.add(reserva);
+                //prueba.add(reserva.getMatricula());
             }while (no_disponibles.moveToNext());
         }
 
         //obtengo todos los vehículos
-        Cursor todos = BaseDeDatos.rawQuery("select * from vehiculos", null);
+        //Cursor todos = BaseDeDatos.rawQuery("select * from vehiculos", null);
+        Cursor todos = BaseDeDatos.rawQuery("select * from vehiculos where nombreOficina = '"+nombreOficina+"'", null);
         if(todos.moveToFirst()){
             do{
                 Vehiculo vehiculo = new Vehiculo(todos.getString(0),todos.getString(1),
                         todos.getString(2), todos.getString(3),
                         todos.getString(4),todos.getDouble(5),
                         todos.getString(6));
-                vehiculos.add(vehiculo);
+                todos_vehiculos.add(vehiculo);
             }while (todos.moveToNext());
         }
         BaseDeDatos.close();
 
         //ya tengo los disponibles y los no disponibles en dos listas, comparos sus pk(son las matriculas) si son distintas inserto los vehículos en una lista de disponibles
-        for (int i=0;i < vehiculos.size();i++){
+        for (int i=0;i < todos_vehiculos.size();i++){
             for(int j=0;j < vehiculos_no_disponibles.size();j++){
 
-                if(!(vehiculos.get(i).getMatricula().equals(vehiculos_no_disponibles.get(j).getMatricula()))){
-                    vehiculos_disponibles.add(vehiculos.get(i));
+                if(!(todos_vehiculos.get(i).getMatricula().equals(vehiculos_no_disponibles.get(j).getMatricula()))){
+                    vehiculos_disponibles.add(todos_vehiculos.get(i));
                 }
             }
         }

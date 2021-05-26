@@ -21,6 +21,9 @@ public class Reserva {
         this.dni = dni;
 
     }
+    public String getMatricula() {
+        return matricula;
+    }
 
     public String toString(){
         return codigo +" - "+ dni +" - "+ matricula;
