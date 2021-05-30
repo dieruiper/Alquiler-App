@@ -10,12 +10,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.sql.Date;
 import java.util.ArrayList;
 
 public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
-    private ListView lv5;
+    private VehiculoAdapter vAdapter;
     TextView tv_lugar_recogida,tv_lugar_entrega,tv_fecha_recogida,tv_fecha_entrega;
     String efecha_resumen,efecha2_resumen,elugar_resumen,fechaInicio,fechaFin;
 
@@ -23,14 +25,13 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_seleccionar_vehiculo);
-    lv5=(ListView)findViewById(R.id.lv5);
         Intent me=getIntent();
         efecha_resumen=me.getStringExtra("es_efecha");
         efecha2_resumen=me.getStringExtra("es_efecha2");
         elugar_resumen=me.getStringExtra("es_elugar");
         //String elugar2_resumen=me.getStringExtra("es_elugar2");
 
-        tv_lugar_entrega = findViewById(R.id.elugar_recogida_resumen);
+        //tv_lugar_entrega = findViewById(R.id.elugar_recogida_resumen);
         //tv_lugar_entrega.setText(elugar2_resumen);
         tv_lugar_recogida = findViewById(R.id.elugar_devolucion_resumen);
         tv_lugar_recogida.setText(elugar_resumen);
@@ -51,9 +52,9 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
     String fechaInicio = splitInicio1+"-"+splitInicio2+"-"+splitInicio3;
     String fechaFin = splitFin1+"-"+splitFin2+"-"+splitFin3;
     String nombreOficina = elugar_resumen;
-    ArrayList<String> ocupados = new ArrayList<String>();
-    ArrayList<String> todos_vehiculos = new ArrayList<>();
-    ArrayList<String> disponibles = new ArrayList<>();
+    ArrayList<Reserva> ocupados = new ArrayList<>();
+    ArrayList<Vehiculo> todos_vehiculos = new ArrayList<>();
+    ArrayList<Vehiculo> disponibles = new ArrayList<>();
     AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
     SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
     //Cursor fila = BaseDeDatos.rawQuery("select * from reservas ", null);
@@ -62,7 +63,7 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
         do{
             Reserva reserva = new Reserva(fila.getInt(0),fila.getString(1),
                     fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5));
-            ocupados.add(reserva.getMatricula());
+            ocupados.add(reserva);
         }while (fila.moveToNext());
     }
     Cursor todos = BaseDeDatos.rawQuery("select * from vehiculos where nombreOficina = '"+nombreOficina+"'", null);
@@ -72,7 +73,7 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
                     todos.getString(2), todos.getString(3),
                     todos.getString(4), todos.getDouble(5),
                     todos.getString(6));
-            todos_vehiculos.add(vehiculo.getMatricula());
+            todos_vehiculos.add(vehiculo);
         } while (todos.moveToNext());
     }
         if(ocupados.isEmpty()==true) {
@@ -82,15 +83,22 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
         }else {
             for (int i = 0; i < todos_vehiculos.size(); i++) {
                 for (int j = 0; j < ocupados.size(); j++) {
-                    if ((todos_vehiculos.get(i).equals(ocupados.get(j))) == false) {
+                    if ((todos_vehiculos.get(i).getMatricula().equals(ocupados.get(j).getMatricula())) == false) {
                         disponibles.add(todos_vehiculos.get(i));
                     }
                 }
             }
         }
-    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_veroficinas,disponibles);
-        lv5.setAdapter(adapter);
-
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_vehiculos);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        //este es del método original
+        /*vAdapter = new VehiculoAdapter(lista_vehiculos);
+        recyclerView.setAdapter(vAdapter);
+         */
+        //quizás no lo muestre por el rView sino prueba con un list o algo parecido, mas sencillo de implementar
+        vAdapter = new VehiculoAdapter(disponibles);
+        recyclerView.setAdapter(vAdapter);
     }
 
     public void volver_reserva_vehiculos(View view){

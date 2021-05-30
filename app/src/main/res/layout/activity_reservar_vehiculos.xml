@@ -20,65 +20,56 @@
         android:id="@+id/punto_recogida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Punto de recogida"
+        android:layout_marginTop="148dp"
+        android:text="Día de recogida"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/consultar_disponibilidad" />
-
-    <EditText
-        android:id="@+id/elugar"
-        android:layout_width="164dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/blugar"
-        app:layout_constraintTop_toBottomOf="@+id/punto_recogida" />
 
     <EditText
         android:id="@+id/elugar2"
         android:layout_width="164dp"
         android:layout_height="45dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="140dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/blugar2"
-        app:layout_constraintTop_toBottomOf="@+id/punto_recogida2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bfecha"
         android:layout_width="143dp"
         android:layout_height="39dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
         android:onClick="onClick"
         android:text="FECHA"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blugar" />
+        app:layout_constraintTop_toBottomOf="@+id/punto_recogida" />
 
     <EditText
         android:id="@+id/efecha"
         android:layout_width="179dp"
         android:layout_height="57dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="84dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/bfecha"
-        app:layout_constraintTop_toBottomOf="@+id/elugar" />
+        app:layout_constraintTop_toBottomOf="@+id/elugar2" />
 
     <TextView
         android:id="@+id/punto_recogida2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Punto de devolucion"
+        android:layout_marginTop="100dp"
+        android:text="Día de devolucion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bfecha" />
 
@@ -86,45 +77,44 @@
         android:id="@+id/bfecha2"
         android:layout_width="143dp"
         android:layout_height="39dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="252dp"
         android:onClick="onClick"
         android:text="FECHA"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blugar2" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/efecha2"
-        android:layout_width="196dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="180dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="116dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintHorizontal_bias="0.338"
         app:layout_constraintStart_toEndOf="@+id/bfecha2"
-        app:layout_constraintTop_toBottomOf="@+id/elugar2" />
-
-    <Button
-        android:id="@+id/blugar"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
-        android:onClick="Actividad_Maps"
-        android:text="Lugar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/punto_recogida" />
+        app:layout_constraintTop_toBottomOf="@+id/efecha" />
 
     <Button
         android:id="@+id/blugar2"
         android:layout_width="140dp"
         android:layout_height="40dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="144dp"
         android:onClick="Actividad_Maps"
         android:text="Lugar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/punto_recogida2" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/oficina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="12dp"
+        android:text="Oficina"
+        app:layout_constraintBottom_toTopOf="@+id/blugar2"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

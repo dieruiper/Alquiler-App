@@ -20,6 +20,7 @@
 
     /**Activity Reservar Vehículos*/
     <string name="punto_recogida">Punto de recogida</string>
+    <string name="oficina">Oficina</string>
     <string name="punto_devolucion">Punto de devolución</string>
     <string name="btn_fecha_inicio">Fecha</string>
     <string name="et_fecha_inicio"> </string>

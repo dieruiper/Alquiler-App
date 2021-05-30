@@ -28,17 +28,17 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         setContentView(R.layout.activity_reservar_vehiculos);
 
         et_lugar_entrega = (EditText) findViewById(R.id.elugar2);
-        et_lugar_recogida = (EditText) findViewById(R.id.elugar);
+        //et_lugar_recogida = (EditText) findViewById(R.id.elugar);
         btn_fecha_inicio=(Button) findViewById(R.id.bfecha);
         et_fecha_inicio=(EditText)findViewById(R.id.efecha);
         btn_fecha_fin=(Button) findViewById(R.id.bfecha2);
         et_fecha_fin=(EditText)findViewById(R.id.efecha2);
-        btn_lugar_recogida = (Button)findViewById(R.id.blugar);
+       // btn_lugar_recogida = (Button)findViewById(R.id.blugar);
         btn_lugar_entrega = (Button)findViewById(R.id.blugar2);
 
         title2 = getIntent().getStringExtra("title");
         title = getIntent().getStringExtra("title");
-        et_lugar_recogida.setText(title);
+        //et_lugar_recogida.setText(title);
         et_lugar_entrega.setText(title2);
 
     }
@@ -132,8 +132,8 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
             double lng=(double) data.getExtras().get("lng");
 
             double lat=data.getDoubleExtra("lat",0.0);
-            TextView elugar =findViewById(R.id.elugar);
-            elugar.setText("Long: " + lng + "Lat :" + lat);
+            //TextView elugar =findViewById(R.id.elugar);
+            //elugar.setText("Long: " + lng + "Lat :" + lat);
 
         }
 
@@ -146,7 +146,7 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         String s_efecha =et_fecha_inicio.getText().toString().trim();
         String s_efecha2 =et_fecha_fin.getText().toString().trim();
         String s_elugar = et_lugar_entrega.getText().toString().trim();
-        String s_elugar2 = et_lugar_recogida.getText().toString().trim();
+        //String s_elugar2 = et_lugar_recogida.getText().toString().trim();
 
         myIntent.putExtra("es_efecha", s_efecha);
         myIntent.putExtra("es_efecha2",  s_efecha2);
