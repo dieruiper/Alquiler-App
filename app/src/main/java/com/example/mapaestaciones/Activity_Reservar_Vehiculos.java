@@ -59,8 +59,20 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    et_fecha_inicio.setText(year + "/" + (monthOfYear + 1) + "/" + dayOfMonth);
+                    if (monthOfYear + 1 > 10) {
+                        if (monthOfYear + 1 > 10) {
+                            et_fecha_inicio.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                        } else {
+                            et_fecha_inicio.setText(year + "-" + (monthOfYear + 1) + "-0" + dayOfMonth);
+                        }
+                    } else {
+                        if (dayOfMonth >= 10) {
+                            et_fecha_inicio.setText(year + "-0" + (monthOfYear + 1) + "-" + dayOfMonth);
+                        } else {
+                            et_fecha_inicio.setText(year + "-0" + (monthOfYear + 1) + "-0" + dayOfMonth);
 
+                        }
+                    }
                 }
             }
                     , ano, mes, dia);
@@ -75,8 +87,20 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    et_fecha_fin.setText(year + "/" + (monthOfYear + 1) + "/" + dayOfMonth);
+                    if (monthOfYear + 1 > 10) {
+                        if (monthOfYear + 1 > 10) {
+                            et_fecha_fin.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                        } else {
+                            et_fecha_fin.setText(year + "-" + (monthOfYear + 1) + "-0" + dayOfMonth);
+                        }
+                    } else {
+                        if (dayOfMonth >= 10) {
+                            et_fecha_fin.setText(year + "-0" + (monthOfYear + 1) + "-" + dayOfMonth);
+                        } else {
+                            et_fecha_fin.setText(year + "-0" + (monthOfYear + 1) + "-0" + dayOfMonth);
 
+                        }
+                    }
                 }
             }
                     , ano, mes, dia);

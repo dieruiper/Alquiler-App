@@ -78,6 +78,7 @@
     /* Actividad Resumen_Reserva*/
     <string name="fecha_recogida_resumen">Fecha recogida</string>
     <string name="lugar_recogida_resumen">Lugar recogida</string>
+    <string name="fecha_devolucion_resumen">Fecha devolucion</string>
     <string name="lugar_devolucion_resumen">Lugar devolucion</string>
     <string name="volver_reserva_vehiculos">Volver</string>
     <string name="continuarRegistroUsuario">Continuar</string>

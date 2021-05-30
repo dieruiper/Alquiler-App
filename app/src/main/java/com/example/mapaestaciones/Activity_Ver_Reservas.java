@@ -20,13 +20,15 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
         setContentView(R.layout.activity__ver__reservas);
         lv3=(ListView)findViewById(R.id.lv3);
         lv4=(ListView)findViewById(R.id.lv4);
+        String fechaInicio = "2021-05-13";
+        String fechaFin = "2021-05-16";
         ArrayList<String> lista = new ArrayList<String>();
         ArrayList<String> todos_vehiculos = new ArrayList<>();
         ArrayList<String> disponibles = new ArrayList<>();
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
         //Cursor fila = BaseDeDatos.rawQuery("select * from reservas ", null);
-        Cursor fila = BaseDeDatos.rawQuery("select * from reservas where nombreOficina = 'Sevilla' and ((fechaInicio between '2021-05-24' and '2021-05-27') or (fechaFin between '2021-05-24' and '2021-05-27'))" ,null);
+        Cursor fila = BaseDeDatos.rawQuery("select * from reservas where nombreOficina = 'Sevilla' and ((fechaInicio between '"+fechaInicio+"' and '"+fechaFin+"') or (fechaFin between '"+fechaInicio+"' and '"+fechaFin+"'))" ,null);
         if(fila.moveToFirst()){
             do{
                 Reserva reserva = new Reserva(fila.getInt(0),fila.getString(1),
