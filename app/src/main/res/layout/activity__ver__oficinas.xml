@@ -33,8 +33,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/round_border"
         android:onClick="ConsultarOficina"
         android:text="@string/btn_ver2"
+        app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,63 +21,72 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Actividad_Reserva_adelante"
-            android:text="RESERVAR VEHICULO" />
+            android:text="RESERVAR VEHICULO"
+            app:backgroundTint="@color/blue"/>
 
         <Button
             android:id="@+id/btn_acciones_bd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Actividad_Acciones_BD"
-            android:text="acciones bd" />
+            android:text="acciones bd"
+            app:backgroundTint="@color/blue"/>
 
         <Button
             android:id="@+id/btn_ver_veh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Actividad_Ver_Vehiculos"
-            android:text="ver vehiculos" />
+            android:text="ver vehiculos"
+            app:backgroundTint="@color/blue"/>
 
         <Button
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Actividad_Acciones_Oficinas_BD"
-            android:text="ACCIONES OFICINAS BD" />
+            android:text="ACCIONES OFICINAS BD"
+            app:backgroundTint="@color/blue"/>
 
         <Button
             android:id="@+id/btn_ver_ofi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Actividad_Ver_Oficinas"
-            android:text="VER OFICINAS" />
+            android:text="VER OFICINAS"
+            app:backgroundTint="@color/blue"/>
 
         <Button
             android:id="@+id/btn_prueba_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Actividad_Prueba_Login"
-            android:text="Prueba Login" />
+            android:text="Prueba Login"
+            app:backgroundTint="@color/blue"/>
 
         <Button
             android:id="@+id/btn_reservas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Actividad_Acciones_Reservas_BD"
-            android:text="RESERVAS" />
+            android:text="RESERVAS"
+            app:backgroundTint="@color/blue"/>
 
         <Button
             android:id="@+id/btn_reservas2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Actividad_Ver_Reservas"
-            android:text=" VER RESERVAS FILTRADAS" />
+            android:text=" VER RESERVAS FILTRADAS"
+            app:backgroundTint="@color/blue"/>
 
         <Button
             android:id="@+id/btn_prueba_login3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Cerrar_Sesion"
-            android:text="@string/cerrar_sesion" />
+            android:text="@string/cerrar_sesion"
+            app:backgroundTint="@color/blue"/>
 
     </LinearLayout>
 

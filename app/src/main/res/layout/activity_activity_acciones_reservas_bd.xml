@@ -12,19 +12,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="424dp"
-        android:text="Registrar Reserva"
+        android:background="@drawable/round_border"
         android:onClick="RegistrarReserva"
+        android:text="Registrar Reserva"
+        app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_consultar_res"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="186dp"
+        android:layout_height="52dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="480dp"
+        android:background="@drawable/round_border"
         android:onClick="BuscarReserva"
         android:text="Consultar Reserva"
+        app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,19 +38,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="540dp"
+        android:background="@drawable/round_border"
         android:onClick="ModificarReserva"
         android:text="Modificar Reserva"
+        app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_eliminar_res"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="192dp"
+        android:layout_height="44dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="600dp"
+        android:background="@drawable/round_border"
         android:onClick="EliminarReserva"
         android:text="Eliminar Reserva"
+        app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -9,10 +9,12 @@
         android:id="@+id/consultar_disponibilidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="624dp"
+        android:background="@drawable/round_border"
         android:onClick="Consultar_Disponibilidad"
         android:text="@string/consultar_disponibilidad"
+        app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,12 +22,12 @@
         android:id="@+id/punto_recogida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="252dp"
         android:text="Día de recogida"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/consultar_disponibilidad" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/elugar2"
@@ -44,10 +46,12 @@
         android:id="@+id/bfecha"
         android:layout_width="143dp"
         android:layout_height="39dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/round_border"
         android:onClick="onClick"
         android:text="FECHA"
+        app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/punto_recogida" />
 
@@ -56,7 +60,7 @@
         android:layout_width="179dp"
         android:layout_height="57dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="152dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/bfecha"
@@ -66,10 +70,10 @@
         android:id="@+id/punto_recogida2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:text="Día de devolucion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bfecha" />
 
@@ -77,10 +81,12 @@
         android:id="@+id/bfecha2"
         android:layout_width="143dp"
         android:layout_height="39dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="252dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="164dp"
+        android:background="@drawable/round_border"
         android:onClick="onClick"
         android:text="FECHA"
+        app:backgroundTint="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -88,11 +94,11 @@
         android:id="@+id/efecha2"
         android:layout_width="180dp"
         android:layout_height="63dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="120dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toEndOf="@+id/bfecha2"
         app:layout_constraintTop_toBottomOf="@+id/efecha" />
 
@@ -102,8 +108,10 @@
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="144dp"
+        android:background="@drawable/round_border"
         android:onClick="Actividad_Maps"
         android:text="Lugar"
+        app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -111,9 +119,11 @@
         android:id="@+id/oficina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginBottom="68dp"
         android:text="Oficina"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/blugar2"
         app:layout_constraintStart_toStartOf="parent" />
 

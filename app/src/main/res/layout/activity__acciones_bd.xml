@@ -81,6 +81,7 @@
         android:layout_marginTop="68dp"
         android:onClick="Registrar"
         android:text="@string/BotonRegistrar"
+        app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/real_precio" />
@@ -91,6 +92,7 @@
         android:layout_height="wrap_content"
         android:onClick="Buscar"
         android:text="@string/BotonBuscar"
+        app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
@@ -101,6 +103,7 @@
         android:layout_height="wrap_content"
         android:onClick="Modificar"
         android:text="@string/BotonModificar"
+        app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
@@ -111,6 +114,7 @@
         android:layout_height="wrap_content"
         android:onClick="Eliminar"
         android:text="@string/BotonEliminar"
+        app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button7" />
