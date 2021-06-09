@@ -33,12 +33,14 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
 
         //tv_lugar_entrega = findViewById(R.id.elugar_recogida_resumen);
         //tv_lugar_entrega.setText(elugar2_resumen);
+        /*
         tv_lugar_recogida = findViewById(R.id.elugar_devolucion_resumen);
         tv_lugar_recogida.setText(elugar_resumen);
         tv_fecha_recogida=findViewById(R.id.fecha_recogida_resumen);
         tv_fecha_recogida.setText(efecha_resumen);
         tv_fecha_entrega=findViewById(R.id.efecha2_resumen);
         tv_fecha_entrega.setText(efecha2_resumen);
+        */
 
     //Date fechaInicio = Date.valueOf(efecha_resumen);
     //Date fechaFin = Date.valueOf(efecha2_resumen);
