@@ -36,8 +36,9 @@
                 android:id="@+id/btn_seleccionar_vehiculo"
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
-                android:text="@string/btn_seleccionar_veh"
-                android:autoSizeMaxTextSize="@dimen/cardview_compat_inset_shadow"/>
+                android:autoSizeMaxTextSize="@dimen/cardview_compat_inset_shadow"
+                android:onClick="seleccionar_Vehiculo"
+                android:text="@string/btn_seleccionar_veh" />
 
             <ImageView
                 android:layout_width="150dp"

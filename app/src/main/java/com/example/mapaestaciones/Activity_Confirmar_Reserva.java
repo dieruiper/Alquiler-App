@@ -10,6 +10,7 @@ public class Activity_Confirmar_Reserva extends AppCompatActivity {
     String efecha_resumen,efecha2_resumen,elugar_resumen;
     TextView tv_lugar_recogida,tv_lugar_entrega,tv_fecha_recogida,tv_fecha_entrega;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__confirmar__reserva);

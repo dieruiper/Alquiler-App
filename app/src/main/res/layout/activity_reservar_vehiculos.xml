@@ -10,24 +10,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="624dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/round_border"
         android:onClick="Consultar_Disponibilidad"
         android:text="@string/consultar_disponibilidad"
         app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/bfecha2" />
 
     <TextView
         android:id="@+id/punto_recogida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="28dp"
         android:text="Día de recogida"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/elugar2" />
 
     <EditText
         android:id="@+id/elugar2"
@@ -46,8 +46,8 @@
         android:id="@+id/bfecha"
         android:layout_width="143dp"
         android:layout_height="39dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/round_border"
         android:onClick="onClick"
         android:text="FECHA"
@@ -59,18 +59,18 @@
         android:id="@+id/efecha"
         android:layout_width="179dp"
         android:layout_height="57dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/bfecha"
-        app:layout_constraintTop_toBottomOf="@+id/elugar2" />
+        app:layout_constraintTop_toBottomOf="@+id/punto_recogida" />
 
     <TextView
         android:id="@+id/punto_recogida2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="44dp"
         android:text="Día de devolucion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
@@ -81,26 +81,26 @@
         android:id="@+id/bfecha2"
         android:layout_width="143dp"
         android:layout_height="39dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/round_border"
         android:onClick="onClick"
         android:text="FECHA"
         app:backgroundTint="@color/blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/punto_recogida2" />
 
     <EditText
         android:id="@+id/efecha2"
         android:layout_width="180dp"
         android:layout_height="63dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toEndOf="@+id/bfecha2"
-        app:layout_constraintTop_toBottomOf="@+id/efecha" />
+        app:layout_constraintTop_toBottomOf="@+id/punto_recogida2" />
 
     <Button
         android:id="@+id/blugar2"

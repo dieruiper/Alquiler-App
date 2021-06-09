@@ -70,7 +70,6 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
                             et_fecha_inicio.setText(year + "-0" + (monthOfYear + 1) + "-" + dayOfMonth);
                         } else {
                             et_fecha_inicio.setText(year + "-0" + (monthOfYear + 1) + "-0" + dayOfMonth);
-
                         }
                     }
                 }

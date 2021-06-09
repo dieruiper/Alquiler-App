@@ -10,11 +10,12 @@
         android:id="@+id/linearLayout"
         android:layout_width="376dp"
         android:layout_height="582dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/tv_credenciales">
 
         <Button
             android:id="@+id/btn_res_veh"
@@ -22,7 +23,7 @@
             android:layout_height="wrap_content"
             android:onClick="Actividad_Reserva_adelante"
             android:text="RESERVAR VEHICULO"
-            app:backgroundTint="@color/blue"/>
+            app:backgroundTint="@color/blue" />
 
         <Button
             android:id="@+id/btn_acciones_bd"
@@ -30,7 +31,7 @@
             android:layout_height="wrap_content"
             android:onClick="Actividad_Acciones_BD"
             android:text="acciones bd"
-            app:backgroundTint="@color/blue"/>
+            app:backgroundTint="@color/blue" />
 
         <Button
             android:id="@+id/btn_ver_veh"
@@ -38,7 +39,7 @@
             android:layout_height="wrap_content"
             android:onClick="Actividad_Ver_Vehiculos"
             android:text="ver vehiculos"
-            app:backgroundTint="@color/blue"/>
+            app:backgroundTint="@color/blue" />
 
         <Button
             android:id="@+id/button4"
@@ -46,7 +47,7 @@
             android:layout_height="wrap_content"
             android:onClick="Actividad_Acciones_Oficinas_BD"
             android:text="ACCIONES OFICINAS BD"
-            app:backgroundTint="@color/blue"/>
+            app:backgroundTint="@color/blue" />
 
         <Button
             android:id="@+id/btn_ver_ofi"
@@ -54,7 +55,7 @@
             android:layout_height="wrap_content"
             android:onClick="Actividad_Ver_Oficinas"
             android:text="VER OFICINAS"
-            app:backgroundTint="@color/blue"/>
+            app:backgroundTint="@color/blue" />
 
         <Button
             android:id="@+id/btn_prueba_login"
@@ -62,7 +63,7 @@
             android:layout_height="wrap_content"
             android:onClick="Actividad_Prueba_Login"
             android:text="Prueba Login"
-            app:backgroundTint="@color/blue"/>
+            app:backgroundTint="@color/blue" />
 
         <Button
             android:id="@+id/btn_reservas"
@@ -70,7 +71,7 @@
             android:layout_height="wrap_content"
             android:onClick="Actividad_Acciones_Reservas_BD"
             android:text="RESERVAS"
-            app:backgroundTint="@color/blue"/>
+            app:backgroundTint="@color/blue" />
 
         <Button
             android:id="@+id/btn_reservas2"
@@ -78,7 +79,7 @@
             android:layout_height="wrap_content"
             android:onClick="Actividad_Ver_Reservas"
             android:text=" VER RESERVAS FILTRADAS"
-            app:backgroundTint="@color/blue"/>
+            app:backgroundTint="@color/blue" />
 
         <Button
             android:id="@+id/btn_prueba_login3"
@@ -86,7 +87,7 @@
             android:layout_height="wrap_content"
             android:onClick="Cerrar_Sesion"
             android:text="@string/cerrar_sesion"
-            app:backgroundTint="@color/blue"/>
+            app:backgroundTint="@color/blue" />
 
     </LinearLayout>
 
@@ -95,8 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
-        android:layout_marginTop="40dp"
         android:text="@string/tv_credenciales"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        tools:layout_editor_absoluteY="32dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

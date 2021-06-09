@@ -55,9 +55,10 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
     ArrayList<Reserva> ocupados = new ArrayList<>();
     ArrayList<Vehiculo> todos_vehiculos = new ArrayList<>();
     ArrayList<Vehiculo> disponibles = new ArrayList<>();
+
     AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
     SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
-    //Cursor fila = BaseDeDatos.rawQuery("select * from reservas ", null);
+
     Cursor fila = BaseDeDatos.rawQuery("select * from reservas where nombreOficina = '"+nombreOficina+"' and ((fechaInicio between '"+fechaInicio+"' and '"+fechaFin+"') or (fechaFin between '"+fechaInicio+"' and '"+fechaFin+"'))" ,null);
         if(fila.moveToFirst()){
         do{
@@ -66,6 +67,7 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
             ocupados.add(reserva);
         }while (fila.moveToNext());
     }
+
     Cursor todos = BaseDeDatos.rawQuery("select * from vehiculos where nombreOficina = '"+nombreOficina+"'", null);
         if(todos.moveToFirst()) {
         do {
@@ -76,6 +78,7 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
             todos_vehiculos.add(vehiculo);
         } while (todos.moveToNext());
     }
+
         if(ocupados.isEmpty()==true) {
             for (int i = 0; i < todos_vehiculos.size(); i++) {
                 disponibles.add(todos_vehiculos.get(i));
@@ -89,6 +92,7 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
                 }
             }
         }
+
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_vehiculos);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -105,15 +109,9 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
         finish();
     }
 
-    public void confirmar_Reserva(View view){
+    public void seleccionar_Vehiculo(View view){
         Intent i = new Intent(this, Activity_Confirmar_Reserva.class );
-       // String c_efecha =efecha_resumen;
-        //String c_efecha2 =efecha2_resumen;
         String c_elugar = elugar_resumen;
-        //String s_elugar2 = et_lugar_recogida.getText().toString().trim();
-
-        //i.putExtra("es_efecha", c_efecha);
-        //i.putExtra("es_efecha2",  c_efecha2);
         i.putExtra("es_elugar",  c_elugar);
         startActivity(i);
     }

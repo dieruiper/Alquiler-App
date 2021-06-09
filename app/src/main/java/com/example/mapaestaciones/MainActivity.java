@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
-        tv_credenciales.setText(preferences.getString("usuario", ""));
+        tv_credenciales.setText(preferences.getString("usuario", "AAAAAA"));
     }
 
     /*public void Actividad_Maps (View view){

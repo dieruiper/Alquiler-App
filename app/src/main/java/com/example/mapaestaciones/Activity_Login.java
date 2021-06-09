@@ -90,6 +90,7 @@ public class Activity_Login extends AppCompatActivity {
         SharedPreferences.Editor obj_editor = preferences.edit();
         obj_editor.putString("nombre",u.getNombre());
         obj_editor.putString("apellidos",u.getApellidos());
+        obj_editor.putString("usuario",u.getUsuario());
         obj_editor.putString("dni",u.getDni());
         obj_editor.putString("telefono", u.getTelefono());
         obj_editor.putString("email",u.getEmail());
