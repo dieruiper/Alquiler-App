@@ -72,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginTop="24dp"
+        android:text="@string/fecha_devolucion_resumen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fechaInicio_conf" />
 
@@ -86,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/dni_conf" />
 
     <TextView
-        android:id="@+id/vehiculo_conf"
+        android:id="@+id/matricula_conf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
@@ -106,6 +107,6 @@
         android:onClick="Confirmar_reserva"
         android:text="@string/btn_confirmarReserva"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vehiculo_conf" />
+        app:layout_constraintTop_toBottomOf="@+id/matricula_conf" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,7 +37,7 @@ public class Activity_Login extends AppCompatActivity {
         btnRegistrate=(Button)findViewById(R.id.btnRegistrate);
         ArrayList<String> l = new ArrayList<String>();
 
-        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        //SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
     }
 
     public void Registrate(View view){

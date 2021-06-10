@@ -130,7 +130,7 @@
         android:fontFamily="@font/neutrons"
         android:hint="@string/btnReservaVehiculo"
         android:onClick="RegistrarUsuario"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textColorHighlight="@color/yellow"
         android:textColorHint="@color/yellow"
         app:layout_constraintEnd_toEndOf="parent"

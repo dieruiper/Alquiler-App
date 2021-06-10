@@ -27,6 +27,12 @@
             android:layout_height="wrap_content"
             android:textColor="@color/cardview_dark_background" />
 
+        <TextView
+            android:id="@+id/v_matricula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cardview_dark_background" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -37,7 +43,6 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:autoSizeMaxTextSize="@dimen/cardview_compat_inset_shadow"
-                android:onClick="seleccionar_Vehiculo"
                 android:text="@string/btn_seleccionar_veh" />
 
             <ImageView

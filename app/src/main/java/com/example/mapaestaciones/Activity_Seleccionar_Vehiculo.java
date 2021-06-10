@@ -1,6 +1,8 @@
 package com.example.mapaestaciones;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -18,7 +20,7 @@ import java.util.ArrayList;
 
 public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
     private VehiculoAdapter vAdapter;
-    TextView tv_lugar_recogida,tv_lugar_entrega,tv_fecha_recogida,tv_fecha_entrega;
+    TextView tv_lugar_recogida,tv_fecha_recogida,tv_fecha_entrega;
     String efecha_resumen,efecha2_resumen,elugar_resumen,fechaInicio,fechaFin;
 
     @Override
@@ -27,13 +29,9 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
         setContentView(R.layout.activity_seleccionar_vehiculo);
 
         Intent me=getIntent();
-        efecha_resumen=me.getStringExtra("es_efecha");
-        efecha2_resumen=me.getStringExtra("es_efecha2");
-        elugar_resumen=me.getStringExtra("es_elugar");
-        //String elugar2_resumen=me.getStringExtra("es_elugar2");
-
-        //tv_lugar_entrega = findViewById(R.id.elugar_recogida_resumen);
-        //tv_lugar_entrega.setText(elugar2_resumen);
+        efecha_resumen=me.getStringExtra("fecha_inicio");
+        efecha2_resumen=me.getStringExtra("fecha_fin");
+        elugar_resumen=me.getStringExtra("lugar_recogida");
 
         tv_lugar_recogida = findViewById(R.id.elugar_devolucion_resumen);
         tv_lugar_recogida.setText(elugar_resumen);
@@ -42,6 +40,12 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
         tv_fecha_entrega=findViewById(R.id.efecha2_resumen);
         tv_fecha_entrega.setText(efecha2_resumen);
 
+        SharedPreferences p = getSharedPreferences("adminReserva", Context.MODE_PRIVATE);
+        SharedPreferences.Editor obj_editor = p.edit();
+        obj_editor.putString("fecha_recogida",efecha_resumen);
+        obj_editor.putString("fecha_entrega",efecha2_resumen);
+        obj_editor.putString("lugar_recogida",elugar_resumen);
+        obj_editor.commit();
 
         //Date fechaInicio = Date.valueOf(efecha_resumen);
         //Date fechaFin = Date.valueOf(efecha2_resumen);
@@ -113,14 +117,8 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
     }
 
     public void seleccionar_Vehiculo(View view){
-        Intent i = new Intent(this, Activity_Confirmar_Reserva.class );
 
-        String lugar = elugar_resumen;
-        String fecha_inicio = efecha_resumen;
-        String fecha_fin = efecha2_resumen;
-        i.putExtra("lugar",  lugar);
-        i.putExtra("fecha_inicio",  fecha_inicio);
-        i.putExtra("fecha_fin", fecha_fin);
+        Intent i = new Intent(this, Activity_Confirmar_Reserva.class );
 
         startActivity(i);
     }
