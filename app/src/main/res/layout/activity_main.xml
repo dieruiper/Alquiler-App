@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -21,9 +22,12 @@
             android:id="@+id/btnReservaVehiculo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/neutrons"
             android:hint="@string/btnReservaVehiculo"
             android:onClick="Actividad_Reserva_adelante"
-            app:backgroundTint="@color/blue" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:backgroundTint="@color/yellow" />
 
         <Button
             android:id="@+id/btn_acciones_bd"
@@ -31,15 +35,18 @@
             android:layout_height="wrap_content"
             android:hint="@string/btn_acciones_bd"
             android:onClick="Actividad_Acciones_BD"
-            app:backgroundTint="@color/blue" />
+            app:backgroundTint="@color/yellow" />
 
         <Button
             android:id="@+id/btn_ver_veh"
+            android:fontFamily="@font/neutrons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/btn_ver_veh"
             android:onClick="Actividad_Ver_Vehiculos"
-            app:backgroundTint="@color/blue" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:backgroundTint="@color/yellow" />
 
         <Button
             android:id="@+id/btnBDOficinas"
@@ -47,41 +54,54 @@
             android:layout_height="wrap_content"
             android:hint="@string/btnBDOficinas"
             android:onClick="Actividad_Acciones_Oficinas_BD"
-            app:backgroundTint="@color/blue" />
+            app:backgroundTint="@color/yellow" />
 
         <Button
             android:id="@+id/btn_ver_ofi"
+            android:fontFamily="@font/neutrons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/btn_ver_ofi"
             android:onClick="Actividad_Ver_Oficinas"
-            app:backgroundTint="@color/blue" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:backgroundTint="@color/yellow" />
 
         <Button
             android:id="@+id/btn_reservas"
+            android:fontFamily="@font/neutrons"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/btn_reservas"
             android:onClick="Actividad_Acciones_Reservas_BD"
-            app:backgroundTint="@color/blue" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:backgroundTint="@color/yellow" />
 
         <Button
             android:id="@+id/btn_prueba_login3"
+            android:fontFamily="@font/neutrons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/btn_prueba_login3"
             android:onClick="Cerrar_Sesion"
-            app:backgroundTint="@color/blue" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:backgroundTint="@color/yellow" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv_credenciales"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
         android:layout_marginTop="48dp"
+        android:drawableStart="@drawable/ic_person"
         android:text="@string/tv_credenciales"
+        android:textColor="@color/yellow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

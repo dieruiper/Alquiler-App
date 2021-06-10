@@ -97,11 +97,13 @@
 
     <Button
         android:id="@+id/btn_confirmarReserva"
-        android:onClick="Confirmar_reserva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
         android:layout_marginTop="52dp"
+        android:background="@drawable/round_border"
+        android:backgroundTint="@color/blue"
+        android:onClick="Confirmar_reserva"
         android:text="@string/btn_confirmarReserva"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vehiculo_conf" />

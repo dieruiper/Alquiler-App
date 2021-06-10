@@ -27,6 +27,9 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservar_vehiculos);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
         et_lugar_entrega = (EditText) findViewById(R.id.elugar2);
         //et_lugar_recogida = (EditText) findViewById(R.id.elugar);
         btn_fecha_inicio=(Button) findViewById(R.id.bfecha);

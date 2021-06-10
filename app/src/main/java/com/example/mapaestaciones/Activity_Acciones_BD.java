@@ -24,6 +24,10 @@ public class Activity_Acciones_BD extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__acciones_bd);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
         et_matricula = (EditText)findViewById(R.id.int_matricula);
         et_categoria = (EditText)findViewById(R.id.txt_categoria);
         et_marca = (EditText)findViewById(R.id.txt_marca);

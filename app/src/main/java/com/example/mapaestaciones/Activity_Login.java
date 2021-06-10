@@ -27,6 +27,10 @@ public class Activity_Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__login);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
         user=(EditText)findViewById(R.id.username);
         pass=(EditText)findViewById(R.id.password);
         btnEntrar=(Button)findViewById(R.id.btnEntrar);
