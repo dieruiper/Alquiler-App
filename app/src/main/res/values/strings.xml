@@ -12,27 +12,38 @@
     <string name="ajustes">Ajustes</string>
     <string name="ayuda">Ayuda</string>
 
+    /**Activity Main*/
+    <string name="btnReservaVehiculo">Reservar vehiculos</string>
+    <string name="btn_acciones_bd">Vehiculos BBDD</string>
+    <string name="btn_ver_veh">Vehiculos</string>
+    <string name="btnBDOficinas">Oficinas BBDD</string>
+    <string name="btn_ver_ofi">Oficinas</string>
+    <string name="btn_reservas">Reservas</string>
+    <string name="btn_prueba_login3">Cerrar sesion</string>
     /**Activity Ayuda*/
     <string name="correo_a_ayuda">Correo</string>
     <string name="nombre_a_ayuda">Nombre</string>
     <string name="apellidos_a_ayuda">Apellidos</string>
     <string name="telefono_a_ayuda">Teléfono</string>
 
+    <string name="et_fecha_inicio">Fecha de inicio</string>
+    <string name="et_fecha_fin">Fecha de fin</string>
+
     /**Activity Reservar Vehículos*/
     <string name="punto_recogida">Punto de recogida</string>
     <string name="oficina">Oficina</string>
     <string name="punto_devolucion">Punto de devolución</string>
     <string name="btn_fecha_inicio">Fecha</string>
-    <string name="et_fecha_inicio"> </string>
     <string name="button_consultar_disp">Consultar disponibilidad</string>
     <string name="btn_fecha_fin">Fecha</string>
-    <string name="et_fecha_fin"> </string>
     <string name="btn_mapa_reserva">Lugar</string>
     <string name="consultar_disponibilidad">Consultar disponibilidad</string>
     <string name="et_lugar_recogida">Lugar</string>
     <string name="et_lugar_entrega">Lugar</string>
     <string name="btn_lugar_recogida">Lugar de recogida</string>
     <string name="btn_lugar_entrega">Lugar de entrega</string>
+    <string name="txt_dia_recogida">Dia de recogida</string>
+    <string name="txt_dia_entrega">Dia de entrega</string>
 
     /*Activity Ver Vehículos*/
     <string name="tv1">Selecciona una Matricula</string>
@@ -60,6 +71,7 @@
     <string name="BotonRegistrarOficina">Registrar oficina</string>
     <string name="BotonConsultarOficina">Consultar oficina</string>
     <string name="BotonModificarOficina">Modificar oficina</string>
+    <string name="txt_EliminaOficina">Eliminar oficina</string>
 
     <string name="elugar_resumen">Lugar</string>
     <string name="efecha_resumen">fecha</string>
@@ -75,6 +87,10 @@
     <string name="txt_matricula_res">Matricula</string>
     <string name="txt_oficina_res">Oficina</string>
     <string name="txt_dni_res">DNI</string>
+    <string name="txt_registrarReserva">Registrar reserva</string>
+    <string name="txt_consultarReserva">Consultar reserva</string>
+    <string name="txt_modificarReserva">Modificar reserva</string>
+    <string name="txt_elminarReserva">Eliminar resreva</string>
 
     /* Actividad Resumen_Reserva*/
     <string name="fecha_recogida_resumen">Fecha recogida</string>
@@ -88,6 +104,8 @@
     <string name="fecha_recogida_resumen2">Fecha recogida</string>
     <string name="elugar_recogida_resumen2">Lugar recogida</string>
     <string name="efecha2_resumen2">Fecha devolucion</string>
+    <string name="btn_confirmarReserva">Confirmar Reserva</string>
+    <string name="et_vehiculoSeleccionado">Vehiculo seleccionado</string>
 
     /* Actividad Seleccionar_vehiculo */
     <string name="btn_seleccionar_veh">Seleccionar</string>

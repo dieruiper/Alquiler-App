@@ -8,55 +8,55 @@
 
     <Button
         android:id="@+id/btn_registrar_res"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="424dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/round_border"
         android:onClick="RegistrarReserva"
-        android:text="Registrar Reserva"
+        android:text="@string/txt_registrarReserva"
         app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_dni_res" />
 
     <Button
         android:id="@+id/btn_consultar_res"
-        android:layout_width="186dp"
-        android:layout_height="52dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="480dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_border"
         android:onClick="BuscarReserva"
-        android:text="Consultar Reserva"
+        android:text="@string/txt_consultarReserva"
         app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_registrar_res" />
 
     <Button
         android:id="@+id/btn_modificar_res"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/round_border"
         android:onClick="ModificarReserva"
-        android:text="Modificar Reserva"
+        android:text="@string/txt_modificarReserva"
         app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_consultar_res" />
 
     <Button
         android:id="@+id/btn_eliminar_res"
-        android:layout_width="192dp"
-        android:layout_height="44dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/round_border"
         android:onClick="EliminarReserva"
-        android:text="Eliminar Reserva"
+        android:text="@string/txt_elminarReserva"
         app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_modificar_res" />
 
     <EditText
         android:id="@+id/txt_fecha_inicio_res"
@@ -122,8 +122,8 @@
         android:id="@+id/int_codigo_res"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="62dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/int_codigo_res"
         android:inputType="number"

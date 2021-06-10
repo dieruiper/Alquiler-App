@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RentApp</string>
+    <string name="title_activity_mapa_con_las_oficinas">Map</string>
+    <string name="title_activity_mapa_con_las_oficinas2">Map2</string>
+    <string name="reserva_vehiculo">Reserve the vehicle</string>
+    <string name="ver_reservas">Bookings</string>
+    <string name="ver_vehiculos">Vehicle</string>
+    <string name="encontrar_oficinas">Find office</string>
+    <string name="reservas">Bookings</string>
+    <string name="ver_oficinas">Offices</string>
+    <string name="cerrar_sesion">sing off</string>
+    <string name="ajustes">Settings</string>
+    <string name="ayuda">Help</string>
+
+    /**Activity Main*/
+    <string name="btnReservaVehiculo">Reserve the vehicle</string>
+    <string name="btn_acciones_bd">Database actions</string>
+    <string name="btn_ver_veh">Vehicle</string>
+    <string name="btnBDOficinas">Database Office actions</string>
+    <string name="btn_ver_ofi">Offices</string>
+    <string name="btn_reservas">Bookings</string>
+    <string name="btn_prueba_login3">sing off</string>
+    /**Activity Ayuda*/
+    <string name="correo_a_ayuda">Mail</string>
+    <string name="nombre_a_ayuda">Name</string>
+    <string name="apellidos_a_ayuda">Surname</string>
+    <string name="telefono_a_ayuda">Phone</string>
+
+    <string name="et_fecha_inicio">Start date</string>
+    <string name="et_fecha_fin">End date</string>
+
+    /**Activity Reservar Vehículos*/
+    <string name="punto_recogida">Pick up point</string>
+    <string name="oficina">Office</string>
+    <string name="punto_devolucion">Delivery point</string>
+    <string name="btn_fecha_inicio">Date</string>
+    <string name="button_consultar_disp">Consult availability</string>
+    <string name="btn_fecha_fin">Date</string>
+    <string name="btn_mapa_reserva">Place</string>
+    <string name="consultar_disponibilidad">Check availability</string>
+    <string name="et_lugar_recogida">Place</string>
+    <string name="et_lugar_entrega">Place</string>
+    <string name="btn_lugar_recogida">Pick up point</string>
+    <string name="btn_lugar_entrega">Delivery point</string>
+    <string name="txt_dia_recogida">Pick up day</string>
+    <string name="txt_dia_entrega">Delivery day</string>
+
+    /*Activity Ver Vehículos*/
+    <string name="tv1">Select a license plate</string>
+    <string name="btn_ver">consult</string>
+    <string name="tv2">Select a name</string>
+    <string name="btn_ver2">consult</string>
+
+    /*Activity Acciones BD*/
+    <string name="int_matricula">License plate</string>
+    <string name="chr_categoria">Category</string>
+    <string name="txt_marca">Brand</string>
+    <string name="txt_modelo">Model</string>
+    <string name="txt_descripcion">Description</string>
+    <string name="real_precio">Price</string>
+    <string name="BotonRegistrar">Register vehicle</string>
+    <string name="BotonBuscar">Find vehicle</string>
+    <string name="BotonEliminar">Delete vehicle</string>
+    <string name="BotonModificar">Modify vehicle</string>
+
+    /*Activity Acciones Oficinas BD*/
+    <string name="txt_nombreOfi">Office</string>
+    <string name="txt_matricula">License plate</string>
+    <string name="real_lat">latitude</string>
+    <string name="real_long">length</string>
+    <string name="BotonRegistrarOficina">Register office</string>
+    <string name="BotonConsultarOficina">Consult office</string>
+    <string name="BotonModificarOficina">Modify office</string>
+    <string name="txt_EliminaOficina">Delete office</string>
+
+    <string name="elugar_resumen">Place</string>
+    <string name="efecha_resumen">date</string>
+    <string name="ehora_resumen">time</string>
+    <string name="elugar2_resumen">place</string>
+    <string name="efecha2_resumen">date</string>
+    <string name="ehora2_resumen">time</string>
+
+    /*Activity Acciones Reservas BD*/
+    <string name="int_codigo_res">Codigo</string>
+    <string name="txt_fecha_inicio_res">Date Pickup</string>
+    <string name="txt_fecha_vuelta_res">Date Return</string>
+    <string name="txt_matricula_res">License plate</string>
+    <string name="txt_oficina_res">Office</string>
+    <string name="txt_dni_res">NID</string>
+    <string name="txt_registrarReserva">Register reservation</string>
+    <string name="txt_consultarReserva">Consult reservation</string>
+    <string name="txt_modificarReserva">Modify reservation</string>
+    <string name="txt_elminarReserva">Delete reservation</string>
+
+    /* Actividad Resumen_Reserva*/
+    <string name="fecha_recogida_resumen">Date pickup</string>
+    <string name="lugar_recogida_resumen">Place pickup</string>
+    <string name="fecha_devolucion_resumen">Date return</string>
+    <string name="lugar_devolucion_resumen">Place return</string>
+    <string name="volver_reserva_vehiculos">Back</string>
+    <string name="continuarRegistroUsuario">Next</string>
+
+    /* Actividad Confirmar_Reserva*/
+    <string name="fecha_recogida_resumen2">Date pickup</string>
+    <string name="elugar_recogida_resumen2">Place pickup</string>
+    <string name="efecha2_resumen2">Date return</string>
+    <string name="btn_confirmarReserva">Confirm reservation</string>
+    <string name="et_vehiculoSeleccionado">Selected vehicle</string>
+
+    /* Actividad Seleccionar_vehiculo */
+    <string name="btn_seleccionar_veh">Select</string>
+
+    /* Usuarios */
+    <string name="etNombre">Name</string>
+    <string name="etUsuario">User</string>
+    <string name="etEmail">Mail</string>
+    <string name="etPass">Password</string>
+    <string name="etDni">NID</string>
+    <string name="etApellidos">Surname</string>
+    <string name="etTelefono">Phone</string>
+    <string name="btnRegistrarUsuario">sing in</string>
+    <string name="btnCancelarRegistro">Cancel</string>
+
+
+    <string name="username">User</string>
+    <string name="password">Password</string>
+    <string name="btnEntrar">Enter</string>
+    <string name="btnRegistrate">sign in</string>
+    <string name="Bienvenida">Welcome to RentApp</string>
+
+    <string name="tv_credenciales">Credentials</string>
+    <string name="vehiculo_seleccionado">Selected vehicle</string>
+</resources>

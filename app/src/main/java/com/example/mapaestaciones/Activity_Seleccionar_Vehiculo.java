@@ -23,8 +23,9 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_seleccionar_vehiculo);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_seleccionar_vehiculo);
+
         Intent me=getIntent();
         efecha_resumen=me.getStringExtra("es_efecha");
         efecha2_resumen=me.getStringExtra("es_efecha2");
@@ -33,53 +34,53 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
 
         //tv_lugar_entrega = findViewById(R.id.elugar_recogida_resumen);
         //tv_lugar_entrega.setText(elugar2_resumen);
-        /*
+
         tv_lugar_recogida = findViewById(R.id.elugar_devolucion_resumen);
         tv_lugar_recogida.setText(elugar_resumen);
         tv_fecha_recogida=findViewById(R.id.fecha_recogida_resumen);
         tv_fecha_recogida.setText(efecha_resumen);
         tv_fecha_entrega=findViewById(R.id.efecha2_resumen);
         tv_fecha_entrega.setText(efecha2_resumen);
-        */
 
-    //Date fechaInicio = Date.valueOf(efecha_resumen);
-    //Date fechaFin = Date.valueOf(efecha2_resumen);
-    String splitInicio1 = efecha_resumen.substring(0,4);
+
+        //Date fechaInicio = Date.valueOf(efecha_resumen);
+        //Date fechaFin = Date.valueOf(efecha2_resumen);
+        String splitInicio1 = efecha_resumen.substring(0,4);
         String splitInicio2 = efecha_resumen.substring(5,7);
         String splitInicio3 = efecha_resumen.substring(8);
         String splitFin1 = efecha2_resumen.substring(0,4);
         String splitFin2 = efecha2_resumen.substring(5,7);
         String splitFin3 = efecha2_resumen.substring(8);
 
-    String fechaInicio = splitInicio1+"-"+splitInicio2+"-"+splitInicio3;
-    String fechaFin = splitFin1+"-"+splitFin2+"-"+splitFin3;
-    String nombreOficina = elugar_resumen;
-    ArrayList<Reserva> ocupados = new ArrayList<>();
-    ArrayList<Vehiculo> todos_vehiculos = new ArrayList<>();
-    ArrayList<Vehiculo> disponibles = new ArrayList<>();
+        String fechaInicio = splitInicio1+"-"+splitInicio2+"-"+splitInicio3;
+        String fechaFin = splitFin1+"-"+splitFin2+"-"+splitFin3;
+        String nombreOficina = elugar_resumen;
+        ArrayList<Reserva> ocupados = new ArrayList<>();
+        ArrayList<Vehiculo> todos_vehiculos = new ArrayList<>();
+        ArrayList<Vehiculo> disponibles = new ArrayList<>();
 
-    AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
-    SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
 
-    Cursor fila = BaseDeDatos.rawQuery("select * from reservas where nombreOficina = '"+nombreOficina+"' and ((fechaInicio between '"+fechaInicio+"' and '"+fechaFin+"') or (fechaFin between '"+fechaInicio+"' and '"+fechaFin+"'))" ,null);
+        Cursor fila = BaseDeDatos.rawQuery("select * from reservas where nombreOficina = '"+nombreOficina+"' and ((fechaInicio between '"+fechaInicio+"' and '"+fechaFin+"') or (fechaFin between '"+fechaInicio+"' and '"+fechaFin+"'))" ,null);
         if(fila.moveToFirst()){
-        do{
-            Reserva reserva = new Reserva(fila.getInt(0),fila.getString(1),
-                    fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5));
-            ocupados.add(reserva);
-        }while (fila.moveToNext());
-    }
+            do{
+                Reserva reserva = new Reserva(fila.getInt(0),fila.getString(1),
+                        fila.getString(2),fila.getString(3),fila.getString(4),fila.getString(5));
+                ocupados.add(reserva);
+            }while (fila.moveToNext());
+        }
 
-    Cursor todos = BaseDeDatos.rawQuery("select * from vehiculos where nombreOficina = '"+nombreOficina+"'", null);
+        Cursor todos = BaseDeDatos.rawQuery("select * from vehiculos where nombreOficina = '"+nombreOficina+"'", null);
         if(todos.moveToFirst()) {
-        do {
-            Vehiculo vehiculo = new Vehiculo(todos.getString(0), todos.getString(1),
-                    todos.getString(2), todos.getString(3),
-                    todos.getString(4), todos.getDouble(5),
-                    todos.getString(6));
-            todos_vehiculos.add(vehiculo);
-        } while (todos.moveToNext());
-    }
+            do {
+                Vehiculo vehiculo = new Vehiculo(todos.getString(0), todos.getString(1),
+                        todos.getString(2), todos.getString(3),
+                        todos.getString(4), todos.getDouble(5),
+                        todos.getString(6));
+                todos_vehiculos.add(vehiculo);
+            } while (todos.moveToNext());
+        }
 
         if(ocupados.isEmpty()==true) {
             for (int i = 0; i < todos_vehiculos.size(); i++) {
@@ -113,8 +114,14 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
 
     public void seleccionar_Vehiculo(View view){
         Intent i = new Intent(this, Activity_Confirmar_Reserva.class );
-        String c_elugar = elugar_resumen;
-        i.putExtra("es_elugar",  c_elugar);
+
+        String lugar = elugar_resumen;
+        String fecha_inicio = efecha_resumen;
+        String fecha_fin = efecha2_resumen;
+        i.putExtra("lugar",  lugar);
+        i.putExtra("fecha_inicio",  fecha_inicio);
+        i.putExtra("fecha_fin", fecha_fin);
+
         startActivity(i);
     }
 

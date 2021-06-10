@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/tvRegistrar"
-        android:layout_width="375dp"
-        android:layout_height="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="72dp"
         android:gravity="center"
@@ -22,10 +22,10 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="362dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/round_border"
         android:drawableStart="@drawable/ic_person"
@@ -33,16 +33,15 @@
         android:inputType="text"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRegistrar" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="370dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/round_border"
         android:drawableStart="@drawable/ic_pass"
@@ -50,16 +49,16 @@
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <Button
         android:id="@+id/btnEntrar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/round_border"
         android:onClick="Entrar"
@@ -68,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
         android:id="@+id/btnRegistrate"

@@ -7,68 +7,103 @@
     tools:context=".Activity_Confirmar_Reserva">
 
     <TextView
-        android:id="@+id/titulo_recogida3"
-        android:layout_width="114dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="28dp"
-        android:text="Recogida"
-        android:textColor="#F44336"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/titulo_recogida4"
-        android:layout_width="133dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="28dp"
-        android:text="Devolución"
-        android:textColor="#F44336"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.617"
-        app:layout_constraintStart_toEndOf="@+id/titulo_recogida"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/efecha2_resumen2"
-        android:layout_width="90dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="52dp"
-        android:text="@string/efecha2_resumen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
-        app:layout_constraintStart_toEndOf="@+id/elugar_devolucion_resumen"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/fecha_recogida_resumen2"
-        android:layout_width="85dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="88dp"
-        android:text="@string/efecha_resumen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/elugar_recogida_resumen2"
-        android:layout_width="50dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="88dp"
-        android:text="@string/elugar_resumen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/vehiculo_seleccionado"
+        android:id="@+id/nombre_conf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="215dp" />
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/etNombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/apellidos_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/etApellidos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_conf" />
+
+    <TextView
+        android:id="@+id/telefono_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/etTelefono"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellidos_conf" />
+
+    <TextView
+        android:id="@+id/dni_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/etDni"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefono_conf" />
+
+    <TextView
+        android:id="@+id/lugar_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/btn_lugar_recogida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_conf" />
+
+    <TextView
+        android:id="@+id/fechaInicio_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/et_fecha_inicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lugar_conf" />
+
+    <TextView
+        android:id="@+id/fechaFin_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fechaInicio_conf" />
+
+    <TextView
+        android:id="@+id/email_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/etEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dni_conf" />
+
+    <TextView
+        android:id="@+id/vehiculo_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/et_vehiculoSeleccionado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fechaFin_conf" />
+
+    <Button
+        android:id="@+id/btn_confirmarReserva"
+        android:onClick="Confirmar_reserva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/btn_confirmarReserva"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehiculo_conf" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
