@@ -32,7 +32,8 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("create table usuarios (dni text primary key, usuario text, nombre text, apellidos text, " +
                 "telefono text, email text, password text)");
 
-        db.execSQL("create table reservas (codigo integer primary key, fechaInicio date, fechaFin date,matricula string references vehiculos,nombreOficina string references oficinas, dni string references usuarios)");
+        db.execSQL("create table reservas (codigo integer primary key, fechaInicio date, fechaFin date," +
+                "matricula string references vehiculos, nombreOficina string references oficinas, dni string references usuarios)");
 
 
         db.execSQL("insert into oficinas values('Sevilla','37.3886303', '-5.9953403')");
@@ -51,7 +52,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("insert into usuarios values('1234','jf','jf','jf','3','jf@j.com','jf')");
         db.execSQL("insert into usuarios values('1244','j','j','j','2','j@j.com','j')");
 
-        db.execSQL("insert into reservas values(11,'2021-05-13', '2021-05-16', '1111AAA', 'Sevilla', '1234')");
+        db.execSQL("insert into reservas values(1,'2021-05-13', '2021-05-16', '1111AAA', 'Sevilla', '1234')");
     }
 
     @Override

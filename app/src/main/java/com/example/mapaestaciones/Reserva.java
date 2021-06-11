@@ -28,4 +28,44 @@ public class Reserva {
     public String toString(){
         return codigo +" - "+ dni +" - "+ matricula;
     }
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public String getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(String fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public String getNombreOficina() {
+        return nombreOficina;
+    }
+
+    public void setNombreOficina(String nombreOficina) {
+        this.nombreOficina = nombreOficina;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
 }
