@@ -9,7 +9,7 @@
     <string name="encontrar_oficinas">Find office</string>
     <string name="reservas">Bookings</string>
     <string name="ver_oficinas">Offices</string>
-    <string name="cerrar_sesion">sing off</string>
+    <string name="cerrar_sesion">Logout</string>
     <string name="ajustes">Settings</string>
     <string name="ayuda">Help</string>
 
@@ -19,8 +19,8 @@
     <string name="btn_ver_veh">Vehicle</string>
     <string name="btnBDOficinas">Database Office actions</string>
     <string name="btn_ver_ofi">Offices</string>
-    <string name="btn_reservas">Bookings</string>
-    <string name="btn_prueba_login3">sing off</string>
+    <string name="btn_reservas">My Bookings</string>
+    <string name="btn_prueba_login3">Logout</string>
     /**Activity Ayuda*/
     <string name="correo_a_ayuda">Mail</string>
     <string name="nombre_a_ayuda">Name</string>
@@ -117,7 +117,7 @@
     <string name="marca_adapter">Brand: </string>
     <string name="modelo_adapter">Model: </string>
     <string name="matricula_adapter">Car id: </string>
-    <string name="precio_adapter">Precio por día (€): </string>
+    <string name="precio_adapter">Price per day (€): </string>
 
     /* Usuarios */
     <string name="etNombre">Name</string>
@@ -127,18 +127,18 @@
     <string name="etDni">NID</string>
     <string name="etApellidos">Surname</string>
     <string name="etTelefono">Phone</string>
-    <string name="btnRegistrarUsuario">sing in</string>
+    <string name="btnRegistrarUsuario">Login</string>
     <string name="btnCancelarRegistro">Cancel</string>
 
 
     <string name="username">User</string>
     <string name="password">Password</string>
     <string name="btnEntrar">Enter</string>
-    <string name="btnRegistrate">sign in</string>
+    <string name="btnRegistrate">Login</string>
     <string name="Bienvenida">Welcome to RentApp</string>
 
     <string name="tv_credenciales">Credentials</string>
     <string name="vehiculo_seleccionado">Selected vehicle</string>
 
-
+    <string name="btn_scanerQR">Scam QR</string>
 </resources>

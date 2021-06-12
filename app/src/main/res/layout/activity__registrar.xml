@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/black"
     tools:context=".Activity_Registrar">
 
     <EditText
@@ -17,6 +17,8 @@
         android:hint="@string/etNombre"
         android:inputType="textPersonName"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
@@ -46,7 +48,9 @@
         android:hint="@string/etUsuario"
         android:inputType="text"
         android:selectAllOnFocus="true"
+        android:shadowColor="@color/white"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +66,8 @@
         android:hint="@string/etPass"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,6 +83,8 @@
         android:hint="@string/etApellidos"
         android:inputType="textPersonName"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RegNombre" />
@@ -91,6 +99,8 @@
         android:hint="@string/etEmail"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RegApellidos" />
@@ -105,6 +115,8 @@
         android:hint="@string/etDni"
         android:inputType="text"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RegEmail" />
@@ -119,40 +131,45 @@
         android:hint="@string/etTelefono"
         android:inputType="text"
         android:selectAllOnFocus="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RegDni" />
 
     <Button
-        android:id="@+id/btnEntrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn4"
+        android:layout_width="263dp"
+        android:layout_height="53dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="436dp"
+        android:background="@drawable/round_border"
         android:fontFamily="@font/neutrons"
-        android:hint="@string/btnReservaVehiculo"
+        android:hint="@string/btnRegistrarUsuario"
         android:onClick="RegistrarUsuario"
         android:textColor="@color/white"
-        android:textColorHighlight="@color/yellow"
-        android:textColorHint="@color/yellow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColorHint="@color/black"
+        app:backgroundTint="@color/yellow"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RegTelefono" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnRegistrate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="24dp"
+        android:id="@+id/btn5"
+        android:layout_width="260dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="516dp"
+        android:background="@drawable/round_border"
         android:fontFamily="@font/neutrons"
+        android:hint="@string/btnCancelarRegistro"
         android:onClick="Cancelar"
-        android:text="@string/btnCancelarRegistro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:backgroundTint="@color/yellow"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

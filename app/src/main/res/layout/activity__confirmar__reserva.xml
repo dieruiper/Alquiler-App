@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".Activity_Confirmar_Reserva">
 
     <Button
@@ -11,12 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:background="@drawable/round_border"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/neutrons"
         android:foregroundGravity="center_horizontal"
         android:onClick="cancelar_reserva"
         android:text="@string/btn_cancelarConfirmacion"
-        android:textColor="@color/yellow"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_confirmarReserva" />
@@ -28,6 +29,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="36dp"
         android:text="@string/etNombre"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirma_datos" />
 
@@ -38,6 +40,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/etApellidos"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombre_conf" />
 
@@ -48,6 +51,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/etTelefono"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/apellidos_conf" />
 
@@ -58,6 +62,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/etDni"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telefono_conf" />
 
@@ -68,6 +73,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/btn_lugar_recogida"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_conf" />
 
@@ -78,6 +84,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/et_fecha_inicio"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lugar_conf" />
 
@@ -88,6 +95,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/fecha_devolucion_resumen"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fechaInicio_conf" />
 
@@ -98,6 +106,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/etEmail"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dni_conf" />
 
@@ -108,6 +117,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/et_vehiculoSeleccionado"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fechaFin_conf" />
 
@@ -116,11 +126,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:background="@drawable/round_border"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/neutrons"
         android:onClick="Confirmar_reserva"
         android:text="@string/btn_confirmarReserva"
-        android:textColor="@color/yellow"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_precioTotal" />
@@ -129,10 +139,11 @@
         android:id="@+id/confirma_datos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
         android:layout_marginHorizontal="30dp"
-        android:text="@string/txt_cofirmar"
+        android:layout_marginTop="72dp"
         android:gravity="center_horizontal"
+        android:text="@string/txt_cofirmar"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
@@ -144,6 +155,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/real_precio"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/matricula_conf" />
 

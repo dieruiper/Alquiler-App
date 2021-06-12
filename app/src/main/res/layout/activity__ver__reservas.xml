@@ -1,26 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".Activity_Ver_Reservas">
 
+    <TextView
+        android:id="@+id/tv_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="41dp"
+        android:text="Nombre"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_apellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="41dp"
+        android:layout_toEndOf="@+id/tv_nombre"
+        android:text="apellidos"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_dni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nombre"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="19dp"
+        android:text="DNI"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_dni"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="19dp"
+        android:text="Email"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_telefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_email"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="16dp"
+        android:text="TLF"
+        android:textColor="@color/white" />
+
     <ListView
-        android:id="@+id/lv4"
+        android:id="@+id/lv1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="136dp" />
+        android:layout_height="573dp"
+        android:layout_below="@+id/tv_telefono"
+        android:layout_marginTop="9dp" />
 
-    <ListView
-        android:id="@+id/lv3"
-        android:layout_width="258dp"
-        android:layout_height="390dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="136dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ListView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="116dp"
+        android:background="@drawable/round_border"
+        android:backgroundTint="#FFEB3B"
+        android:onClick="Consultar_Reservas"
+        android:text="@string/txt_consultarReserva"
+        android:textColor="@color/yellow" />
+</RelativeLayout>

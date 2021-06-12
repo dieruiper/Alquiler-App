@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Dando permisos para acceder a la camara-->
+    <uses-permission android:name="android.permission.CAMERA"  ></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -17,7 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MapaEstaciones">
-        <activity android:name=".Activity_Detalles"></activity>
+        <activity android:name=".Activity_QR"></activity>
         <activity android:name=".Activity_Confirmar_Reserva" />
         <activity android:name=".Activity_Acciones_Reservas_BD" />
         <activity android:name=".Activity_Ver_Reservas" />

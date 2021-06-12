@@ -18,7 +18,7 @@
     <string name="btn_ver_veh">Vehiculos</string>
     <string name="btnBDOficinas">Oficinas BBDD</string>
     <string name="btn_ver_ofi">Oficinas</string>
-    <string name="btn_reservas">Reservas</string>
+    <string name="btn_reservas">Mis Reservas</string>
     <string name="btn_prueba_login3">Cerrar sesion</string>
     /**Activity Ayuda*/
     <string name="correo_a_ayuda">Correo</string>
@@ -139,4 +139,5 @@
     <string name="tv_credenciales">Credenciales</string>
     <string name="vehiculo_seleccionado">Vehiculo Seleccionado</string>
 
+    <string name="btn_scanerQR">Escaner QR</string>
 </resources>

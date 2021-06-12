@@ -76,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(login);
     }
 
+        public void Actividad_QR (View view) {
+        Intent escanerQR = new Intent(getApplicationContext(), Activity_QR.class);
+        startActivity(escanerQR);
+    }
+
     public void Cerrar_Sesion (View view){
         saveValuePreference(getApplicationContext(), true);
         reiniciarActivity(this);
