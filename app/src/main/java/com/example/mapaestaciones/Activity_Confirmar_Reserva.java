@@ -124,7 +124,7 @@ public class Activity_Confirmar_Reserva extends AppCompatActivity {
     }
 
     public void cancelar_reserva(View view){
-        Intent i = new Intent(this, Activity_Reservar_Vehiculos.class);
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish();
     }
