@@ -26,6 +26,9 @@ public class Activity_Confirmar_Reserva extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__confirmar__reserva);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
         btn_confirmarReserva = findViewById(R.id.btn_confirmarReserva);
         r_nombre = findViewById(R.id.nombre_conf);
         r_apellidos = findViewById(R.id.apellidos_conf);
@@ -66,17 +69,6 @@ public class Activity_Confirmar_Reserva extends AppCompatActivity {
                 && !lugar.isEmpty() && !dni.isEmpty()){
 
             Integer id = nextId();
-
-            /*
-            ContentValues registro = new ContentValues();
-            registro.put("codigo", id);
-            registro.put("fecha_inicio", fecha_inicio);
-            registro.put("fecha_fin", fecha_fin);
-            registro.put("matricula", matricula);
-            registro.put("lugar", lugar);
-            registro.put("dni", dni);
-
-             */
 
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
             SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
@@ -129,5 +121,11 @@ public class Activity_Confirmar_Reserva extends AppCompatActivity {
         }
 
         return res;
+    }
+
+    public void cancelar_reserva(View view){
+        Intent i = new Intent(this, Activity_Reservar_Vehiculos.class);
+        startActivity(i);
+        finish();
     }
 }

@@ -106,9 +106,17 @@
     <string name="efecha2_resumen2">Fecha devolucion</string>
     <string name="btn_confirmarReserva">Confirmar Reserva</string>
     <string name="et_vehiculoSeleccionado">Vehiculo seleccionado</string>
+    <string name="tv_confirma_datos">Confirmar datos</string>
+    <string name="txt_cofirmar">Por favor, asegúrese de que los datos de la reserva son correctos antes de confirmar</string>
+    <string name="btn_cancelarConfirmacion">Cancelar Reserva</string>
 
     /* Actividad Seleccionar_vehiculo */
     <string name="btn_seleccionar_veh">Seleccionar</string>
+    <string name="btn_ver_detalles">Ver detalles</string>
+    <string name="marca_adapter">Marca: </string>
+    <string name="modelo_adapter">Modelo: </string>
+    <string name="matricula_adapter">Matricula: </string>
+    <string name="precio_adapter">Precio por día (€): </string>
 
     /* Usuarios */
     <string name="etNombre">Nombre</string>

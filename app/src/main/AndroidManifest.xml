@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MapaEstaciones">
-        <activity android:name=".Activity_Confirmar_Reserva"></activity>
+        <activity android:name=".Activity_Detalles"></activity>
+        <activity android:name=".Activity_Confirmar_Reserva" />
         <activity android:name=".Activity_Acciones_Reservas_BD" />
         <activity android:name=".Activity_Ver_Reservas" />
         <activity android:name=".Activity_Registrar" />

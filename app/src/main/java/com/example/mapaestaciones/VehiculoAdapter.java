@@ -28,6 +28,7 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
         public TextView v_precio;
         public TextView v_matricula;
         Button btn_seleccionar_vehiculo;
+        Button btn_detalles;
 
         public ViewHolder(View v) {
             super(v);
@@ -37,10 +38,12 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
             v_precio = (TextView) v.findViewById(R.id.v_precio);
             v_matricula = (TextView) v.findViewById(R.id.v_matricula);
             btn_seleccionar_vehiculo = (Button) v.findViewById(R.id.btn_seleccionar_vehiculo);
+            btn_detalles = (Button) v.findViewById(R.id.btn_detalles);
         }
 
         void setOnClickListeners(){
             btn_seleccionar_vehiculo.setOnClickListener(this);
+            btn_detalles.setOnClickListener(this);
         }
 
         public void onClick(@NotNull View v) {
@@ -49,6 +52,11 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
                     Intent i = new Intent(context, Activity_Confirmar_Reserva.class );
                     i.putExtra("matricula_select", v_matricula.getText());
                     context.startActivity(i);
+                    break;
+                case R.id.btn_detalles:
+                    Intent r = new Intent(context, Activity_Detalles.class);
+                    r.putExtra("matricula_select", v_matricula.getText());
+                    context.startActivity(r);
                     break;
             }
         }

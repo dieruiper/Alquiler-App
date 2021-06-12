@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -137,17 +138,23 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
 
     public void Consultar_Disponibilidad(View view) {
 
-        Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this, Activity_Seleccionar_Vehiculo.class);
-
         String s_efecha =et_fecha_inicio.getText().toString().trim();
         String s_efecha2 =et_fecha_fin.getText().toString().trim();
         String s_elugar = et_lugar_recogida.getText().toString().trim();
 
-        myIntent.putExtra("fecha_inicio", s_efecha);
-        myIntent.putExtra("fecha_fin",  s_efecha2);
-        myIntent.putExtra("lugar_recogida",  s_elugar);
+        if(!s_efecha.isEmpty() && !s_efecha2.isEmpty() && !s_elugar.isEmpty()){
 
-        startActivity(myIntent);
+            Intent myIntent=new Intent(Activity_Reservar_Vehiculos.this, Activity_Seleccionar_Vehiculo.class);
+
+            myIntent.putExtra("fecha_inicio", s_efecha);
+            myIntent.putExtra("fecha_fin",  s_efecha2);
+            myIntent.putExtra("lugar_recogida",  s_elugar);
+
+            startActivity(myIntent);
+
+        }else{
+            Toast.makeText(this, "Debe rellenar todos los campos", Toast.LENGTH_LONG).show();
+        }
 
     }
 }

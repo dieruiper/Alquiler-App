@@ -107,9 +107,17 @@
     <string name="efecha2_resumen2">Date return</string>
     <string name="btn_confirmarReserva">Confirm reservation</string>
     <string name="et_vehiculoSeleccionado">Selected vehicle</string>
+    <string name="tv_confirma_datos">Confirm</string>
+    <string name="txt_cofirmar">Please, make sure the reservation details are correct before confirming</string>
+    <string name="btn_cancelarConfirmacion">Cancelar Reserva</string>
 
     /* Actividad Seleccionar_vehiculo */
     <string name="btn_seleccionar_veh">Select</string>
+    <string name="btn_ver_detalles">Show details</string>
+    <string name="marca_adapter">Brand: </string>
+    <string name="modelo_adapter">Model: </string>
+    <string name="matricula_adapter">Car id: </string>
+    <string name="precio_adapter">Precio por día (€): </string>
 
     /* Usuarios */
     <string name="etNombre">Name</string>
@@ -131,4 +139,6 @@
 
     <string name="tv_credenciales">Credentials</string>
     <string name="vehiculo_seleccionado">Selected vehicle</string>
+
+
 </resources>

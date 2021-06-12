@@ -23,6 +23,9 @@ public class Activity_Registrar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__registrar);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
         et_usuario=(EditText)findViewById(R.id.username);
         et_nombre=(EditText)findViewById(R.id.RegNombre);
         et_apellidos=(EditText)findViewById(R.id.RegApellidos);
