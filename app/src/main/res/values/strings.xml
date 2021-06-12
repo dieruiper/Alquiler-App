@@ -103,7 +103,7 @@
     /* Actividad Confirmar_Reserva*/
     <string name="fecha_recogida_resumen2">Fecha recogida</string>
     <string name="elugar_recogida_resumen2">Lugar recogida</string>
-    <string name="efecha2_resumen2">Fecha devolucion</string>
+    <string name="efecha2_resumen2">Fecha</string>
     <string name="btn_confirmarReserva">Confirmar Reserva</string>
     <string name="et_vehiculoSeleccionado">Vehiculo seleccionado</string>
     <string name="tv_confirma_datos">Confirmar datos</string>
