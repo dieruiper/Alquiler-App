@@ -106,11 +106,7 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_vehiculos);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        //este es del método original
-        /*vAdapter = new VehiculoAdapter(lista_vehiculos);
-        recyclerView.setAdapter(vAdapter);
-         */
-        //quizás no lo muestre por el rView sino prueba con un list o algo parecido, mas sencillo de implementar
+
         vAdapter = new VehiculoAdapter(disponibles);
         recyclerView.setAdapter(vAdapter);
     }

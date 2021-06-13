@@ -159,5 +159,11 @@
     <string name="txt_matricula2">matricula</string>
     <string name="txt_oficina">oficina</string>
     <string name="txt_dni">dini</string>
+    <string name="et_inserte_codigo">Inserte el código de la reserva que desea eliminar</string>
+    <string name="txt_nombre">Nombre:</string>
+    <string name="btn_volver_main">Volver</string>
+
+
+
 
 </resources>

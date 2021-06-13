@@ -72,17 +72,46 @@
         android:layout_marginTop="120dp"
         android:backgroundTint="@color/yellow"
         android:fontFamily="@font/neutrons"
+        android:onClick="Consultar_Reservas"
         android:text="@string/txt_consultarReserva"
         android:textColor="@color/black"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_reservas"
-        android:layout_width="333dp"
-        android:layout_height="245dp"
+    <ListView
+        android:id="@+id/lv1"
+        android:layout_width="338dp"
+        android:layout_height="138dp"
+        android:layout_below="@+id/button4"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="198dp" />
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="29dp" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_inserte_codigo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="42dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/neutrons"
+        android:onClick="EliminarReserva"
+        android:text="@string/btn_eliminar_res"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/et_inserte_codigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lv1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:hint="@string/et_inserte_codigo"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
 </RelativeLayout>

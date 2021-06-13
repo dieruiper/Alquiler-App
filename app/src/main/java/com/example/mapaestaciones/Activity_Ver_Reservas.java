@@ -9,13 +9,18 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class Activity_Ver_Reservas extends AppCompatActivity {
     TextView r_nombre, r_apellidos, r_dni, r_telefono, r_email;
+    EditText r_codigo;
     private listAdapter resevaAdapter;
     private ListView lv1;
 
@@ -34,8 +39,8 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
         r_telefono = findViewById(R.id.tv_telefono);
         r_email = findViewById(R.id.tv_email);
 
-        //lv1 = (ListView) findViewById(R.id.lv1);
-
+        lv1 = (ListView) findViewById(R.id.lv1);
+        r_codigo = (EditText) findViewById(R.id.et_inserte_codigo);
 
         SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
         r_nombre.setText(preferences.getString("nombre", ""));
@@ -43,55 +48,14 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
         r_dni.setText(preferences.getString("dni", ""));
         r_telefono.setText(preferences.getString("telefono", ""));
         r_email.setText(preferences.getString("email", ""));
+    }
 
-
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-
-        String dni = r_dni.getText().toString();
-        ArrayList<Reserva> lista = new ArrayList<>();
-
-        if (!dni.isEmpty()) {
-            Cursor fila = BaseDeDatos.rawQuery
-                    ("select * from reservas where dni ='" + dni + "'", null);
-            if (fila.moveToFirst()) {
-                do {
-                    Reserva reserva = new Reserva(fila.getInt(0), fila.getString(1), fila.getString(2),
-                            fila.getString(3), fila.getString(4), fila.getString(5));
-                    lista.add(reserva);
-                } while (fila.moveToNext());
-                // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item_verreservas, lista);
-                // lv1.setAdapter(adapter);
-
-            }
-        }
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_reservas);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        resevaAdapter = new listAdapter(lista);
-        recyclerView.setAdapter(resevaAdapter);
-                /*
-            } else {
-                Toast.makeText(this, "No hay ninguna reserva", Toast.LENGTH_SHORT).show();
-                BaseDeDatos.close();
-            }
-        } else {
-            Toast.makeText(this, "Algo salió mal", Toast.LENGTH_LONG).show();
-        }
-
-
-                 */
-
-
-
-    /*
     public void Consultar_Reservas(View view) {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         String dni = r_dni.getText().toString();
-        ArrayList<Reserva> lista = new ArrayList<>();
+        ArrayList<String> lista = new ArrayList<>();
 
         if (!dni.isEmpty()) {
             Cursor fila = BaseDeDatos.rawQuery
@@ -100,16 +64,11 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
                 do {
                     Reserva reserva = new Reserva(fila.getInt(0), fila.getString(1), fila.getString(2),
                             fila.getString(3), fila.getString(4), fila.getString(5));
-                    lista.add(reserva);
+                    lista.add(reserva.toString());
                 } while (fila.moveToNext());
-               // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item_verreservas, lista);
-               // lv1.setAdapter(adapter);
-                RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_reservas);
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-                recyclerView.setLayoutManager(linearLayoutManager);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item_verreservas, lista);
+                lv1.setAdapter(adapter);
 
-                resevaAdapter = new listAdapter(lista);
-                recyclerView.setAdapter(resevaAdapter);
 
             } else {
                 Toast.makeText(this, "No hay ninguna reserva", Toast.LENGTH_SHORT).show();
@@ -120,7 +79,21 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
         }
     }
 
-     */
+    public void EliminarReserva(View view) {
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+
+        String codigo = r_codigo.getText().toString();
+        String dni = r_dni.getText().toString();
+
+        if (!codigo.isEmpty()) {
+            //int cantidad = BaseDeDatos.delete("vehiculos", "matricula=" + "matricula", null);
+            BaseDeDatos.execSQL("DELETE FROM reservas WHERE codigo = '" + codigo + "' and (dni = '" + dni + "')");
+            BaseDeDatos.close();
+            r_codigo.setText("");
+        } else {
+            Toast.makeText(this, "No hay ninguna reserva", Toast.LENGTH_SHORT).show();
+        }
 
     }
 

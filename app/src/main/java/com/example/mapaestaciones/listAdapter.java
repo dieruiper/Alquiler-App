@@ -2,6 +2,7 @@ package com.example.mapaestaciones;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.ViewHolder> {
         public TextView r_matricula;
         public TextView r_oficina;
         public TextView r_dni;
-        Button btn_eliminarReserva;
+        Button btn_eliminar_res;
 
         public ViewHolder(View v) {
             super(v);
@@ -38,12 +39,12 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.ViewHolder> {
             r_matricula = (TextView) v.findViewById(R.id.r_matricula);
             r_oficina = (TextView) v.findViewById(R.id.r_oficina);
             r_dni = (TextView) v.findViewById(R.id.r_dni);
-            btn_eliminarReserva = (Button) v.findViewById(R.id.btn_eliminar_res);
+            btn_eliminar_res = (Button) v.findViewById(R.id.btn_eliminar_res);
 
         }
 
         void setOnClickListeners(){
-            btn_eliminarReserva.setOnClickListener(this);
+            btn_eliminar_res.setOnClickListener(this);
 
         }
 
@@ -51,10 +52,11 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.ViewHolder> {
             switch (v.getId()) {
                 case R.id.btn_eliminar_res:
 
-                    break;
 
             }
         }
+
+
 
 
     }

@@ -75,7 +75,7 @@
     <string name="txt_EliminaOficina">Delete office</string>
 
     <string name="elugar_resumen">Place</string>
-    <string name="efecha_resumen">date</string>
+    <string name="efecha_resumen">Date Pick up</string>
     <string name="ehora_resumen">time</string>
     <string name="elugar2_resumen">place</string>
     <string name="efecha2_resumen">date</string>
@@ -154,12 +154,14 @@
 
 
     /*Actividad ver reservas*/
-    <string name="btn_eliminar_res">Eliminar Reserva</string>
-    <string name="txt_codigo">Codigo</string>
-    <string name="txt_fechaInicio">fecha inicio</string>
-    <string name="txt_fechaFin">fecha fin</string>
-    <string name="txt_matricula2">matricula</string>
-    <string name="txt_oficina">oficina</string>
-    <string name="txt_dni">dini</string>
-
+    <string name="btn_eliminar_res">Delete reserve</string>
+    <string name="txt_codigo">Code</string>
+    <string name="txt_fechaInicio">Date Pickup </string>
+    <string name="txt_fechaFin">Date Return</string>
+    <string name="txt_matricula2">License plate</string>
+    <string name="txt_oficina">Oficce</string>
+    <string name="txt_dni">NID</string>
+    <string name="et_inserte_codigo">Insert the reservation code</string>
+    <string name="txt_nombre">Name:</string>
+    <string name="btn_volver_main">Back</string>
 </resources>
