@@ -18,7 +18,7 @@ import java.sql.RowId;
 import java.util.ArrayList;
 
 public class Activity_Confirmar_Reserva extends AppCompatActivity {
-    TextView r_nombre, r_apellidos, r_dni, r_telefono, r_email, r_lugar, r_fechaInicio, r_fechaFin, r_matricula;
+    TextView r_nombre, r_apellidos, r_dni, r_telefono, r_email, r_lugar, r_fechaInicio, r_fechaFin, r_matricula, r_precio;
     Button btn_confirmarReserva;
 
     @Override
@@ -39,9 +39,19 @@ public class Activity_Confirmar_Reserva extends AppCompatActivity {
         r_fechaInicio = findViewById(R.id.fechaInicio_conf);
         r_fechaFin = findViewById(R.id.fechaFin_conf);
         r_matricula = findViewById(R.id.matricula_conf);
+        r_precio = findViewById(R.id.precioTotal_conf);
+
 
         Intent i = getIntent();
         r_matricula.setText(i.getStringExtra("matricula_select"));
+        r_precio.setText(i.getStringExtra("precio"));
+
+        /*
+        String precioxDia = i.getStringExtra("precio").trim();
+        String precioTotal = calculaPrecioTotal(precioxDia);
+        r_precio.setText(precioTotal.toString());
+
+         */
 
         SharedPreferences res = getSharedPreferences("adminReserva", Context.MODE_PRIVATE);
         r_lugar.setText(res.getString("lugar_recogida","AA"));
@@ -56,6 +66,22 @@ public class Activity_Confirmar_Reserva extends AppCompatActivity {
         r_email.setText(preferences.getString("email", ""));
 
     }
+
+    /*
+    private String calculaPrecioTotal(String precioxDia) {
+
+        String fecha_inicio = r_fechaInicio.getText().toString();
+        String fecha_fin = r_fechaFin.getText().toString();
+        int diaInicio = Integer.parseInt(fecha_inicio.substring(8));
+        int diaFin = Integer.parseInt(fecha_fin.substring(8));
+
+        Integer diasReservados = diaFin - diaInicio;
+        Integer n = Integer.parseInt(precioxDia);
+        Integer total = diasReservados * precioxDia;
+
+    }
+
+     */
 
     public void Confirmar_reserva(View view){
 

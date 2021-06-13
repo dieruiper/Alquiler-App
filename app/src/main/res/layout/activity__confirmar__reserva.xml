@@ -26,100 +26,241 @@
         android:id="@+id/nombre_conf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="60dp"
         android:text="@string/etNombre"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.602"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirma_datos" />
 
     <TextView
-        android:id="@+id/apellidos_conf"
+        android:id="@+id/tv_confApellidos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
-        android:text="@string/etApellidos"
+        android:text="@string/tv_confApellidos"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/apellidos_conf"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_conf" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_confNombre" />
 
     <TextView
-        android:id="@+id/telefono_conf"
+        android:id="@+id/tv_confMatricula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
-        android:text="@string/etTelefono"
+        android:text="@string/tv_confMatricula"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/matricula_conf"
+        app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apellidos_conf" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_confFechaFin" />
+
+    <TextView
+        android:id="@+id/precioTotal_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/real_precio"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matricula_conf" />
+
+    <TextView
+        android:id="@+id/tv_confPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_confPrecio"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/precioTotal_conf"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_confMatricula" />
 
     <TextView
         android:id="@+id/dni_conf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/etDni"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telefono_conf" />
 
     <TextView
-        android:id="@+id/lugar_conf"
+        android:id="@+id/tv_confFechaIni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
-        android:text="@string/btn_lugar_recogida"
+        android:text="@string/tv_confFechaIni"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/fechaInicio_conf"
+        app:layout_constraintHorizontal_bias="0.83"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_conf" />
-
-    <TextView
-        android:id="@+id/fechaInicio_conf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/et_fecha_inicio"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lugar_conf" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_confLugar" />
 
     <TextView
         android:id="@+id/fechaFin_conf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/fecha_devolucion_resumen"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.725"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fechaInicio_conf" />
 
     <TextView
-        android:id="@+id/email_conf"
+        android:id="@+id/tv_confDNI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
-        android:text="@string/etEmail"
+        android:text="@string/tv_confDni"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/dni_conf"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dni_conf" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_confTelefono" />
+
+    <TextView
+        android:id="@+id/lugar_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/btn_lugar_recogida"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_conf" />
 
     <TextView
         android:id="@+id/matricula_conf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:text="@string/et_vehiculoSeleccionado"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.804"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fechaFin_conf" />
+
+    <TextView
+        android:id="@+id/email_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/etEmail"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dni_conf" />
+
+    <TextView
+        android:id="@+id/tv_confNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/tv_confNombre"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/nombre_conf"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirma_datos" />
+
+    <TextView
+        android:id="@+id/tv_confLugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_confLugarRecogida"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/lugar_conf"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_confEmail" />
+
+    <TextView
+        android:id="@+id/telefono_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/etTelefono"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellidos_conf" />
+
+    <TextView
+        android:id="@+id/tv_confFechaFin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_confFechaFin"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/fechaFin_conf"
+        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_confFechaIni" />
+
+    <TextView
+        android:id="@+id/tv_confTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_confTelefono"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/telefono_conf"
+        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_confApellidos" />
+
+    <TextView
+        android:id="@+id/fechaInicio_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/et_fecha_inicio"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.685"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lugar_conf" />
+
+    <TextView
+        android:id="@+id/tv_confEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_confEmail"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/email_conf"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_confDNI" />
+
+    <TextView
+        android:id="@+id/apellidos_conf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/etApellidos"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_conf" />
 
     <Button
         android:id="@+id/btn_confirmarReserva"
@@ -133,30 +274,19 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_precioTotal" />
+        app:layout_constraintTop_toBottomOf="@+id/precioTotal_conf" />
 
     <TextView
         android:id="@+id/confirma_datos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="32dp"
         android:gravity="center_horizontal"
         android:text="@string/txt_cofirmar"
         android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/tv_precioTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/real_precio"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/matricula_conf" />
+        tools:layout_editor_absoluteX="30dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

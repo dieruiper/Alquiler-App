@@ -51,6 +51,7 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
                 case R.id.btn_seleccionar_vehiculo:
                     Intent i = new Intent(context, Activity_Confirmar_Reserva.class );
                     i.putExtra("matricula_select", v_matricula.getText());
+                    i.putExtra("precio", v_precio.getText());
                     context.startActivity(i);
                     break;
                 case R.id.btn_detalles:

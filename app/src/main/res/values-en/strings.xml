@@ -109,7 +109,17 @@
     <string name="et_vehiculoSeleccionado">Selected vehicle</string>
     <string name="tv_confirma_datos">Confirm</string>
     <string name="txt_cofirmar">Please, make sure the reservation details are correct before confirming</string>
-    <string name="btn_cancelarConfirmacion">Cancelar Reserva</string>
+    <string name="btn_cancelarConfirmacion">Cancel</string>
+    <string name="tv_confNombre">Name: </string>
+    <string name="tv_confApellidos">Surname: </string>
+    <string name="tv_confTelefono">Phone: </string>
+    <string name="tv_confDni">DNI: </string>
+    <string name="tv_confEmail">Email: </string>
+    <string name="tv_confLugarRecogida">Pick up place : </string>
+    <string name="tv_confFechaIni">Pick up date: </string>
+    <string name="tv_confFechaFin">Delivery date: </string>
+    <string name="tv_confMatricula">Car id: </string>
+    <string name="tv_confPrecio">Price (€): </string>
 
     /* Actividad Seleccionar_vehiculo */
     <string name="btn_seleccionar_veh">Select</string>

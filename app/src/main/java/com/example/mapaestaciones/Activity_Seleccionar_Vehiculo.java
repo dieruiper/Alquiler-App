@@ -119,11 +119,4 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
         finish();
     }
 
-    public void seleccionar_Vehiculo(View view){
-
-        Intent i = new Intent(this, Activity_Confirmar_Reserva.class );
-
-        startActivity(i);
-    }
-
 }

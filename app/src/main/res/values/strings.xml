@@ -109,6 +109,16 @@
     <string name="tv_confirma_datos">Confirmar datos</string>
     <string name="txt_cofirmar">Por favor, asegúrese de que los datos de la reserva son correctos antes de confirmar</string>
     <string name="btn_cancelarConfirmacion">Cancelar Reserva</string>
+    <string name="tv_confNombre">Nombre: </string>
+    <string name="tv_confApellidos">Apellidos: </string>
+    <string name="tv_confTelefono">Teléfono: </string>
+    <string name="tv_confDni">DNI: </string>
+    <string name="tv_confEmail">Email: </string>
+    <string name="tv_confLugarRecogida">Oficina de recogida: </string>
+    <string name="tv_confFechaIni">Fecha de recogida: </string>
+    <string name="tv_confFechaFin">Fecha de entrega: </string>
+    <string name="tv_confMatricula">Matrícula: </string>
+    <string name="tv_confPrecio">Precio (€): </string>
 
     /* Actividad Seleccionar_vehiculo */
     <string name="btn_seleccionar_veh">Seleccionar</string>
