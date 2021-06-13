@@ -140,4 +140,14 @@
     <string name="vehiculo_seleccionado">Vehiculo Seleccionado</string>
 
     <string name="btn_scanerQR">Escaner QR</string>
+
+    /*Actividad ver reservas*/
+    <string name="btn_eliminar_res">Eliminar Reserva</string>
+    <string name="txt_codigo">Codigo</string>
+    <string name="txt_fechaInicio">fecha inicio</string>
+    <string name="txt_fechaFin">fecha fin</string>
+    <string name="txt_matricula2">matricula</string>
+    <string name="txt_oficina">oficina</string>
+    <string name="txt_dni">dini</string>
+
 </resources>

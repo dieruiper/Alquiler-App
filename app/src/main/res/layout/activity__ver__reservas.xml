@@ -62,24 +62,27 @@
         android:text="TLF"
         android:textColor="@color/white" />
 
-    <ListView
-        android:id="@+id/lv1"
-        android:layout_width="match_parent"
-        android:layout_height="573dp"
-        android:layout_below="@+id/tv_telefono"
-        android:layout_marginTop="9dp" />
-
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="210dp"
-        android:layout_marginTop="116dp"
-        android:background="@drawable/round_border"
-        android:backgroundTint="#FFEB3B"
-        android:onClick="Consultar_Reservas"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/neutrons"
         android:text="@string/txt_consultarReserva"
-        android:textColor="@color/yellow" />
+        android:textColor="@color/black"
+        android:visibility="invisible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_reservas"
+        android:layout_width="333dp"
+        android:layout_height="245dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="198dp" />
+
 </RelativeLayout>
