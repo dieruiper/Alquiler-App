@@ -22,7 +22,8 @@ public class Activity_QR extends AppCompatActivity implements ZXingScannerView.R
         super.onCreate(savedInstanceState);
         setContentView(activity_qr);
 
-
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
     }
 
     public void bntEscaner(View view){

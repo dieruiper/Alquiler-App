@@ -55,10 +55,13 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
                     context.startActivity(i);
                     break;
                 case R.id.btn_detalles:
+                    /*
                     Intent r = new Intent(context, Activity_Detalles.class);
                     r.putExtra("matricula_select", v_matricula.getText());
                     context.startActivity(r);
                     break;
+
+                     */
             }
         }
     }

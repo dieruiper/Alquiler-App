@@ -14,9 +14,13 @@ import java.util.ArrayList;
 
 public class Activity_Detalles extends AppCompatActivity {
 
-    String matricula;
-    Vehiculo vehiculo;
-    TextView tv;
+    //Vehiculo vehiculo;
+    /*
+    TextView tv_detailsMarca;
+    TextView tv_detailsModelo;
+    TextView tv_detailsDescrp;
+
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +30,29 @@ public class Activity_Detalles extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
+        /*
+        tv_detailsMarca = findViewById(R.id.tv_detailsMarca);
+        tv_detailsModelo = findViewById(R.id.tv_detailsModelo);
+        tv_detailsDescrp = findViewById(R.id.tv_detailsDescrp);
+
+         */
+
         Intent i = getIntent();
-        matricula = i.getStringExtra("matricula_select");
+        String matricula = i.getStringExtra("matricula_select");
+
+        //recuperaVehiculo(matricula);
+
+        /*
+        tv_detailsMarca.setText(vehiculo.getMarca());
+        tv_detailsModelo.setText(vehiculo.getModelo());
+        tv_detailsDescrp.setText(vehiculo.getDescripcion());
+
+         */
+
+    }
+
+    /*
+    private void recuperaVehiculo(String matricula){
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
@@ -47,10 +72,16 @@ public class Activity_Detalles extends AppCompatActivity {
         if (l.size() == 1){
             vehiculo = l.get(0);
             Toast.makeText(this, "Recuperando detalles del vehículo", Toast.LENGTH_LONG).show();
+
         }else{
             Toast.makeText(this, "Error al recuperar el vehículo", Toast.LENGTH_LONG).show();
+            Intent n = new Intent(this, MainActivity.class);
+            startActivity(n);
+            finish();
         }
     }
+
+     */
 
 
 }

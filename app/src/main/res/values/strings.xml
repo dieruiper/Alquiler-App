@@ -33,7 +33,7 @@
     <string name="punto_recogida">Punto de recogida</string>
     <string name="oficina">Oficina</string>
     <string name="punto_devolucion">Punto de devolución</string>
-    <string name="btn_fecha_inicio">Fecha</string>
+    <string name="btn_fecha_inicio">Fecha recogida</string>
     <string name="button_consultar_disp">Consultar disponibilidad</string>
     <string name="btn_fecha_fin">Fecha</string>
     <string name="btn_mapa_reserva">Lugar</string>

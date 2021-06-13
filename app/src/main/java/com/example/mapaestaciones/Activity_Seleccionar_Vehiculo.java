@@ -111,6 +111,12 @@ public class Activity_Seleccionar_Vehiculo extends AppCompatActivity {
         recyclerView.setAdapter(vAdapter);
     }
 
+    public void verDetalles(View view, String m){
+        Intent r = new Intent(this, Activity_Detalles.class);
+        r.putExtra("matricula_select", m);
+        startActivity(r);
+    }
+
     public void volver_reserva_vehiculos(View view){
         finish();
     }

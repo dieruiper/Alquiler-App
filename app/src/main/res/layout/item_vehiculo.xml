@@ -121,10 +121,10 @@
             <Button
                 android:id="@+id/btn_detalles"
                 android:layout_width="wrap_content"
-                android:layout_height="58dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
 
-                android:backgroundTint="@color/yellow"
+                android:backgroundTint="#CAB290"
                 android:fontFamily="@font/neutrons"
                 android:text="@string/btn_ver_detalles"
                 android:textColor="@color/black" />
