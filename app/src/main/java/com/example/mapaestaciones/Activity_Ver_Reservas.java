@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -56,6 +57,7 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
 
         String dni = r_dni.getText().toString();
         ArrayList<String> lista = new ArrayList<>();
+        lista.clear();
 
         if (!dni.isEmpty()) {
             Cursor fila = BaseDeDatos.rawQuery
@@ -94,6 +96,10 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
         } else {
             Toast.makeText(this, "No hay ninguna reserva", Toast.LENGTH_SHORT).show();
         }
+
+        Intent i = new Intent(this, Activity_Ver_Reservas.class);
+        startActivity(i);
+        finish();
 
     }
 
