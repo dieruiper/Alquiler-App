@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,13 +20,16 @@ import org.jetbrains.annotations.NotNull;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHolder> {
+public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHolder> implements Filterable{
 
     private ArrayList<Vehiculo> mDataset;
+    private ArrayList<Vehiculo> arr;
 
+    /*
     public void filtrado(String txtBuscar) {
         ArrayList<Vehiculo>lista=new ArrayList<Vehiculo>();
         int longitud =txtBuscar.length();
@@ -47,7 +52,7 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
         }
         notifyDataSetChanged();
     }
-
+    */
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         Context context;
@@ -121,6 +126,36 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
     public int getItemCount() {
         return mDataset.size();
     }
+
+    public Filter getFilter() {
+        return filter;
+    }
+    Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            ArrayList<Vehiculo> arrayFiltrado =new ArrayList<Vehiculo>();
+            if(charSequence.toString().isEmpty()){
+                arrayFiltrado.addAll(mDataset);
+            }else{
+                for(Vehiculo v :mDataset){
+                    if(v.getMarca().toLowerCase().contains(charSequence.toString().toLowerCase())){
+                        arrayFiltrado.add(v);
+                    }
+                }
+            }
+            FilterResults filterResults= new FilterResults();
+            filterResults.values=arrayFiltrado;
+            return filterResults;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            mDataset.clear();
+            mDataset.addAll((Collection<? extends Vehiculo>) results.values);
+            notifyDataSetChanged();
+        }
+    };
+
 
 }
 

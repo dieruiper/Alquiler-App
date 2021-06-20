@@ -95,6 +95,17 @@
             android:visibility="invisible"
             app:backgroundTint="@color/yellow" />
 
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/neutrons"
+            android:hint="@string/btn_ver_ofi"
+            android:onClick="Actividad_SearchActivity"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:backgroundTint="@color/yellow" />
+
     </LinearLayout>
 
     <TextView

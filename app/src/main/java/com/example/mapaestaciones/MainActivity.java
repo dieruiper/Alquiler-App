@@ -70,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
         Intent ver_oficinas_adelante = new Intent(getApplicationContext(), Activity_Ver_Reservas.class);
         startActivity(ver_oficinas_adelante);
     }
+    public void Actividad_SearchActivity (View view) {
+        Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(intent);
+    }
 
     public void Actividad_Prueba_Login (View view) {
         Intent login = new Intent(getApplicationContext(), Activity_Login.class);
