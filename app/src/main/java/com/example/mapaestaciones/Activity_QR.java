@@ -4,8 +4,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.transition.Fade;
+import android.transition.Slide;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 
 import com.google.zxing.Result;
 
@@ -20,6 +24,15 @@ public class Activity_QR extends AppCompatActivity implements ZXingScannerView.R
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        Slide slide = new Slide(Gravity.BOTTOM);
+        slide.setDuration(MainActivity.DURATION_TRANSITION);
+        slide.setInterpolator(new DecelerateInterpolator());
+
+        getWindow().setEnterTransition(slide);
+
+
         setContentView(activity_qr);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);

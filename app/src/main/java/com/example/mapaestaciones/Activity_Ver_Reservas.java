@@ -11,7 +11,10 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.transition.Explode;
+import android.transition.Fade;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -31,6 +34,15 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Explode explode = new Explode();
+        explode.setDuration(MainActivity.DURATION_TRANSITION);
+        explode.setInterpolator(new DecelerateInterpolator());
+
+        getWindow().setEnterTransition(explode);
+
+
+
         setContentView(R.layout.activity__ver__reservas);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);

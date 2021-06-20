@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.transition.Fade;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -26,6 +28,13 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+
+        Fade fadeIn = new Fade(Fade.IN);
+        fadeIn.setDuration(MainActivity.DURATION_TRANSITION);
+        fadeIn.setInterpolator(new DecelerateInterpolator());
+
+        getWindow().setEnterTransition(fadeIn);
+
         setContentView(R.layout.activity_reservar_vehiculos);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -42,6 +51,8 @@ public class Activity_Reservar_Vehiculos extends AppCompatActivity implements Vi
         title2 = getIntent().getStringExtra("title");
         title = getIntent().getStringExtra("title");
         et_lugar_recogida.setText(title2);
+
+
 
     }
 
