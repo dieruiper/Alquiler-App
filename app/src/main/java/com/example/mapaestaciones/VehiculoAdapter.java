@@ -4,6 +4,7 @@ package com.example.mapaestaciones;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +15,38 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHolder> {
 
     private ArrayList<Vehiculo> mDataset;
+
+    public void filtrado(String txtBuscar) {
+        ArrayList<Vehiculo>lista=new ArrayList<Vehiculo>();
+        int longitud =txtBuscar.length();
+        if(longitud ==0){
+            lista.addAll(mDataset);
+        }else{
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+                List<Vehiculo> collection=mDataset.stream()
+                        .filter(i -> i.getMarca().toLowerCase().contains(txtBuscar.toLowerCase()))
+                        .collect(Collectors.toList());
+                        collection.toArray();
+                        lista.addAll(collection);
+            }else{
+                for(Vehiculo v:mDataset){
+                    if(v.getMarca().toLowerCase().contains(txtBuscar.toLowerCase())){
+                        lista.add(v);
+                    }
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 

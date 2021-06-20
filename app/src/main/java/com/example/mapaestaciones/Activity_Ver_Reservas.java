@@ -1,6 +1,7 @@
 package com.example.mapaestaciones;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,6 +25,7 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
     EditText r_codigo;
     private listAdapter resevaAdapter;
     private ListView lv1;
+    private CardView cv1;
 
 
     @Override
@@ -40,6 +42,7 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
         r_telefono = findViewById(R.id.tv_telefono);
         r_email = findViewById(R.id.tv_email);
 
+        cv1 =(CardView) findViewById(R.id.cv1);
         lv1 = (ListView) findViewById(R.id.lv1);
         r_codigo = (EditText) findViewById(R.id.et_inserte_codigo);
 
@@ -68,8 +71,11 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
                             fila.getString(3), fila.getString(4), fila.getString(5));
                     lista.add(reserva.toString());
                 } while (fila.moveToNext());
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item_verreservas, lista);
-                lv1.setAdapter(adapter);
+                //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item_verreservas, lista);
+                //lv1.setAdapter(adapter);
+
+                //Array<String> array = new Array<String>(this, R.layout.list_item_verreservas, lista);
+                //lv1.setAdapter(adapter);
 
 
             } else {
