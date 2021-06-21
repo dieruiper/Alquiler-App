@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 public class MiPerfil extends AppCompatActivity {
 
-    TextView tv_usuario,tv_nombreusuario;
+    TextView tv_usuario,tv_nombreusuario,apellidousuario,dniusuario,telefonousuario,emailusuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +23,22 @@ public class MiPerfil extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
-        tv_usuario=(TextView)findViewById(R.id.tv_usuario);
-        tv_nombreusuario=(TextView)findViewById(R.id.nombreusuario);
+        tv_usuario=findViewById(R.id.tv_usuario);
+        tv_nombreusuario=findViewById(R.id.nombreusuario);
+        apellidousuario=findViewById(R.id.apellidousuario);
+        dniusuario=findViewById(R.id.dniusuario);
+        telefonousuario=findViewById(R.id.telefonousuario);
+        emailusuario=findViewById(R.id.emailusuario);
+
+
+
         SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
         tv_usuario.setText(preferences.getString("usuario", "AAAAAA"));
         tv_nombreusuario.setText(preferences.getString("nombre", "AquiEsElNombre"));
+        apellidousuario.setText(preferences.getString("apellidos", "AquiEsElNombre"));
+        dniusuario.setText(preferences.getString("dni", "AquiEsElNombre"));
+        telefonousuario.setText(preferences.getString("telefono", "AquiEsElNombre"));
+        emailusuario.setText(preferences.getString("email", "AquiEsElNombre"));
 
         /*
         String nombreusuario =tv_nombreusuario.getText().toString();
