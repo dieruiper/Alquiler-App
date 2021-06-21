@@ -77,7 +77,7 @@
         android:textColor="@color/black"
         android:visibility="visible" />
 
-    <androidx.cardview.widget.CardView
+    <ListView
         android:id="@+id/cv1"
         android:layout_width="338dp"
         android:layout_height="138dp"

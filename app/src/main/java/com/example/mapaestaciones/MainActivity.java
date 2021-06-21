@@ -152,6 +152,11 @@ public class MainActivity extends AppCompatActivity {
         actividad.finish();
     }
 
+    public void Actividad_MiPerfil(View view) {
+        Intent miperfil = new Intent(getApplicationContext(), MiPerfil.class);
+        startActivity(miperfil);
+    }
+
     public static void saveValuePreference(Context context, Boolean b) {
         SharedPreferences sesion = context.getSharedPreferences("sesion", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor;

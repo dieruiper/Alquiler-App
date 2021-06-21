@@ -54,7 +54,7 @@ public class Activity_Ver_Reservas extends AppCompatActivity {
         r_telefono = findViewById(R.id.tv_telefono);
         r_email = findViewById(R.id.tv_email);
 
-        cv1 =(CardView) findViewById(R.id.cv1);
+        //cv1 =(CardView) findViewById(R.id.cv1);
         lv1 = (ListView) findViewById(R.id.lv1);
         r_codigo = (EditText) findViewById(R.id.et_inserte_codigo);
 
